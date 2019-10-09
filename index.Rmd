@@ -1,0 +1,15 @@
+--- 
+title: "Giới thiệu cơ bản về XSTK"
+author: "Truong Hoang"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+github-repo: truonghm/stat101
+description: ""
+---
+
+
+# Mở đầu {-}
+
+Test
