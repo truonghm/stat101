@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Thống kê mô tả cơ bản | Giới thiệu cơ bản về XSTK</title>
+  <meta name="description" content="1 Thống kê mô tả cơ bản | Giới thiệu cơ bản về XSTK" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Thống kê mô tả cơ bản | Giới thiệu cơ bản về XSTK" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="truonghm/stat101" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Thống kê mô tả cơ bản | Giới thiệu cơ bản về XSTK" />
+  
+  
+  
+
+<meta name="author" content="Truong Hoang" />
+
+
+<meta name="date" content="2019-10-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Mở đầu</a></li>
+<li class="part"><span><b>Giới thiệu chung</b></span></li>
+<li class="chapter" data-level="1" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html"><i class="fa fa-check"></i><b>1</b> Thống kê mô tả cơ bản</a><ul>
+<li class="chapter" data-level="1.1" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#tom-tt-d-liu-qua--thi"><i class="fa fa-check"></i><b>1.1</b> Tóm tắt dữ liệu qua đồ thị</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#mt-bin-ri-rac-univariate"><i class="fa fa-check"></i><b>1.1.1</b> Một biến rời rạc (univariate)</a></li>
+<li class="chapter" data-level="1.1.2" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#mt-bin-lien-tuc-univariate"><i class="fa fa-check"></i><b>1.1.2</b> Một biến liên tục (univariate)</a></li>
+<li class="chapter" data-level="1.1.3" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#mt-bin-ri-rac-va-mt-bin-lien-tuc-bivariate"><i class="fa fa-check"></i><b>1.1.3</b> Một biến rời rạc và một biến liên tục (bivariate)</a></li>
+<li class="chapter" data-level="1.1.4" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#hai-bin-lien-tuc-bivariate"><i class="fa fa-check"></i><b>1.1.4</b> Hai biến liên tục (bivariate)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#xu-hung-trung-tam"><i class="fa fa-check"></i><b>1.2</b> Xu hướng trung tâm</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#mean-trung-binh-cng"><i class="fa fa-check"></i><b>1.2.1</b> Mean (Trung bình cộng)</a></li>
+<li class="chapter" data-level="1.2.2" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#median-trung-vi"><i class="fa fa-check"></i><b>1.2.2</b> Median (Trung vị)</a></li>
+<li class="chapter" data-level="1.2.3" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#trimmed-mean"><i class="fa fa-check"></i><b>1.2.3</b> Trimmed mean</a></li>
+<li class="chapter" data-level="1.2.4" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#vi-du"><i class="fa fa-check"></i><b>1.2.4</b> Ví dụ</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#mc--phan-tan-spreaddispersion"><i class="fa fa-check"></i><b>1.3</b> Mức độ phân tán (Spread/Dispersion)</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#range-khoang-bin-thien"><i class="fa fa-check"></i><b>1.3.1</b> Range (Khoảng biến thiên)</a></li>
+<li class="chapter" data-level="1.3.2" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#inter-quartile-range"><i class="fa fa-check"></i><b>1.3.2</b> Inter-Quartile Range</a></li>
+<li class="chapter" data-level="1.3.3" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#variance-phuong-sai"><i class="fa fa-check"></i><b>1.3.3</b> Variance (Phương sai)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#tip-tuc-vi-biu-"><i class="fa fa-check"></i><b>1.4</b> Tiếp tục với biểu đồ</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#box-plot"><i class="fa fa-check"></i><b>1.4.1</b> Box plot</a></li>
+<li class="chapter" data-level="1.4.2" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#scatter-plot"><i class="fa fa-check"></i><b>1.4.2</b> Scatter plot</a></li>
+<li class="chapter" data-level="1.4.3" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#skewness-kurtosis"><i class="fa fa-check"></i><b>1.4.3</b> Skewness &amp; Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#tng-hp-thut-ng"><i class="fa fa-check"></i><b>1.5</b> Tổng hợp thuật ngữ</a></li>
+<li class="chapter" data-level="1.6" data-path="thng-ke-mo-ta-co-ban.html"><a href="thng-ke-mo-ta-co-ban.html#tham-khao"><i class="fa fa-check"></i><b>1.6</b> Tham khảo</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Giới thiệu cơ bản về XSTK</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="thng-ke-mo-ta-co-ban" class="section level1">
+<h1><span class="header-section-number">1</span> Thống kê mô tả cơ bản</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p>Summary statistics (thống kê mô tả tóm tắt) là một phần cơ bản trong khoa học thống kê, giúp chúng ta mô tả ngắn gọn dữ liệu thông qua các chỉ số thống kê cơ bản nhất. Đồng thời, chúng ta cũng sử dụng các công cụ visualization trong R để đưa data trở thành 1 biểu đồ mang mục đích tóm tắt.</p>
+<p>Trong phần này, chúng ta sẽ sử dụng dataset <code>TenMileRace</code> từ package <strong>mosaicData</strong>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Cài package nếu chưa có sẵn</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">install.packages</span>(<span class="st">&#39;mosaicData&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">data</span>(TenMileRace, <span class="dt">package=</span><span class="st">&#39;mosaicData&#39;</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">head</span>(TenMileRace)</a></code></pre></div>
+<pre><code>##   state time  net age sex
+## 1    VA 6060 5978  12   M
+## 2    MD 4515 4457  13   M
+## 3    VA 5026 4928  13   M
+## 4    MD 4229 4229  14   M
+## 5    MD 5293 5076  14   M
+## 6    VA 6234 5968  14   M</code></pre>
+<p>Dataset này có các cột sau:</p>
+<ul>
+<li><p><code>state</code>: Là nơi sống của người chạy.</p></li>
+<li><p><code>time</code>: Thời gian chính thức từ lúc bắt đầu chạy đến lúc chạm vạch đích (tính bằng giây).</p></li>
+<li><p><code>net</code>: Thời gian ghi được (theo giây) từ lúc người chạy vượt qua vạch bắt đầu cho đến lúc chạm vạch đích. Giá trị này thường nhỏ hơn giá trị <code>time</code> do có một số lượng lớn người tham gia chạy, và không thể sắp xếp cho người tham gia đứng thẳng hàng để xuất phát cùng 1 lúc được (need citation here).</p></li>
+<li><p><code>age</code>: Tuổi của người tham gia chạy tính bằng năm.</p></li>
+<li><p><code>sex</code>: Giới tính người tham gia chạy, thuộc dạng <code>factor</code> với 2 giá trị <code>F</code> (female) vàdư <code>M</code> (male).</p></li>
+</ul>
+<p>Trước tiên, chúng ta cần phân biệt giữa 2 loại dữ liệu:</p>
+<ol style="list-style-type: decimal">
+<li><p>Discrete/Categorical (dữ liệu rời rạc): Là kiểu dữ liệu có giá trị nằm trong 1 tập hợp giới hạn có thể đếm được. Nếu dữ liệu là kiểu numeric, ta có thể gọi là Discrete, còn nếu là kiểu factor/string, ta gọi là Categorical. Ví dụ: Xếp hạng điểm của học sinh theo kiểu chữ cái (A/B/C/D/E/F) hoặc giới tính (Nam hoặc Nữ), hoặc số bữa ăn trong ngày (1 đến 3 bữa, thậm chí nhiều hơn, nhưng quan trọng là chúng ta có thể <em>đếm được</em>).</p></li>
+<li><p>Continuous (dữ liệu liên tục): Là kiểu dữ liệu số có thể nhận một số giá trị vô hạn, không thể đếm được. Ví dụ: Chiều cao, cân nặng, thời gian/tuổi (ví dụ: Có thể nói là 10 tuổi, nhưng cũng có thể nói là 10 tuổi 5 tháng 20 ngày 7 phút 5 giây, vân vân).</p></li>
+</ol>
+<p>Tóm lại, khi làm việc với dữ liệu, chúng ta có thể tự đặt câu hỏi: “Liệu có thể chia các giá trị trong dataset này thành các phần nhỏ hơn hay không?”. Nếu có, dữ liệu sẽ thuộc kiểu liên tục.</p>
+<div id="tom-tt-d-liu-qua--thi" class="section level2">
+<h2><span class="header-section-number">1.1</span> Tóm tắt dữ liệu qua đồ thị</h2>
+<div id="mt-bin-ri-rac-univariate" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Một biến rời rạc (univariate)</h3>
+<p>Chúng ta có thể dùng bar chart để mô tả phân phối của một biến rời rạc (đơn biến - univariate). Các cột (bar) được vẽ thể hiện một giá trị (level) của nhóm factor, và chiều cao của cột (nếu để biểu đồ dọc) thể hiện số quan sát (observation).</p>
+<p>Ta cũng có thể dùng <code>group_by</code> và <code>summarise</code> để diễn giải bar chart như ở dưới:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">TenMileRace <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="st">    </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">count =</span> <span class="kw">n</span>())</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   sex   count
+##   &lt;fct&gt; &lt;int&gt;
+## 1 F      4325
+## 2 M      4311</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>sex)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Có thể thấy 2 cột có chiều cao tương đương nhau do số observation của mỗi giá trị factor gần bằng nhau (4325 vs. 4311). Như vậy, dữ liệu về người chạy đua trong data rất cân bằng về giới tính.</p>
+</div>
+<div id="mt-bin-lien-tuc-univariate" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Một biến liên tục (univariate)</h3>
+<p>Đồ thị histogram nhìn khá giống với đồ thị bar chart, nhưng vì được sử dụng với biến liên tục nên các cột sẽ chạm vào nhau.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>net)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Chiều cao của mỗi cột trong đồ thị histogram thể hiện tần suất kết quả chạy theo các khoảng (interval), và trong R gọi là các bin (ngăn). Mặc định của hàm <code>geom_histogram</code> là <code>bins=30</code>, tức là mỗi khoảng cách nhau 30 đơn vị.</p>
+<p>Ta có thể diễn giải lại biểu đồ trên dưới dạng bảng:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">TenMileRace <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">bins=</span><span class="kw">cut</span>(net, <span class="dt">breaks=</span><span class="dv">30</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="st">    </span><span class="kw">group_by</span>(bins) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">count=</span><span class="kw">n</span>())</a></code></pre></div>
+<pre><code>## # A tibble: 29 x 2
+##    bins                count
+##    &lt;fct&gt;               &lt;int&gt;
+##  1 (2.81e+03,3.07e+03]    18
+##  2 (3.07e+03,3.33e+03]    22
+##  3 (3.33e+03,3.59e+03]    65
+##  4 (3.59e+03,3.84e+03]   131
+##  5 (3.84e+03,4.1e+03]    197
+##  6 (4.1e+03,4.36e+03]    339
+##  7 (4.36e+03,4.62e+03]   495
+##  8 (4.62e+03,4.87e+03]   685
+##  9 (4.87e+03,5.13e+03]   735
+## 10 (5.13e+03,5.39e+03]  1004
+## # ... with 19 more rows</code></pre>
+<p>các interval trong bảng và đồ thị trên đều có mặc định là <span class="math inline">\((x, y]\)</span>, tức là <span class="math inline">\(x &lt; values &lt;= y\)</span> (right-closed, left-opened).</p>
+<p>Chú ý: Đồ thị histogram dựa vào diện tích của các cột, không phải chiều cao, tức là bằng <span class="math inline">\(bin\;width\;*\;count\)</span>.</p>
+</div>
+<div id="mt-bin-ri-rac-va-mt-bin-lien-tuc-bivariate" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Một biến rời rạc và một biến liên tục (bivariate)</h3>
+<p>Chúng ta thường phải so sánh mức độ phản hồi (dữ liệu liên tục) của hai biến rời rạc hoặc nhiều hơn. Biểu đồ boxplot thường để sử dụng để làm việc này. Mỗi observation gắn với một giá trị liên tục và 1 giá trị rời rạc</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>sex, <span class="dt">y=</span>net)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="st">    </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Tron biểu đồ trên, phần rìa (hinge) của hộp được định nghĩa là các khoảng phần tư thứ nhất và thứ 3 (1st quartile, tương đương với 25% quantile, và 3rd quartile, đương tương với 75% quantile). Nói cách khác, 25% dữ liệu nằm dưới hộp, 50% nằm trong hộp, và phần 25% cuối cùng nằm phía trên hộp. Các điểm bên ngoài hộp là các outliers (điểm ngoại lai). Nếu định nghĩa Inter-Quartile Range (IQR) là chiều dài của hộp thì tất các quan sát lớn hơn 1.5*IQR tính từ hộp được coi như là 1 outlier.</p>
+<p>Ngoài cách trên, chúng ta có thể dùng 2 đồ thị histogram đặt cạnh nhau để so sánh:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>net)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="st">  </span><span class="kw">facet_grid</span>( . <span class="op">~</span><span class="st"> </span>sex )</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Trong trường hợp này, đồ thị đặt theo chiều dọc sẽ dễ so sánh hơn:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>net)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="st">  </span><span class="kw">facet_grid</span>( sex <span class="op">~</span><span class="st"> </span>. ) <span class="co"># thay đổi chiều facet</span></a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="hai-bin-lien-tuc-bivariate" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Hai biến liên tục (bivariate)</h3>
+<p>Để biểu diễn mối quan hệ của 2 biến liên tục, ta dùng biểu đô dạng điểm:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>age, <span class="dt">y=</span>net, <span class="dt">color=</span>sex)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+</div>
+<div id="xu-hung-trung-tam" class="section level2">
+<h2><span class="header-section-number">1.2</span> Xu hướng trung tâm</h2>
+<p>Ngoài việc sử dụng các loại biểu đồ và đồ thị, chúng ta còn có thể dùng các 1 số chỉ số cơ bản để miêu tả dữ liệu. Mở đầu là các chỉ số về chiều hướng trung tâm (centrality).</p>
+<div id="mean-trung-binh-cng" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Mean (Trung bình cộng)</h3>
+<p>Giá trị trung bình cộng (arithmetic mean, hay còn được gọi là average) là chỉ số cơ bản nhất, được tính theo công thức:</p>
+<p><span class="math display">\[\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_{i}=\frac{1}{n}\left(x_{1}+x_{2}+\dots+x_{n}\right)\]</span></p>
+<p>Trong R, ta tính mean bằng cách dùng hàm <code>mean()</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Dùng base R</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="kw">mean</span>(TenMileRace<span class="op">$</span>net)</a></code></pre></div>
+<pre><code>## [1] 5599.065</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># Dùng dplyr</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="kw">summarise</span>(TenMileRace, <span class="kw">mean</span>(net))</a></code></pre></div>
+<pre><code>##   mean(net)
+## 1  5599.065</code></pre>
+</div>
+<div id="median-trung-vi" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Median (Trung vị)</h3>
+<p>Median (trung vị) là giá trị ở giữa của 1 tập hợp dữ liệu đã sắp xếp theo thứ tự. Trong trường hợp số phần tự của tập hợp là số chẵn, ta lấy trung bình cộng của 2 giá trị ở giữa làm median, tức là lấy <span class="math inline">\((1/2)(y_{n/2}\;+\;y_{(n/2+1)})\)</span>.</p>
+<p>Trong R, ta tính median bằng hàm <code>median()</code>:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">median</span>(TenMileRace<span class="op">$</span>net)</a></code></pre></div>
+<pre><code>## [1] 5555</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co"># Dùng dplyr</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="kw">summarise</span>(TenMileRace, <span class="kw">median</span>(net))</a></code></pre></div>
+<pre><code>##   median(net)
+## 1        5555</code></pre>
+</div>
+<div id="trimmed-mean" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Trimmed mean</h3>
+<p>Giá trị “trimmed mean” là giá trị trung bình sau khi “xén” bớt một số phần trăm nhất định ở 2 đầu phân phối; ví dụ đối với 5% trimmed mean, sau khi sắp xếp dữ liệu theo thứ tự, ta lấy bớt 5% các quan sát đầu tiên và cuối cùng, giữ lại 90% rồi lấy trung bình cộng.</p>
+<p>Trong R, ta tính trimmed mean bằng hàm <code>mean()</code> kèm theo thông số <code>trim = n</code>:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">mean</span>(TenMileRace<span class="op">$</span>net, <span class="dt">trim=</span><span class="fl">0.5</span>)</a></code></pre></div>
+<pre><code>## [1] 5555</code></pre>
+<p>Có thể thấy, sau khi xén bớt 5% quan sát ở 2 đầu phân phối, mean và median của trường <code>net</code> trong dataset <code>TenMileRace</code> bằng nhau.</p>
+</div>
+<div id="vi-du" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Ví dụ</h3>
+<p>Một lớp học có 9 người, tuổi của cả lớp là tập hợp <span class="math inline">\(\{21, 22, 23, 25,26,22, 23,21, 26\}\)</span>. Mean của tập hợp là 23.222, median là 23; hai giá trị này hiện đang xấp xỉ nhau. Người thứ 10 nhập học có tuổi là 71, khiến mean của tập hợp trở thành 28.6, median vẫn giữ nguyên là 24. Giá trị mean mới lớn hơn so với median, do chúng ta thêm vào 1 outlier lớn hơn hẳn. Dữ liệu lúc này được gọi là lệch sang bên phải (skewed).</p>
+<p>Đối với dữ liệu có độ lệch lớn, giá trị median sẽ thể hiện xu hướng trung tâm tốt hơn mean.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">age &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">22</span>, <span class="dv">23</span>,<span class="dv">21</span>, <span class="dv">26</span>)</a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="kw">mean</span>(age)</a></code></pre></div>
+<pre><code>## [1] 23.22222</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">median</span>(age)</a></code></pre></div>
+<pre><code>## [1] 23</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">age &lt;-<span class="st"> </span><span class="kw">append</span>(age, <span class="dv">71</span>) <span class="co"># thành viên mới của lớp học</span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="kw">mean</span>(age)</a></code></pre></div>
+<pre><code>## [1] 28</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">median</span>(age)</a></code></pre></div>
+<pre><code>## [1] 23</code></pre>
+</div>
+</div>
+<div id="mc--phan-tan-spreaddispersion" class="section level2">
+<h2><span class="header-section-number">1.3</span> Mức độ phân tán (Spread/Dispersion)</h2>
+<p>Câu hỏi thứ 2 khi làm việc với 1 dataset là “Mức độ phân tán của dataset này như thế nào?”. Ví dụ, ta có 2 tập dữ liệu có các tham số trung tâm tương đương nhau, nhưng không có nghĩa là 2 tập này giống nhau, mà dữ liệu có thể phân tán và biến thiên khác nhau. Có nhiều cách để trả lời câu hỏi này:</p>
+<div id="range-khoang-bin-thien" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Range (Khoảng biến thiên)</h3>
+<p><em>Range</em> (khoảng biến thiên) là khoảng cách giữa giá trị quan sát nhỏ nhất đến giá trị quan sát lớn nhất.</p>
+<p><span class="math display">\[Range=Max-Min\]</span></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">TenMileRace <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">range =</span> <span class="kw">max</span>(net) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(net))</a></code></pre></div>
+<pre><code>##   range
+## 1  7722</code></pre>
+</div>
+<div id="inter-quartile-range" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Inter-Quartile Range</h3>
+<p><em>Interquartile range</em> là khoảng cách giữa tứ phân vị thứ 3 (3rd quartile) và thứ phân vị thứ nhất (1st quartile):</p>
+<p><span class="math display">\[IQR=Q3-Q1\]</span></p>
+<p>Trước tiên, cần giải thích định nghĩa của các thuật ngữ <em>-tile</em>:</p>
+<ul>
+<li><p><strong>Percentile</strong>: Tiếng Việt nghĩa là “bách phân vị”; sau khi xếp dữ liệu theo thứ tự, giá trị phần trăm thứ <span class="math inline">\(p\)</span> (<span class="math inline">\(p_{th}\)</span> percentile) là giá trị quan sát có <span class="math inline">\(p\)</span> phần trăm số quan sát bên dưới và <span class="math inline">\((1-p)\)</span> bên trên, trong đó <span class="math inline">\(p\)</span> nằm giữa 0 và 100. Percentile thứ 0 và 100 là chính là giá trị nhỏ nhất và lớn nhất của tập dữ liệu. Giá trị <em>median</em> là giá trị phần trăm thứ 50 (50th percentile). Percentile là một <em>mốc</em>, không phải 1 <em>khoảng</em> dữ liệu.</p></li>
+<li><p><strong>Quartile</strong>: Thông thường, chúng ta sẽ chia dữ liệu ra làm 4 phần với 3 mốc 25th percentile, 50th percentile và 75th percentile, tức là chia dữ liệu ra làm 4 phần. Ba mốc này cũng được gọi là 1st, 2nd và 3rd quartiles (khoảng phần tư thứ nhất, thứ 2 và thứ 3).</p></li>
+<li><p><strong>Quantile</strong>: Là các điểm cắt/điểm mốc chia một khoảng phân phối xác suất ra thành các khoảng với xác suất giống nhau. Như vậy, <strong>quartile</strong> và <strong>percentile</strong> là các trường hợp đặc biệt của quantile.</p></li>
+</ul>
+<p>Dùng hàm <code>quantile()</code>:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">quantile</span>(TenMileRace<span class="op">$</span>net)</a></code></pre></div>
+<pre><code>##    0%   25%   50%   75%  100% 
+##  2814  4950  5555  6169 10536</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="co"># so sánh giá trị 0%, 50% và 100%</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="co"># với các hàm min, max và median</span></a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="kw">c</span>(<span class="kw">min</span>(TenMileRace<span class="op">$</span>net),</a>
+<a class="sourceLine" id="cb37-4" title="4">  <span class="kw">median</span>(TenMileRace<span class="op">$</span>net),</a>
+<a class="sourceLine" id="cb37-5" title="5">  <span class="kw">max</span>(TenMileRace<span class="op">$</span>net))</a></code></pre></div>
+<pre><code>## [1]  2814  5555 10536</code></pre>
+<p>Chúng ta có thể dùng argument <code>probs</code> trong hàm <code>quantile()</code> để tìm ra các percentile khác:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">quantile</span>(TenMileRace<span class="op">$</span>net, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>))</a></code></pre></div>
+<pre><code>##      5%     95% 
+## 4098.75 7260.50</code></pre>
+<p>Giá trị mặc định của argument <code>probs</code> là 0 (min), 0.25 (1st quartile), 0.5 (2nd quartile/median), 0.75 (third quartile) và 1 (max).</p>
+<p>Để tính IQR, chúng ta hàm <code>IQR</code> (nhớ viết hoa):</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">IQR</span>(TenMileRace<span class="op">$</span>net)</a></code></pre></div>
+<pre><code>## [1] 1219</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="co"># hoặc kết hợp với dplyr</span></a>
+<a class="sourceLine" id="cb43-2" title="2">TenMileRace <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="kw">IQR</span>(net))</a></code></pre></div>
+<pre><code>##   IQR(net)
+## 1     1219</code></pre>
+<p>Lưu ý: hàm <code>quantile</code> mặc định trả về 5 giá trị, vì vậy sẽ không kết hợp được với <code>dplyr::summarise</code> do hàm <code>summarise</code> chỉ trả về 1 kết quả. Nếu thay đổi argument <code>probs</code> thì có thể kết hợp được.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1">TenMileRace <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-2" title="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">quantile</span>(net, <span class="dt">probs =</span> <span class="fl">0.5</span>))</a></code></pre></div>
+<pre><code>##   quantile(net, probs = 0.5)
+## 1                       5555</code></pre>
+</div>
+<div id="variance-phuong-sai" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Variance (Phương sai)</h3>
+</div>
+</div>
+<div id="tip-tuc-vi-biu-" class="section level2">
+<h2><span class="header-section-number">1.4</span> Tiếp tục với biểu đồ</h2>
+<div id="box-plot" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Box plot</h3>
+</div>
+<div id="scatter-plot" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Scatter plot</h3>
+</div>
+<div id="skewness-kurtosis" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> Skewness &amp; Kurtosis</h3>
+</div>
+</div>
+<div id="tng-hp-thut-ng" class="section level2">
+<h2><span class="header-section-number">1.5</span> Tổng hợp thuật ngữ</h2>
+</div>
+<div id="tham-khao" class="section level2">
+<h2><span class="header-section-number">1.6</span> Tham khảo</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
