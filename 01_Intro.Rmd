@@ -34,6 +34,7 @@ install.packages('mosaicData')
 
 ```{r}
 data(TenMileRace, package='mosaicData')
+summary(TenMileRace)
 head(TenMileRace)
 ```
 
@@ -57,7 +58,9 @@ Trước tiên, chúng ta cần phân biệt giữa 2 loại dữ liệu:
 
 Tóm lại, khi làm việc với dữ liệu, chúng ta có thể tự đặt câu hỏi: "Liệu có thể chia các giá trị trong dataset này thành các phần nhỏ hơn hay không?". Nếu có, dữ liệu sẽ thuộc kiểu liên tục.
 
+
 ## Tóm tắt dữ liệu qua đồ thị
+
 
 ### Một biến rời rạc (univariate)
 
@@ -265,13 +268,117 @@ TenMileRace %>%
 
 ### Variance (Phương sai)
 
+Trước tiên, ta xem xét khoảng cách từ một quan sát bất kì đến mean (_deviation_). Ta định nghĩa deviation thứ $i_{th}$ là:
+
+$$e_{i}=x_{i}-\bar{x}$$
+
+Vậy khoảng cách trung bình đến mean là bao nhiêu? Nếu khảo sát mức độ phân tán bằng cách này, ta gặp phải 2 vấn đề:
+
+1. Tổng của tất cả các khoảng cách từ các quan sát đến mean bằng 0:
+
+$$\sum_{i=1}^{n}(x_{i}-\bar{x})	=	\sum_{i=1}^{n}x_{i}-\sum_{i=1}^{n}\bar{x}
+	=	n\frac{1}{n}\sum_{i=1}^{n}x_{i}-n\bar{x}
+	=	n\bar{x}-n\bar{x}
+	=	0$$
+	
+2. Vấn đề lớn hơn: Các giá trị khoảng cách đến mean có cả giá trị âm và dương, và khi khảo sát mức độ phân tán, kết quả âm hay dương là vô nghĩa. Để giải quyết vấn đề này, chúng ta có thể lấy giá trị tuyệt đối hoặc bình phương kết quả.
+
+Nếu đi theo hướng lấy giá trị tuyệt đối, ta dùng chỉ số MAD (_Mean Absolute Deviation_), được tính là trung bình của tổng giá trị tuyệt đối của khoảng cách từ các observation đến mean: $(1/n)\sum_{i=1}^{n}|x_{i}-\bar{x}|$. 
 
 
+Nếu đi theo hướng bình phương kết quả, ta dùng phương sai (_variance_). Trong thực tế, dữ liệu thường ở dạng một phân phối chuẩn (normal distribution - sẽ nhắc đến ở phần 2), như chiều cao con người, huyết áp, điểm thi, giá cổ phiếu, v.v. Phân phối chuẩn được định nghĩa bởi 2 thông số là mean và variance, và vì mức độ quan trọng của phân phối chuẩn, nên variance được sử dụng nhiều hơn khi tính toán mức độ phân tán.
 
+1. _Sample variance_ (Phương sai mẫu), với $\bar{x}$ là giá trị trung bình cộng của mẫu, $n$ là số observation:
+$$s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\bar{x})^2$$
+
+2. _Population variance_ (Phương sai quần thể), với $\mu$ là giá trị trung bình cộng của quần thể, $n$ là số observation:
+$$\sigma^{2}=\frac{1}{n}\sum_{i=1}^{n}(x_{i}-\mu)^2$$
+
+
+Dữ liệu thu thập được thường ở dạng một mẫu của cả quần thể. Nếu trong trường hợp có dữ liệu của cả population, ta sẽ dùng công thức 2. Ở cả 2 công thức, ta lấy tổng bình phương của khoảng cách tới mean, sau đó lấy trung bình, tuy nhiên ta chia cho $(n-1)$ để tính _sample variance_ (phương sai mẫu) thay vì chia cho $n$ để tính _population variance_ (phương sai quần thể). Ta làm điều này để tránh việc ($\sigma^{2}$) bị "biased" - có nghĩa là nếu dùng công thức tính population variance cho một sample, kết quả tính ra thường _nhỏ_ hơn bình thường (do ta đang tính $s^2$, vốn là 1 chỉ số ước lượng (estimator), dựa trên 1 chỉ số ước lượng khác là $\bar{x}$).
+
+Để tính sample variance trong R, chúng ta sử dụng hàm `var()`:
+
+```{r}
+var(TenMileRace$net)
+```
+
+
+### Standard variation (độ lệch chuẩn)
+
+
+Vấn đề lớn nhất của sample variance là đơn vị ở dạng bình phương, dẫn đến việc gây khó hiểu, khó để dẫn đến kết luận/phân tích. Để giải quyết, ta lấy giá trị căn bậc 2 để có được độ lệch chuẩn mẫu (sample standard deviation).
+
+$$s=\sqrt{s^2}$$
+
+Để tính độ lệch chuẩn mẫu trong R, ta dùng hàm `sd()`:
+
+```{r}
+sd(TenMileRace$net)
+```
+
+Về mặt toán học, phương sai quan trọng hơn vì nó được sử dụng làm định nghĩa cho các phân phối xác suất, nhưng độ lệch chuẩn dễ hiểu hơn và vì thế có ích trong thực tế hơn.
+
+
+### Hệ số biến thiên (Coefficient of variation)
+
+Chúng ta xem xét ví dụ sau: Có 1 nhóm động vật có độ lệch chuẩn mẫu của chiều dài con vật là 15cm. Chỉ với thông tin này, ta gần như không thể đưa ra kết luận gì có ích. Giả sử có thêm thông tin về loài động vật:
+
++ Nếu là  voi: ta có thể kết luận nhóm các con voi này có chiều dài rất đồng đều, do chiều dài trung bình của cả loài voi nói chung sẽ lớn hơn 15cm rất nhiều, và ta có thể dựa vào common sense để nhận định rằng chiều dài giữa các con voi trong nhóm lệch nhau rất nhỏ.
+
++ Nếu là côn trùng: ta có thể kết luận nhóm côn trùng này có chiều dài rất đa dạng, thậm chí là có nhiều loài côn trùng khác nhau. Trong thực tế, loài côn trùng dài nhất cũng có chỉ độ dài khoảng 60cm.
+
+Như vậy, nếu có thêm thông tin về loài động vật, hay nói cách khác là thông tin giúp ta ước lượng được **chiều dài trung bình** của nhóm động vật trên, ta sẽ đưa ra được nhiều kết luận có ích.
+
+Để giải quyết vấn đề này, ta có thể dùng hệ số biến thiên:
+
+$$CV = \frac{s}{|\bar{x}|}$$
+
+### Quy tắc thực nghiệm
+
+Ta có thể sử dụng quy tắc thực nghiệm như sau để áp dụng cho các mẫu dữ liệu tương đối lớn và đối xứng:
+
+|  Khoảng          |   Số lượng phần trăm quan sát (tương đối) |
+|:----------------:|:-----------------------------------------:|  
+| $\bar{x}\pm s$   |               68.3%                       |  
+| $\bar{x}\pm 2s$  |               95.5%                       |
+| $\bar{x}\pm 3s$  |               99.7%                       |
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+n <- 1000
+Line.Data <- data.frame(x=seq(-4,4,length=n)) %>%
+  mutate(y=dnorm(x))
+Text.Data1 <- data.frame(x=0, y=.25, label='bar(x) %+-% s',  group="Độ lệch chuẩn = 1") %>%
+        rbind(data.frame(x=0, y=.25, label='bar(x) %+-% 2*s', group="Độ lệch chuẩn = 2")) %>%
+        rbind(data.frame(x=0, y=.25, label='bar(x) %+-% 3*s', group="Độ lệch chuẩn = 3")) 
+Text.Data2 <- data.frame(x=0, y=.15, label='68%',   group="Độ lệch chuẩn = 1") %>%
+        rbind(data.frame(x=0, y=.15, label='95%',   group="Độ lệch chuẩn = 2")) %>%
+        rbind(data.frame(x=0, y=.15, label='99.7%', group="Độ lệch chuẩn = 3")) 
+Area.Data <- Line.Data %>% filter(abs(x)<1) %>% mutate(group="Độ lệch chuẩn = 1")   %>%
+      rbind( Line.Data %>% filter(abs(x)<2) %>% mutate(group="Độ lệch chuẩn = 2") ) %>%
+      rbind( Line.Data %>% filter(abs(x)<3) %>% mutate(group="Độ lệch chuẩn = 3") ) 
+
+ggplot( Area.Data, aes(x=x)) +
+  geom_line( data=Line.Data, aes(x=x, y=y)) +
+  geom_area(data=Area.Data, aes(x=x,y=y), fill='grey', alpha=.6) +
+  geom_text( data=Text.Data1, aes(x=x, y=y, label=label), parse=TRUE) +
+  geom_text( data=Text.Data2, aes(x=x, y=y, label=label)) +
+  facet_grid( group ~ .) +
+  labs(y='', x='') +
+  scale_y_continuous(breaks=NULL) + 
+  scale_x_continuous(     
+    breaks=c(-3,-2,-1,0,1,2,3), minor_breaks = NULL,    
+    labels = c( expression(bar(x)-3*s ),
+                expression(bar(x)-2*s ),
+                expression(bar(x)-s ),
+                expression(bar(x)),
+                expression(bar(x)+s ),
+                expression(bar(x)+2*s),
+                expression(bar(x)+3*s))) 
+```
 
 ## Tiếp tục với biểu đồ 
-
-
 
 
 ### Box plot
@@ -286,6 +393,7 @@ TenMileRace %>%
 ## Tổng hợp thuật ngữ
 
 
+## Một số bài tập
 
 
 ## Tham khảo

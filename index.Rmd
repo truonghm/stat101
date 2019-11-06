@@ -10,6 +10,42 @@ description: ""
 ---
 
 
-# Mở đầu {-}
+# Preface {-}
 
-Giới thiệu cơ bản về XSTK
+This document is my **studying notes** for the subject of **Statistical Methodologies**. I intend this to be the first part of my learning journey, which I call STAT101. Please note the emphasis on **studying notes**, which means that this is personal and not meant for distribution for other people to use. I'm not a qualified educator in any ways, so if you happen upon this page, please keep that in mind.
+
+The entire document is in Vietnamese, with this page being the only exception. I like to start with English, for personal reasons.
+
+I use several books to study the subject. Please find the full list below.
+
+# Motivation {-}
+
+I admit it, I have a rather slow mind for learning. This could either stem from my (undiagnosed) ADHD, or my horrible work ethic, and obviously it feels better to blame on the ADHD. But be it the laziness or the inability to focus, I still have to find a way to learn efficiently, such that knowledge flows into my mind coherently, with every node of information inter-connected. This does not mean that the learning process gets easier, as I have just stated, but to make it more efficient: so that things I learn stay in my head for as long as possible. This is difficult by nature, because for the average person, there would certainly be topics that could not be fully understood right away. Learning is connecting the dots, and some dots can only be connected much later. I write these notes with a goal in mind: to make things as intuitively as possible, meaning that the flow of things should be smooth and efficient. To do this, certain concepts will be mentioned briefly, and then accepted as is, without further proof or explanation; we will come back to those in later parts.
+
+I hope that after I'm done with writing this, I would realize that I will have to go back and change a lot of things. Or, the better alternative would be that I still go back and change things, but after each chapter, when I become a little less ignorant.
+
+I believe life has meanings, and the noblest of all is that we live to change the world, no matter how small that effort might be. I think statistics is great tool for such task, because life is nothing more than chances. But let's be clear here: I'm not trying to control "fate" (if it even exists at all). If anything, I'm trying to learn to accept fate, because I have came to understand that the best things in life can happen when you think less and believe more. I met my girlfriend this way, and she is the greatest fortune of my life, so why should I try to outsmart the man upstair?
+
+# Draft outline
+
+1. Thống kê mô tả cơ bản (basic descriptive statistics)
+
+2. Xác suất (probability)
+
+3. Sử dụng p/p Bootstrap để tìm khoảng tin cậy (Using bootstrap to find confidence interval)
+
+4. 
+
+# To-do
+
+1. Citation!!!
+
+
+# References
+
+1. Mathematical Statistics with Resampling and R - Laura M. Chihara, Tim C. Hesterberg
+
+2. OpenIntro Statistics - Christopher D. Barr, David M. Diez, and Mine Çetinkaya-Rundel
+
+3. An Introduction to Statistical Methods & Data Analysis - Lyman Ott, Michael Longnecker
+
