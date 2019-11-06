@@ -349,15 +349,15 @@ Ta có thể sử dụng quy tắc thực nghiệm như sau để áp dụng cho
 n <- 1000
 Line.Data <- data.frame(x=seq(-4,4,length=n)) %>%
   mutate(y=dnorm(x))
-Text.Data1 <- data.frame(x=0, y=.25, label='bar(x) %+-% s',  group="Độ lệch chuẩn = 1") %>%
-        rbind(data.frame(x=0, y=.25, label='bar(x) %+-% 2*s', group="Độ lệch chuẩn = 2")) %>%
-        rbind(data.frame(x=0, y=.25, label='bar(x) %+-% 3*s', group="Độ lệch chuẩn = 3")) 
-Text.Data2 <- data.frame(x=0, y=.15, label='68%',   group="Độ lệch chuẩn = 1") %>%
-        rbind(data.frame(x=0, y=.15, label='95%',   group="Độ lệch chuẩn = 2")) %>%
-        rbind(data.frame(x=0, y=.15, label='99.7%', group="Độ lệch chuẩn = 3")) 
-Area.Data <- Line.Data %>% filter(abs(x)<1) %>% mutate(group="Độ lệch chuẩn = 1")   %>%
-      rbind( Line.Data %>% filter(abs(x)<2) %>% mutate(group="Độ lệch chuẩn = 2") ) %>%
-      rbind( Line.Data %>% filter(abs(x)<3) %>% mutate(group="Độ lệch chuẩn = 3") ) 
+Text.Data1 <- data.frame(x=0, y=.25, label='bar(x) %+-% s',  group="std = 1") %>%
+        rbind(data.frame(x=0, y=.25, label='bar(x) %+-% 2*s', group="std = 2")) %>%
+        rbind(data.frame(x=0, y=.25, label='bar(x) %+-% 3*s', group="std = 3")) 
+Text.Data2 <- data.frame(x=0, y=.15, label='68%',   group="std = 1") %>%
+        rbind(data.frame(x=0, y=.15, label='95%',   group="std = 2")) %>%
+        rbind(data.frame(x=0, y=.15, label='99.7%', group="std = 3")) 
+Area.Data <- Line.Data %>% filter(abs(x)<1) %>% mutate(group="std = 1")   %>%
+      rbind( Line.Data %>% filter(abs(x)<2) %>% mutate(group="std = 2") ) %>%
+      rbind( Line.Data %>% filter(abs(x)<3) %>% mutate(group="std = 3") ) 
 
 ggplot( Area.Data, aes(x=x)) +
   geom_line( data=Line.Data, aes(x=x, y=y)) +

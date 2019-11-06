@@ -18,6 +18,8 @@ The entire document is in Vietnamese, with this page being the only exception. I
 
 I use several books to study the subject. Please find the full list below.
 
+Everything is built with **bookdown** in R and uploaded to Github Pages.
+
 # Motivation {-}
 
 I admit it, I have a rather slow mind for learning. This could either stem from my (undiagnosed) ADHD, or my horrible work ethic, and obviously it feels better to blame on the ADHD. But be it the laziness or the inability to focus, I still have to find a way to learn efficiently, such that knowledge flows into my mind coherently, with every node of information inter-connected. This does not mean that the learning process gets easier, as I have just stated, but to make it more efficient: so that things I learn stay in my head for as long as possible. This is difficult by nature, because for the average person, there would certainly be topics that could not be fully understood right away. Learning is connecting the dots, and some dots can only be connected much later. I write these notes with a goal in mind: to make things as intuitively as possible, meaning that the flow of things should be smooth and efficient. To do this, certain concepts will be mentioned briefly, and then accepted as is, without further proof or explanation; we will come back to those in later parts.
