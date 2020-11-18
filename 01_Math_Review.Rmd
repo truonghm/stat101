@@ -1,4 +1,4 @@
-# (PART\*) Giới thiệu chung {-}
+# (PART\*) Kiến thức cơ bản {-}
 
 
 # Review lại toán
