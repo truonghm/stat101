@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK</title>
+  <meta name="description" content="5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="truonghm/stat101" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK" />
+  
+  
+  
+
+<meta name="author" content="Truong Hoang" />
+
+
+<meta name="date" content="2020-11-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="th-ng-kê-mô-t-c-b-n.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="motivation.html"><a href="motivation.html"><i class="fa fa-check"></i>Motivation</a></li>
+<li class="chapter" data-level="1" data-path="draft-outline.html"><a href="draft-outline.html"><i class="fa fa-check"></i><b>1</b> Draft outline</a></li>
+<li class="chapter" data-level="2" data-path="to-do.html"><a href="to-do.html"><i class="fa fa-check"></i><b>2</b> To-do</a></li>
+<li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
+<li class="part"><span><b>Giới thiệu chung</b></span></li>
+<li class="chapter" data-level="4" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html"><i class="fa fa-check"></i><b>4</b> Thống kê mô tả cơ bản</a><ul>
+<li class="chapter" data-level="4.1" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#tóm-tắt-dữ-liệu-qua-đồ-thị"><i class="fa fa-check"></i><b>4.1</b> Tóm tắt dữ liệu qua đồ thị</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#một-biến-rời-rạc-univariate"><i class="fa fa-check"></i><b>4.1.1</b> Một biến rời rạc (univariate)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#một-biến-liên-tục-univariate"><i class="fa fa-check"></i><b>4.1.2</b> Một biến liên tục (univariate)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#một-biến-rời-rạc-và-một-biến-liên-tục-bivariate"><i class="fa fa-check"></i><b>4.1.3</b> Một biến rời rạc và một biến liên tục (bivariate)</a></li>
+<li class="chapter" data-level="4.1.4" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#hai-biến-liên-tục-bivariate"><i class="fa fa-check"></i><b>4.1.4</b> Hai biến liên tục (bivariate)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#xu-hướng-trung-tâm"><i class="fa fa-check"></i><b>4.2</b> Xu hướng trung tâm</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#mean-trung-bình-cộng"><i class="fa fa-check"></i><b>4.2.1</b> Mean (Trung bình cộng)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#median-trung-vị"><i class="fa fa-check"></i><b>4.2.2</b> Median (Trung vị)</a></li>
+<li class="chapter" data-level="4.2.3" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#trimmed-mean"><i class="fa fa-check"></i><b>4.2.3</b> Trimmed mean</a></li>
+<li class="chapter" data-level="4.2.4" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#ví-dụ"><i class="fa fa-check"></i><b>4.2.4</b> Ví dụ</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#mức-độ-phân-tán-spreaddispersion"><i class="fa fa-check"></i><b>4.3</b> Mức độ phân tán (Spread/Dispersion)</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#range-khoảng-biến-thiên"><i class="fa fa-check"></i><b>4.3.1</b> Range (Khoảng biến thiên)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#inter-quartile-range"><i class="fa fa-check"></i><b>4.3.2</b> Inter-Quartile Range</a></li>
+<li class="chapter" data-level="4.3.3" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#variance-phương-sai"><i class="fa fa-check"></i><b>4.3.3</b> Variance (Phương sai)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#standard-variation-độ-lệch-chuẩn"><i class="fa fa-check"></i><b>4.3.4</b> Standard variation (độ lệch chuẩn)</a></li>
+<li class="chapter" data-level="4.3.5" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#hệ-số-biến-thiên-coefficient-of-variation"><i class="fa fa-check"></i><b>4.3.5</b> Hệ số biến thiên (Coefficient of variation)</a></li>
+<li class="chapter" data-level="4.3.6" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#quy-tắc-thực-nghiệm"><i class="fa fa-check"></i><b>4.3.6</b> Quy tắc thực nghiệm</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#tiếp-tục-với-biểu-đồ"><i class="fa fa-check"></i><b>4.4</b> Tiếp tục với biểu đồ</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#box-plot"><i class="fa fa-check"></i><b>4.4.1</b> Box plot</a></li>
+<li class="chapter" data-level="4.4.2" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#scatter-plot"><i class="fa fa-check"></i><b>4.4.2</b> Scatter plot</a></li>
+<li class="chapter" data-level="4.4.3" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#skewness-kurtosis"><i class="fa fa-check"></i><b>4.4.3</b> Skewness &amp; Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#tổng-hợp-thuật-ngữ"><i class="fa fa-check"></i><b>4.5</b> Tổng hợp thuật ngữ</a></li>
+<li class="chapter" data-level="4.6" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#một-số-bài-tập"><i class="fa fa-check"></i><b>4.6</b> Một số bài tập</a></li>
+<li class="chapter" data-level="4.7" data-path="th-ng-kê-mô-t-c-b-n.html"><a href="th-ng-kê-mô-t-c-b-n.html#tham-khảo"><i class="fa fa-check"></i><b>4.7</b> Tham khảo</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
+<li class="chapter" data-level="5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#một-số-định-nghĩa-cơ-bản"><i class="fa fa-check"></i><b>5.1</b> Một số định nghĩa cơ bản</a></li>
+<li class="chapter" data-level="5.2" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#lý-thuyết-tập-hợp"><i class="fa fa-check"></i><b>5.2</b> Lý thuyết tập hợp</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#biểu-đồ-venn"><i class="fa fa-check"></i><b>5.2.1</b> Biểu đồ Venn</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#các-phép-toánquan-hệ-tập-hợp"><i class="fa fa-check"></i><b>5.3</b> Các phép toán/quan hệ tập hợp</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#phép-hợp-union"><i class="fa fa-check"></i><b>5.3.1</b> Phép hợp (Union)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#phép-giao-intersection"><i class="fa fa-check"></i><b>5.3.2</b> Phép giao (intersection)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#phần-bù-complement"><i class="fa fa-check"></i><b>5.3.3</b> Phần bù (Complement)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#loại-trừ-lẫn-nhau-mutually-exclusive"><i class="fa fa-check"></i><b>5.3.4</b> Loại trừ lẫn nhau (Mutually exclusive)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#quy-luật-xác-suất"><i class="fa fa-check"></i><b>5.4</b> Quy luật xác suất</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#các-quy-luật-cơ-bản"><i class="fa fa-check"></i><b>5.4.1</b> Các quy luật cơ bản</a></li>
+<li class="chapter" data-level="5.4.2" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#xác-suất-có-điều-kiện-conditional-probability"><i class="fa fa-check"></i><b>5.4.2</b> Xác suất có điều kiện (conditional probability)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#tổng-hợp-quy-luật-xác-suất"><i class="fa fa-check"></i><b>5.4.3</b> Tổng hợp quy luật xác suất</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#biến-ngẫu-nhiên-rời-rạc"><i class="fa fa-check"></i><b>5.5</b> Biến ngẫu nhiên rời rạc</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#giới-thiệu-về-biến-ngẫu-nhiên-rời-rạc-nnrr"><i class="fa fa-check"></i><b>5.5.1</b> Giới thiệu về biến ngẫu nhiên rời rạc (NNRR)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#các-phân-phối-rời-rạc-phổ-biến"><i class="fa fa-check"></i><b>5.6</b> Các phân phối rời rạc phổ biến</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#binomial-distribution---pp-nhị-thức"><i class="fa fa-check"></i><b>5.6.1</b> Binomial distribution - PP nhị thức</a></li>
+<li class="chapter" data-level="5.6.2" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#poisson-distribution---pp-poisson"><i class="fa fa-check"></i><b>5.6.2</b> Poisson distribution - PP Poisson</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#biến-ngẫu-nhiên-liên-tục"><i class="fa fa-check"></i><b>5.7</b> Biến ngẫu nhiên liên tục</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#pdf-cdf-và-ccdf"><i class="fa fa-check"></i><b>5.7.1</b> PDF, CDF và CCDF</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#các-phân-phối-liên-tục-phổ-biến"><i class="fa fa-check"></i><b>5.8</b> Các phân phối liên tục phổ biến</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#exponential-distribution---pp-mũ"><i class="fa fa-check"></i><b>5.8.1</b> Exponential distribution - PP mũ</a></li>
+<li class="chapter" data-level="5.8.2" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#uniform-01-distribution"><i class="fa fa-check"></i><b>5.8.2</b> Uniform [0,1] distribution</a></li>
+<li class="chapter" data-level="5.8.3" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#normal-distribution"><i class="fa fa-check"></i><b>5.8.3</b> Normal distribution</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Giới thiệu cơ bản về XSTK</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="xác-suất-cơ-bản" class="section level1">
+<h1><span class="header-section-number">5</span> Xác suất cơ bản</h1>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></a>
+<a class="sourceLine" id="cb55-2" title="2"><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb55-3" title="3"><span class="kw">library</span>(venn)</a></code></pre></div>
+<div id="một-số-định-nghĩa-cơ-bản" class="section level2">
+<h2><span class="header-section-number">5.1</span> Một số định nghĩa cơ bản</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Probability</strong>: Likelihood, relative frequency, chance.</p></li>
+<li><p><strong>Outcome</strong>: <em>Kết quả/biến số</em> -&gt; Là một quan sát (observation) của một thí nghiệm (experiment) ngẫu nhiên, ví dụ: một lần tung xúc xắc. Trong mục này ta sẽ giữ nguyên từ “outcome”.</p></li>
+<li><p><strong>Experiment</strong>: quá trình dẫn đến một hoặc nhiều outcome.</p></li>
+<li><p><strong>Sample space</strong>: <em>Không gian mẫu</em> -&gt; tập hợp tất cả các outcome của thí nghiệm, còn được gọi là “universal set”. Từ này chúng ta sẽ cố gắng sử dụng tiếng Việt.</p></li>
+<li><p><strong>Event</strong>: <em>Sự kiện</em> -&gt; là tập hợp các outcome với xác suất nhất định. Ví dụ: Lăn xúc xắc ra số nhỏ hơn 3.</p></li>
+</ol>
+<p>Có 3 cách hiểu về xác suất: clasical, relative frequency và subjective.</p>
+</div>
+<div id="lý-thuyết-tập-hợp" class="section level2">
+<h2><span class="header-section-number">5.2</span> Lý thuyết tập hợp</h2>
+<div id="biểu-đồ-venn" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Biểu đồ Venn</h3>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">library</span>(VennDiagram, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p>Đặt <span class="math inline">\(S\)</span> là tập hợp tất cả các outcome của thí nghiệm ngẫu nhiên (tức là sample space). Trong đó, chúng ta quan tâm đến hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span>.</p>
+<p>Sử dụng biểu đồ Venn để thể hiện các sự kiện, với thí nghiệm là lăn một lần xúc xắc có 6 mặt, tức là <span class="math inline">\(S = \{1,2,3,4,5,6\}\)</span>, với:</p>
+<ul>
+<li><p><span class="math inline">\(A\)</span> là “lăn xúc xắc ra số lẻ”</p></li>
+<li><p><span class="math inline">\(B\)</span> là “lăn xúc xắc ra lớn hơn 5”</p></li>
+</ul>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+</div>
+<div id="các-phép-toánquan-hệ-tập-hợp" class="section level2">
+<h2><span class="header-section-number">5.3</span> Các phép toán/quan hệ tập hợp</h2>
+<div id="phép-hợp-union" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Phép hợp (Union)</h3>
+<p>Phép hợp thể hiện hoặc A và B sẽ sảy ra (quan hệ <em>either or</em>), được ký hiệu là <span class="math inline">\(A\cup B\)</span>.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="phép-giao-intersection" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Phép giao (intersection)</h3>
+<p>Phép giao thể hiện sự kiện cả A và B <strong>cùng</strong> xảy ra (<em>both</em>), ký hiệu là <span class="math inline">\(A\cap B\)</span>.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+</div>
+<div id="phần-bù-complement" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Phần bù (Complement)</h3>
+<ul>
+<li><p>Phần bù tương đối, hay còn gọi là phép hiệu (difference), ký hiệu là <span class="math inline">\(A \setminus B\)</span>. Đây là tập hợp các phần tử có trong A nhưng không có trong B.</p></li>
+<li><p>Phần bù tuyệt đối (absolute complement)</p></li>
+</ul>
+<p>Phần bù tuyệt đối của tập hợp A để thể hiện sự kiện “A không xảy ra”, tương ứng với tất cả các outcome không thuộc A, có thể nằm trong một không gian mẫu toàn thể khác.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+</div>
+<div id="loại-trừ-lẫn-nhau-mutually-exclusive" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Loại trừ lẫn nhau (Mutually exclusive)</h3>
+<p>Quan hệ loại trừ lẫn nhau (hay còn gọi là xung khắc) - <em>mutually exclusiveness/disjoint</em> - ký hiệu là <span class="math inline">\(\bar{A}\)</span> hoặc <span class="math inline">\(A^{C}\)</span>.</p>
+<p><strong>Định nghĩa 1</strong>. Hai sự kiện A và B được gọi là loại trừ lẫn nhau nếu sự xảy ra của sự kiện này ngăn việc xảy ra của sự kiện kia. Ví dụ: Trong 1 lần đổ xúc xắc, số 2 và số 5 không thể cùng xảy ra.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+</div>
+<div id="quy-luật-xác-suất" class="section level2">
+<h2><span class="header-section-number">5.4</span> Quy luật xác suất</h2>
+<div id="các-quy-luật-cơ-bản" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Các quy luật cơ bản</h3>
+<p>Trong phần này, ta sử dụng biểu đồ Venn, cụ thể là phần diện tích trong biểu đồ, để thể hiện xác suất của một sự kiện.</p>
+<p><strong>Định nghĩa 2</strong>. Xác suất là tỷ lệ số lần một sự kiện xảy ra trong nhiều lần thử lặp lại của một hiện tượng ngẫu nhiên. Nói một cách khác, xác suất chính là tần suất tương đối (relative frequency) về lâu dài.</p>
+<p><span style="text-decoration: underline">Quy luật 1.</span> <em>Với bất kỳ sự kiện <span class="math inline">\(A\)</span>, xác suất <span class="math inline">\(P(A)\)</span> luôn thỏa mãn <span class="math inline">\(0\le P(A) \le 1\)</span> vì tỷ lệ luôn nằm trong khoảng <span class="math inline">\([0,1]\)</span>.</em></p>
+<p><span style="text-decoration: underline">Quy luật 2.</span> <em>Nếu hai sự kiện loại trừ lẫn nhau, <span class="math inline">\(PA \cup B = P(A) + P(B)\)</span>.</em></p>
+<p>Vì S là tập hợp tất cả các sự kiện có thể xảy ra, diện tích của hình chữ nhật bên ngoài biểu đồ sẽ là 1 và xác suất của sự kiện A được thể hiện bằng diện tích hình tròn A. Khi A và B loại trừ lẫn nhau, A và B là hai hình tròn tách biệt.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+</div>
+<div id="xác-suất-có-điều-kiện-conditional-probability" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Xác suất có điều kiện (conditional probability)</h3>
+<p>Ở phần trước, chúng ta xem xét các mối quan hệ tập hợp, sử dụng để thể hiện sự liên quan của 2 sự kiện A và B. Tuy nhiên, với phép hợp hay phép giao, A và B không có mối quan hệ <em>phụ thuộc</em>.</p>
+<p>Ở phần này, ta xem xét tiếp tình huống có từ hai sự kiện trở lên xảy ra, và một sự kiện diễn ra trước sự kiện còn lại, tức là trở thành <em>điều kiện</em> của sự kiện còn lại.</p>
+<p>Xác suất của A xảy ra nếu B đã xảy ra được viết là <span class="math inline">\(P(A|B)\)</span>, còn có thể gọi là “xác suất của A với điều kiện B”.</p>
+<p><strong>Ví dụ 1</strong>: Để hình dung rõ ràng hơn về xác suất có điều kiện, ta xét một ví dụ cực kì đơn giản: Nếu tung hai đồng xu cùng một lúc, ta có 4 outcome là <span class="math inline">\(\{hh, ht, th, tt\}\)</span> (h là head, t là tail). Như vậy xác suất tung cả hai đồng xu ra mặt ngửa là 25% (<span class="math inline">\(1/4\)</span>).</p>
+<p>Thay vì tung cùng một lúc, ta tung lần lượt. Nếu đồng xu thứ nhất ra mặt ngửa, thì xác suất để cả hai đều ngửa sau khi tung nốt đồng xu thứ hai là bao nhiêu?</p>
+<p>Nếu nghĩ một cách đơn giản theo common sense, ta thấy nếu bây giờ chỉ còn một đồng xu để tung thì chỉ còn hai kết quả hoặc sấp hoặc ngửa. Vậy rõ ràng xác suất là 50%? Nếu để ý kỹ hơn, ta thấy không gian mẫu ban đầu bị thu nhỏ lại và chỉ còn hai khả năng xảy ra: <span class="math inline">\(\{hh, ht\}\)</span>, tức là <span class="math inline">\(P(H | H) = 1/2\)</span>.</p>
+<p><strong>Ví dụ 2</strong>: trò chơi <a href="https://vi.wikipedia.org/wiki/Roulette">roullette</a> truyền thống có 37 ô, tất cả đều như nhau (xác suất như nhau = 1/37). Có 18 ô đỏ, 18 ô đen, kèm với 1 ô số 0. Trong số các ô đỏ có 8 ô số chẵn (và 10 lẻ); trong số các ô đen có 10 ô số sẵn (và 8 lẻ).</p>
+<ul>
+<li><p>Tình huống: Nếu vòng roullette được xoay bí mật, và sau đó bạn được cho biết là kết quả rơi vào ô màu đỏ -&gt; tính xác suất kết quả cũng là số lẻ?</p></li>
+<li><p>Trước tiên cần định nghĩa 2 sự kiện A và B:</p>
+<ul>
+<li><p>Sự kiện A: kết quả ra là ô màu đỏ</p></li>
+<li><p>Sự kiện B: kết quả ra là số lẻ</p></li>
+<li><p>Hai sự kiện này có mối quan hệ là: A xảy ra trước, và xác suất của B phụ thuộc vào A. Tức là sẽ khác với việc A và B xảy ra cùng lúc (intersection). Với tình huống xác suất có điều kiện như thế này, <em>không gian mẫu của B sẽ phụ thuộc vào A</em>, và không còn là không gian mẫu ban đầu nữa (37 ô).</p></li>
+</ul></li>
+<li><p>Nếu kết quả là một ô màu đỏ, và có 10 trong số 18 ô đỏ là số lẻ, thì <span class="math inline">\(P(odd|red) = 10/18 = 5/9\)</span>. Có thể thấy tử số là 18, thay vì là 37, vì ta đang xét trên không gian mẫu nhỏ hơn là tập các ô có màu đỏ.</p></li>
+<li><p>So sánh với 2 trường hợp:</p>
+<ul>
+<li><p><span class="math inline">\(P(odd) = 18/37\)</span>, tức là không gian mẫu có 37 outcome.</p></li>
+<li><p><span class="math inline">\(P(odd giao red) = 10/37\)</span>, tức là không gian mẫu vẫn có 37 outcome. Trường hợp này, có thể hiểu là ta tính xác suất của sự kiện <em>kết quả xảy ra vừa có màu đỏ, vừa là số lẻ</em>, mà không có điều kiện nào đi trước.</p></li>
+</ul></li>
+</ul>
+<p><strong>Ví dụ 3</strong>: Chúng ta xét tiếp một ví dụ tương tự, nhưng sử dụng một bảng xác suất để dễ hình dung hơn:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(\,\)</span></th>
+<th align="center">Fire</th>
+<th align="center">Auto</th>
+<th align="center">Other</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Fraudulant</strong></td>
+<td align="center">6%</td>
+<td align="center">1%</td>
+<td align="center">3%</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>non-Fraudulant</strong></td>
+<td align="center">14%</td>
+<td align="center">29%</td>
+<td align="center">47%</td>
+</tr>
+</tbody>
+</table>
+<p>Trên đây là dữ liệu về các case đòi bồi thường bảo hiểm và tỷ lệ lừa đảo, lấy từ sách “An Introduction to
+Statistical Methods &amp; Data Analysis” (Ott &amp; Longnecker). Ví dụ trên với vòng xoay roullette có không gian mẫu toàn thể là <span class="math inline">\(P(Color \cap Parity)\)</span> (màu sắc giao với tính chẵn lẻ). Ở ví dụ này, dữ liệu chính là <span class="math inline">\(P(Category \cap PolicyType)\)</span>.</p>
+<p>Cộng dồn các cột và các hàng, ta tìm ra được xác suất của từng hạng mục (category) và từng loại hợp đồng bảo hiểm (policy).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(\,\)</span></th>
+<th align="center">Fire</th>
+<th align="center">Auto</th>
+<th align="center">Other</th>
+<th align="center"><span class="math inline">\(\,\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Fraudulant</strong></td>
+<td align="center">6%</td>
+<td align="center">1%</td>
+<td align="center">3%</td>
+<td align="center"><strong>10%</strong></td>
+</tr>
+<tr class="even">
+<td align="right"><strong>non-Fraudulant</strong></td>
+<td align="center">14%</td>
+<td align="center">29%</td>
+<td align="center">47%</td>
+<td align="center"><strong>90%</strong></td>
+</tr>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\,\)</span></td>
+<td align="center"><strong>20%</strong></td>
+<td align="center"><strong>30%</strong></td>
+<td align="center"><strong>50%</strong></td>
+<td align="center"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Có thể thấy các case đòi bổi thường do cháy nổ dễ có khả năng lừa đảo hơn các case loại khác. Ta tính được tỷ lệ số case lừa đảo liên quan đến cháy nổ là:</p>
+<p><span class="math display">\[\begin{aligned}
+P(\textrm{ Fraud }|\textrm{ FirePolicy })   &amp;=  \frac{\textrm{proportion of claims that are fire policies and are fraudulent}}{\textrm{proportion of fire claims}} \\
+    &amp;=  \frac{6\%}{20\%}\\
+    &amp; \\
+    &amp;=  0.3
+    \end{aligned}\]</span></p>
+<p>Như vậy, có thể định nghĩa xác suất có điều kiện (với giả thiết <span class="math inline">\(P(B) \ne 0\)</span>) là:</p>
+<p><span class="math display">\[P(A|B)=\frac{P(A\cap B)}{P(B)}\]</span></p>
+<p>Công thức trên có thể viết lại thành:</p>
+<p><span class="math display">\[\begin{aligned}
+P(A\cap B)  &amp;=  P(A\,|\,B)\,P(B) \\
+              &amp;=    P(B\,|\,A)\,P(A)
+\end{aligned}\]</span></p>
+<p>Vì thứ tự không quan trọng và <span class="math inline">\(P\left(A\cap B\right)=P\left(B\cap A\right)\)</span>.</p>
+<p>Sử dụng quy luật này, ta tính được xác suất một case đòi bổi thường là hợp đồng Auto với điều kiện case này không lừa đảo:</p>
+<p><span class="math display">\[\begin{aligned}
+P\left(\,Auto\;|\;NotFraud\,\right) &amp;= \frac{P\left(\,Auto\;\cap\;NotFraud\right)}{P\left(\,NotFraud\,\right)} \\
+    &amp;=  \frac{0.29}{0.9} \\
+    &amp;   \\
+    &amp;=  0.3\bar{2}
+    \end{aligned}\]</span></p>
+<p><strong>Ví dụ 4</strong>: Giả sử bạn là một nhà nghiên cứu thị trường về điện thoại, và bạn thu thập được dử liệu (giả định, không phải dữ liệu thật) với các thông tin về hãng (Apple vs Samsung) và giới tính người dùng (nam vs nữ).</p>
+<p>Trong dữ liệu, điện thoại Apple chiếm 40% thị phần. Điều này có nghĩa là <span class="math inline">\(P(Apple) = 0.40\)</span>. Trong số điện thoại Apple, số người sử dụng là nam chỉ chiếm 35%, tức là <span class="math inline">\(P(Men|Apple) = 0.35\)</span>. Tuy nhiên, trong số người dùng Samsung, số lượng nam lại nhiều hơn, vì vậy <span class="math inline">\(P(Men|Samsung) = 0.60\)</span>.</p>
+<p>Với các thông tin trên, ta có bảng sau:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(\,\)</span></th>
+<th align="center">Samsung</th>
+<th align="center">Apple</th>
+<th align="center"><span class="math inline">\(\,\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Nam</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Nữ</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\,\)</span></td>
+<td align="center"><strong>60%</strong></td>
+<td align="center"><strong>40%</strong></td>
+<td align="center"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Có thể điền thêm các thông tin còn thiếu trong bảng bằng cách sử dụng định nghĩa xác suất có điều kiện. Ví dụ:</p>
+<p><span class="math display">\[\begin{aligned}
+P\left(Men\,\cap\,Samsung\right)    &amp;= P\left(Men\,|\,Samsung\right)\,P\left(Samsung\right) \\
+    &amp;=  0.60*0.60 \\
+    &amp;=  0.36
+  \end{aligned}\]</span></p>
+<p>Như vậy số lượng điện thoại là Samsung có người dùng nam là 0.36%. Tương tự, ta tính được:</p>
+<p><span class="math display">\[\begin{aligned}
+P\left(Men\,\cap\,Apple\right)  &amp;= P\left(Men\,|\,Apple\right)\,P\left(Apple\right) \\
+    &amp;=  0.35*0.40 \\
+    &amp;=  0.14
+  \end{aligned}\]</span></p>
+<p>Từ đó, có bảng hoàn chỉnh như sau:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(\,\)</span></th>
+<th align="center">Samsung</th>
+<th align="center">Apple</th>
+<th align="center"><span class="math inline">\(\,\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Nam</strong></td>
+<td align="center"><strong>36%</strong></td>
+<td align="center"><strong>14%</strong></td>
+<td align="center"><strong>50%</strong></td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Nữ</strong></td>
+<td align="center"><strong>24%</strong></td>
+<td align="center"><strong>26%</strong></td>
+<td align="center"><strong>50%</strong></td>
+</tr>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\,\)</span></td>
+<td align="center"><strong>60%</strong></td>
+<td align="center"><strong>40%</strong></td>
+<td align="center"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Tóm lại, các con số <strong>36%</strong> hay <strong>14%</strong> là được dựa trên không gian dữ liệu toàn thể, bao gồm toàn bộ số lượng điện thoại được sử dụng trong phân tích. Nếu chúng ta giới hạn không gian này trong số điện thoại Samsung hay Apple, các con số trên sẽ thay đổi (thành 60% và 35%).</p>
+<div id="tính-độc-lâp" class="section level4">
+<h4><span class="header-section-number">5.4.2.1</span> Tính độc lâp</h4>
+<p>Hai sự kiện ngoài quan hệ phụ thuộc vào nhau còn có thể độc lập hoàn toàn với nhau. Ta có định nghĩa:</p>
+<p><strong>Định nghĩa 3</strong>. <em>Hai sự kiện A và B được coi là độc lập nếu <span class="math inline">\(P(A|B) = P(A)\)</span> và <span class="math inline">\(P(B|A) = P(B)\)</span>.</em></p>
+<p>Hiểu theo cách khác, việc biết các outcome của sự kiện A không cho ta thông tin gì về các coutcome của sự kiện B, tức là xác suất của A giữ nguyên cho dù B có xảy ra hay không. <em>Với phương pháp lấy mẫu ngẫu nhiên cơ bản (random sampling), ta thường giả định rằng hai biến bất kỳ luôn độc lập.</em></p>
+<p><span style="text-decoration: underline">Quy luật 3.</span>. <em>Nếu A và B là hai sự kiện độc lập, thì <span class="math inline">\(P(A /cap B) = P(A|B)P(B) = P(A)P(B)\)</span>.</em></p>
+</div>
+</div>
+<div id="tổng-hợp-quy-luật-xác-suất" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Tổng hợp quy luật xác suất</h3>
+<p><span class="math display">\[0 \le P\left(A\right) \le 1\]</span></p>
+<p><span class="math display">\[P\left(A\right)+P\left(\bar{A}\right)=1\]</span>
+<span class="math display">\[P\left(A\cup B\right) =   P\left(A\right)+P\left(B\right)-P\left(A\cap B\right)\]</span>
+<span class="math display">\[P\left(A\cap B\right) =   \begin{cases}
+P\left(A\,|\,B\right)P\left(B\right)\\
+P\left(B\,|\,A\right)P\left(A\right)\\
+P(A)P(B)\;\; &amp; \textrm{ nếu A, B độc lập}
+\end{cases}\]</span></p>
+<p><span class="math display">\[P\left(A\,|\,B\right) =   \frac{P\left(A\cap B\right)}{P\left(B\right)}\]</span></p>
+</div>
+</div>
+<div id="biến-ngẫu-nhiên-rời-rạc" class="section level2">
+<h2><span class="header-section-number">5.5</span> Biến ngẫu nhiên rời rạc</h2>
+<p>Trong thực tế, lý thuyết xác suất được sử dụng để tính toán khả năng xảy ra của nhiều loại sự kiện khác nhau, bao gồm các sự kiện mang tính định lượng (quantitative) và định tính (qualitative).</p>
+<p>Ví dụ: với các sự kiện mà kết quả thu về không đo đếm được, dữ liệu có thể là các câu trả lời “Đồng ý” hoặc “Không đồng ý” thu được từ một bản survey, và được xếp loại vào một <strong>biến định tính</strong>. Mặt khác, các dữ liệu về thời gian, trọng lượng, etc. thường được xếp loại vào một <strong>biến định lượng</strong>. Chúng ta có thể đưa ra định nghĩa về hai loại biến ngẫu nhiên này:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Biến ngẫu nhiên liên tục</strong> (random continuous variable - biến định lượng): là biến bao gốm các giá trị có dạng số (numeric) và, trên lý thuyết, có thể nhận một số lượng giá trị không đếm được. Nói cách khác, nêu giá trị số có thể diễn đạt hoặc biến đổi theo kiểu số thập phân hoặc phân số, giá trị này thường là kiểu liên tục. <em>Trong R, dữ liệu liên tục thường là kiểu numeric.</em></p></li>
+<li><p><strong>Biến ngẫu nhiên rời rạc</strong> (random discrete variable - định tính): là biến nhận một tập hợp các giá trị có thể đếm được. Nói cách khác, nếu việc diễn đạt giá trị ở dạng phân số hoặc thập phân trở nên vô nghĩa, giá trị thường sẽ là kiểu rời rạc. Nêu các quan sát của một biến biến định lượng chỉ có thể nhận một số các giá trị nhất định, biến này cũng được coi lả rời rạc. <em>Trong R, dữ liệu rời rạc thường là kiểu factor hoặc string</em>.</p></li>
+</ol>
+<div id="giới-thiệu-về-biến-ngẫu-nhiên-rời-rạc-nnrr" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Giới thiệu về biến ngẫu nhiên rời rạc (NNRR)</h3>
+<p>Các quy luật sau áp dụng với biến NNRR:</p>
+<ol style="list-style-type: decimal">
+<li>Xác suất của mỗi giá trị nằm giữa khoảng 0 và 1</li>
+<li>Tổng xác suất của tất cả các giá trị bằng 1</li>
+<li>Xác xuất của các biến NNRR có thể cộng với nhau, tức là <span class="math inline">\(P(3 \ hoặc \ 4) = P(3) + P(4)\)</span></li>
+</ol>
+<div id="giá-trị-kỳ-vọng" class="section level4">
+<h4><span class="header-section-number">5.5.1.1</span> Giá trị kỳ vọng</h4>
+<p><strong>Ví dụ</strong>: Xét biến NNRR <span class="math inline">\(S\)</span> là tổng kết quả của sự kiện thả 2 xúc xắc.</p>
+<p>Ta có biểu đồ thể hiện xác suất của các giá trị mà <span class="math inline">\(S\)</span> <strong>CÓ THỂ NHẬN</strong>:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>Xác suất thường được áp dụng để đưa ra các phỏng đoán về tương lai, và một khái niệm cơ bản được xử dụng là giá trị kỳ vọng (expected value)</p>
+<p>Trong trường hợp tung xúc xắc, ta có giá trị kỳ vọng <span class="math inline">\(E[S]\)</span> chính là mean của tập hợp <span class="math inline">\(D\)</span> gồm tất cả các giá trị mà <span class="math inline">\(S\)</span> có thể nhận.</p>
+<p>Ta biết trước được mọi giá trị mà <span class="math inline">\(S\)</span> có thể nhận vì tập hợp này không lớn và dễ dàng suy ra được. Trong thực tế, việc có toàn bộ population là hiếm khi xảy ra, nên ta thường lấy một sample rất lớn và tìm giá trị kỳ vọng bằng cách tính <em>sample mean</em>, hay nói cách khác là <em>weighted average</em> của các giá trị có thể nhận được, với trọng số là xác suất (hay frequency) của từng giá trị.</p>
+<p><span class="math display">\[\mu=E[S]  =   \sum_{\textrm{possible }s}\;s\cdot P\left(S=s\right)\]</span></p>
+<p>Trong ví dụ trên, ta có:</p>
+<p><span class="math display">\[\begin{aligned} \mu = E[S] 
+&amp;=  \sum_{s=2}^{12}s\cdot P(S=s) \\
+&amp;=  2\cdot P\left(S=2\right)+3\cdot P\left(S=3\right)+\dots+11\cdot P\left(S=11\right)+12\cdot P\left(S=12\right) \\
+&amp;=  2\left(\frac{1}{36}\right)+3\left(\frac{2}{36}\right)+\dots+11\left(\frac{2}{36}\right)+12\left(\frac{1}{36}\right) \\
+&amp;=  7
+\end{aligned}\]</span></p>
+<p>Sau khi đã biết <span class="math inline">\(E[S]\)</span> trong ví dụ trên, ta tiếp tục thí nghiệm bằng cách tung 2 xúc sắc 100 lần:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">x &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>, <span class="dt">by=</span><span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb57-2" title="2">            <span class="dt">size =</span> <span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb57-3" title="3">            <span class="dt">prob =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, <span class="dv">6</span>),</a>
+<a class="sourceLine" id="cb57-4" title="4">            <span class="dt">replace =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb57-5" title="5"></a>
+<a class="sourceLine" id="cb57-6" title="6"><span class="kw">mean</span>(x)</a></code></pre></div>
+<pre><code>## [1] 6.8</code></pre>
+<p>Có thể thấy trong thí nghiệm này, giá trị trung bình không bằng với <span class="math inline">\(E[S]\)</span>. Nếu lặp lại thí nghiệm này với số lần <span class="math inline">\(n\)</span> lớn hơn thì khi <span class="math inline">\(n\)</span> tiến tới vô hạn, giá trị trung bình sẽ tiến tới giá trị kỳ vọng.</p>
+</div>
+<div id="phương-sai" class="section level4">
+<h4><span class="header-section-number">5.5.1.2</span> Phương sai</h4>
+<p>Tương tự, ta định nghĩa phương sai (variance) của S (ký hiệu là <span class="math inline">\(\sigma^{2}\)</span>) là weighted average của bình phương độ lệch chuẩn (squared-deviation) có thể xảy ra:</p>
+<p><span class="math display">\[ \sigma^{2}=V[S]  = \sum_{\textrm{possible }s}\; (s-\mu)^2 \cdot P\left(S=s\right)\]</span></p>
+<p>Trong ví dụ trên, <span class="math inline">\(\sigma^{2}\)</span> bằng:</p>
+<p><span class="math display">\[\begin{aligned} \sigma^{2}=V[S] 
+  &amp;= \sum_{s=2}^{12}\left(s-\mu\right)^{2}P(S=s) \\
+    &amp;= (2-7)^{2}\left(\frac{1}{36}\right)+(3-7)^{2}\left(\frac{2}{36}\right)+\dots+(12-7)^{2}\left(\frac{1}{36}\right) \\
+    &amp;= \frac{35}{6}=5.8\bar{3}
+    \end{aligned}\]</span></p>
+<p><em>Phương sai và giá trị kỳ vọng là 2 đại lượng quan trọng để định nghĩa và miêu tả một phân phối xác suất.</em> (???)</p>
+</div>
+</div>
+</div>
+<div id="các-phân-phối-rời-rạc-phổ-biến" class="section level2">
+<h2><span class="header-section-number">5.6</span> Các phân phối rời rạc phổ biến</h2>
+<div id="binomial-distribution---pp-nhị-thức" class="section level3">
+<h3><span class="header-section-number">5.6.1</span> Binomial distribution - PP nhị thức</h3>
+<div id="định-nghĩa" class="section level4">
+<h4><span class="header-section-number">5.6.1.1</span> Định nghĩa</h4>
+<p><strong>Ví dụ</strong>: Giả sử có ba chiếc bẫy được đặt tại ba vị trí trong rừng. Ba vị trí này xa nhau đủ để không ảnh hưởng đến xác suất của các bẫy khác bắt được thú.</p>
+<p>Ta có:</p>
+<ul>
+<li>Sự kiện bẫy bắt được thú là <span class="math inline">\(C_i\)</span></li>
+<li>Sự kiện bẫy trống là <span class="math inline">\(E_i\)</span></li>
+<li>Xác suất bẫy bắt được thú là <span class="math inline">\(\pi = 0.8\)</span></li>
+</ul>
+<p>Các kết quả có thể nhận được là:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Outcome</th>
+<th align="center"><span class="math inline">\(\,\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E_1, E_2, E_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(C_1, E_2, E_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E_1, C_2, E_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(E_1, E_2, C_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(C_1, C_2, E_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(C_1, E_2, C_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E_1, C_2, C_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(C_1, C_2, C_3\)</span></td>
+<td align="center"><span class="math inline">\(\,\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Vì các bẫy ở xa nhau nên kết quả của từng bẫy là độc lập với nhau. Ta có:</p>
+<p><span class="math display">\[ P(E_1 \cap E_2 \cap E_3) = P(E_1)P(E_2)P(E_3) = (1 - 0.8)0.8(1-0.8) = 0.032\]</span></p>
+<p>Tương tự, ta tính được xác suất của các kết quả còn lại trong bảng:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Outcome</th>
+<th align="center">Probability</th>
+<th align="center"><span class="math inline">\(S\)</span> Outcome</th>
+<th align="center">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E_1, E_2, E_3\)</span></td>
+<td align="center">0.008</td>
+<td align="center"><span class="math inline">\(S=0\)</span></td>
+<td align="center">0.008</td>
+</tr>
+<tr class="even">
+<td align="center">——————-</td>
+<td align="center">—————</td>
+<td align="center">————-</td>
+<td align="center">—————</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(C_1, E_2, E_3\)</span></td>
+<td align="center">0.032</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(E_1, C_2, E_3\)</span></td>
+<td align="center">0.032</td>
+<td align="center"><span class="math inline">\(S=1\)</span></td>
+<td align="center"><span class="math inline">\(3(0.032) = 0.096\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E_1, E_2, C_3\)</span></td>
+<td align="center">0.032</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">——————-</td>
+<td align="center">—————</td>
+<td align="center">————-</td>
+<td align="center">—————</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(C_1, C_2, E_3\)</span></td>
+<td align="center">0.128</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(C_1, E_2, C_3\)</span></td>
+<td align="center">0.128</td>
+<td align="center"><span class="math inline">\(S=2\)</span></td>
+<td align="center"><span class="math inline">\(3(0.128) = 0.384\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E_1, C_2, C_3\)</span></td>
+<td align="center">0.128</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">——————-</td>
+<td align="center">—————</td>
+<td align="center">————-</td>
+<td align="center">—————</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(C_1, C_2, C_3\)</span></td>
+<td align="center">0.512</td>
+<td align="center"><span class="math inline">\(S=3\)</span></td>
+<td align="center"><span class="math inline">\(0.512\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Tiếp đó, ta xét đến biến ngẫu nhiên <span class="math inline">\(S\)</span> và tổng hợp được xác suất của các giá trị mà <span class="math inline">\(S\)</span> nhận được, tương đương với số bẫy bắt được mồi:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(S\)</span> Outcome</th>
+<th align="center">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(S=0\)</span></td>
+<td align="center"><span class="math inline">\(0.008=0.2^3\cdot0.8^0\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(S=1\)</span></td>
+<td align="center"><span class="math inline">\(0.096=3\cdot0.2^2\cdot0.8^1\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(S=2\)</span></td>
+<td align="center"><span class="math inline">\(0.384=3\cdot0.2\cdot0.8^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(S=3\)</span></td>
+<td align="center"><span class="math inline">\(0.512=0.2^0\cdot0.8^3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Do các sự kiện có tính độc lập với nhau nên tổng xác suất của mọi sự kiện bằng <span class="math inline">\(0.008 + 0.096 + 0.384 + 0.512 = 1\)</span>. Đồng thời, ta cũng nhận thấy rằng:</p>
+<ul>
+<li>Ở mỗi bẫy, xác suất để bẫy có bất kỳ outcome nào là <span class="math inline">\(\pi + 1 - \pi = 1\)</span></li>
+<li>Do có 3 bẫy, nên tổng xác suất là:
+<span class="math display">\[\begin{aligned} (\pi + (1-\pi))^3 
+&amp;= \pi^3 + 3\pi(1-\pi)^2 + 3\pi^2(1-\pi) + (1-\pi)^3 \\
+&amp;= 1
+\end{aligned}\]</span></li>
+</ul>
+<p>Tức là trong trường hợp tổng quát với <span class="math inline">\(n\)</span> lần thử, ta sử dụng <a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_nh%E1%BB%8B_th%E1%BB%A9c">định lý nhị thức</a>, trong đó mỗi phần tử tương đương với xác suất mà biến <span class="math inline">\(S\)</span> nhận giá trị <span class="math inline">\(k\)</span> - <span class="math inline">\(P(S=k)\)</span>:</p>
+<p><span class="math display">\[\begin{aligned} (\pi + (1-\pi))^n 
+&amp;= {n \choose 0}\pi^n + {n \choose 1}\pi^{n-1}(1-\pi)^1 + ... + {n \choose n-1}\pi^1(1-\pi)^{n-1} + (1-\pi)^n \\
+&amp;= \sum_{k=0}^{n}{n \choose k}\pi^{k}(1-\pi)^{n-k}
+\end{aligned}\]</span></p>
+<p>Như vậy, để tính <span class="math inline">\(P(S=k)\)</span>, ta chỉ cần sử dụng công thức (hay còn gọi là hàm khối xác suất - probability mass function - pmf) sau:</p>
+<p><span class="math display">\[P(S=k)=\underbrace{\frac{n!}{x!(n-k)!}}_{hệ\ số\ nhị\ thức}\;\underbrace{\pi^{x}}_{k\,thành\ công}\;\underbrace{(1-\pi)^{n-x}}_{n-k\,thất\ bại}\]</span></p>
+<p>Hệ số nhị thức chính là số tổ hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử, có thể hiểu là: có <span class="math inline">\(\frac{n!}{x!(n-k)!}\)</span> cách phân phối <span class="math inline">\(k\)</span> lần thành công và <span class="math inline">\(n-k\)</span> lần thất bại trong <span class="math inline">\(n\)</span> lần thử.</p>
+<p>Như vậy, <strong>phân phối nhị thức là phân phối đáp ứng các điều kiện sau</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>Thí nghiệm bao gồm <span class="math inline">\(n\)</span> lần thử giống nhau</li>
+<li>Mỗi lần thử có thể có 2 kết quả: thành công hoặc thất bại/đúng hoặc sai.</li>
+<li>Xác suất thành công trong mỗi phép thử là <span class="math inline">\(\pi\)</span> là giữ nguyên giữa các phép thử</li>
+<li>Các phép thử có tính độc lâp với nhau</li>
+<li>Tồn tại một biến ngẫu nhiên <span class="math inline">\(S\)</span> là số lần thành công trong <span class="math inline">\(n\)</span> phép thử</li>
+</ol>
+<p>Trong R, ta sử dụng hàm <code>dbinom</code> để mô phỏng lại phân phối nhị thức:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-2" title="2"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">xs=</span><span class="kw">dbinom</span>(x,<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">prob=</span><span class="fl">0.8</span>))</a>
+<a class="sourceLine" id="cb59-3" title="3"><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>x)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb59-4" title="4"><span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y=</span>xs)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-5" title="5"><span class="st">    </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span>xs, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-6" title="6"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;phân phối nhị phân: n=3, p=0.8&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-7" title="7"><span class="st">  </span><span class="kw">theme_bw</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>Trong đồ thị trên, để tính chiều cao các đường tần suất, ta sử dụng hàm pmf tại điểm tương ứng.</p>
+<p><span class="math display">\[\begin{aligned} P(S=2) 
+&amp;= {3 \choose 2} (0.8)^2(1-0.8)^{3-2} \\
+&amp;=\frac{3!}{2!(3-2)!}(0.8)^2(0.2)^{3-2} \\
+&amp;= 0.384
+\end{aligned}\]</span></p>
+<p>Trong R, với mỗi phân phối xác suất, thường sẽ có 4 nhóm function với vai trò khác nhau:</p>
+<ol style="list-style-type: decimal">
+<li>Nhóm <strong>d-function</strong>: Tính chiều cao của hàm pmf (hoặc pdf). Với biến NNRR <span class="math inline">\(Y\)</span>, d-function trả về kết quả tương đương với <span class="math inline">\(P(Y=y)\)</span> với <span class="math inline">\(y\)</span> bất kỳ.</li>
+<li>Nhóm <strong>p-function</strong>: Tính <span class="math inline">\(P(Y\le y)\)</span>, tức là xác suất để <span class="math inline">\(Y\)</span> nhận giá trị nhỏ hơn hoặc bằng <span class="math inline">\(y\)</span>.</li>
+<li>Nhóm <strong>q-function</strong>: Tìm quantile nhất định của phân phối. Ví dụ, giá trị nào chia phân phối tại các ngưỡng 25% và 75%?</li>
+<li>Nhóm <strong>r-function</strong>: Lấy một sample ngẫu nhiên từ phân phối.</li>
+</ol>
+<p>Trong hân phối nhị thức, 4 hàm tương ứng là <code>dbinom</code>, <code>pbinom</code>, <code>qbinom</code> và <code>rbinom</code>.</p>
+</div>
+<div id="giá-trị-kỳ-vọng-của-phân-phối-nhị-thức" class="section level4">
+<h4><span class="header-section-number">5.6.1.2</span> Giá trị kỳ vọng của phân phối nhị thức</h4>
+<p>Xét ví dụ đơn giản sau: Nêu tung 100 đồng xu, với <span class="math inline">\(X\)</span> là số lần ra mặt ngửa (head), ta có <span class="math inline">\(E[X] = 50 = \frac{1}{2}100\)</span></p>
+<p>Hoặc: Một bài kiểm tra có 20 câu hỏi, mỗi câu 4 đáp án. Nếu chọn ngẫu nhiên cho cả 20 câu, số câu đúng kỳ vọng là <span class="math inline">\(\frac{1}{4}20 = 5\)</span>.</p>
+<p>Tóm lại, có thể thấy với phân phối nhị thức, <span class="math inline">\(E[X]=n\pi\)</span>. Ta chứng minh công thức này như sau:</p>
+<p>Ở phần trước, ta có với một phân phối xác suất nói chung, <span class="math inline">\(E[X]\)</span> là mean của 1 sample đủ lớn, tức là <span class="math inline">\(E[X] = \sum\;x\cdot P\left(X=x\right)\)</span>.</p>
+<p>Suy ra với phân phối nhị thức:</p>
+<p><span class="math display">\[\begin{aligned}
+E[X] &amp;= x \cdot P\left(X=x\right) \\
+&amp;=\sum_{x=0}^{n}x{n \choose x}\pi^x(1-\pi)^{n-x} \\
+\end{aligned}\]</span></p>
+<p>Khi <span class="math inline">\(x=0\)</span>, phần tử đầu tiên trong tổng cũng bằng 0 nên:</p>
+<p><span class="math display">\[\begin{aligned}
+E[X] &amp;= x \cdot P\left(X=x\right) \\
+&amp;=\sum_{x=0}^{n}x{n \choose x}\pi^x(1-\pi)^{n-x} \\
+&amp;=\sum_{x=1}^{n}x{n \choose x}\pi^x(1-\pi)^{n-x} \\
+&amp;=\sum_{x=1}^{n}x\frac{n!}{x!(n-x)!}\pi^x(1-\pi)^{n-x} \\ &amp;=\sum_{x=1}^{n}n\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!}\pi^x(1-\pi)^{n-x} \\
+&amp;=n\pi\sum_{x=1}^{n}{n-1 \choose x-1}\pi^{x-1}(1-\pi)^{(n-1)-(x-1)} \\
+\end{aligned}\]</span></p>
+<p>Áp dụng định lý nhị thức:</p>
+<p><span class="math display">\[\begin{aligned}
+E[X] &amp;= \vdots \\
+&amp;=n\pi(\pi+(1-\pi))^{n-1} \\
+&amp;=n\pi \cdot 1^{n-1} \\
+&amp;=n\pi
+\end{aligned}\]</span></p>
+<p>Tương tự, phương sai được tính bằng:</p>
+<p><span class="math display">\[\begin{aligned} V[X]  
+  &amp;=    \sum_{x=0}^{n}\left(x-E\left[X\right]\right)^{2}\,P\left(X=x|n,\pi\right) \\
+    &amp;=  \sum_{x=0}^{n}\left(x-E\left[X\right]\right)^{2}\;\frac{n!}{x!\left(n-x\right)!}\pi^{x}\left(1-\pi\right)^{n-x} \\
+    &amp;=  \vdots \\
+    &amp;=  n\pi(1-\pi) \end{aligned}\]</span></p>
+</div>
+</div>
+<div id="poisson-distribution---pp-poisson" class="section level3">
+<h3><span class="header-section-number">5.6.2</span> Poisson distribution - PP Poisson</h3>
+<p>Phân phối Poisson được tạo ra với mục đích mô hình hóa số lượng sự kiện diễn ra trong một khoảng thời gian nhất định, hay mở rộng ra là trong một giới hạn cố định. Ví dụ:</p>
+<ul>
+<li>Số lượng khách hàng thanh toán mỗi tiếng</li>
+<li>số lượng hươu trên mỗi 1000 hecta</li>
+<li>số lượng búi tảo trong mỗi mét khối nước hồ</li>
+</ul>
+<p>Các dữ kiện trên là một kiểu tốc độ/tần suất thay đổi, trong PP Poisson ký hiệu là <span class="math inline">\(\lambda\)</span>.</p>
+<p>Sử dụng phân phối Poisson, ta có thể dự đoán được xác suất mà số lượng sự kiện nào đó có thể xảy ra trong một giới hạn cố định.</p>
+<div id="so-sánh-với-pp-nhị-thức" class="section level4">
+<h4><span class="header-section-number">5.6.2.1</span> So sánh với PP nhị thức</h4>
+<p>Các ví dụ liệt kê ở trên có thể giải quyết được bằng cách sử dụng PP nhị thức, do ta đang tính xác suất xảy ra số sự kiện thành công (KH có thanh toán, hươu có tồn tại, etc.), gọi là <span class="math inline">\(P(X)\)</span>.</p>
+<p>Tuy nhiên, cần nhiều thông tin hơn để tính <span class="math inline">\(P(X)\)</span>, bao gồm xác suất thành công <span class="math inline">\(\pi\)</span> và tổng số lần thử <span class="math inline">\(n\)</span>. Trong khi đó, đề bài đưa ra lại chỉ có <span class="math inline">\(\lambda\)</span> là dữ kiện ở dạng tỷ lệ tăng/tốc độ: số KH thanh toán/tiếng, số hươu/hecta, etc, hay nói cách khác chính là giá trị kỳ vọng <span class="math inline">\(E[X]\)</span>.</p>
+<p>Như vậy, thách thức đầu tiên gặp phải là PP nhị thức cần nhiều dữ kiện hơn, trong khi Poisson chỉ cần 1 thông tin duy nhất.</p>
+<p>Tiếp đó, ta nhận thấy nếu tính được xác suất thành công trên mỗi đơn vị thời gian hoặc không gian, ta gặp phải vấn đề là PP nhị thức không chứa được NHIỀU HƠN MỘT sự kiện trong một đơn vị thời gian/không gian tương ứng.</p>
+<p>Có thể giải quyết vấn đề này bằng cách chia nhỏ đơn vị thời gian/không gian ra, ví dụ chia 1 tiếng thành 60 phút, hoặc thậm chí nhỏ hơn. Tuy nhiên, kết quả đưa ra sẽ luôn gặp giới hạn trong việc fit với dữ liệu thực tế.</p>
+</div>
+<div id="định-nghĩa-chứng-minh-pp-poisson" class="section level4">
+<h4><span class="header-section-number">5.6.2.2</span> Định nghĩa &amp; chứng minh PP Poisson</h4>
+<p>Từ ví dụ trên, có thể thấy về mặt toán học, <span class="math inline">\(n \to \infty\)</span>, do càng chia nhỏ đại lượng thời gian/không gian, số sự kiện chứa được trong mỗi đơn vị càng tăng.</p>
+<p>Vì <span class="math inline">\(E[X]\)</span> cố định nên <span class="math inline">\(p \to 0\)</span>, do <span class="math inline">\(E[X]= \lambda = np\)</span>.</p>
+<p>Như vậy, ta có thể suy ra công thức tính pmf của PP Poisson từ pmf của PP nhị thức như sau:</p>
+<p><span class="math display">\[\begin{aligned} P(Y=k)    
+&amp;=\lim_{n\to\infty}{n \choose k} \pi^k (1-\pi)^{n-k} \\
+&amp;=\lim_{n\to\infty}{n \choose k} \left(\frac{\lambda}{n} \right)^k \left(1-\frac{\lambda}{n} \right)^{n-k} \\
+&amp;=\lim_{n\to\infty} \frac{n!}{(n-k)!k!} \frac{1}{n^k} \lambda^k \left(1-\frac{\lambda}{n}\right)^n \left(1-\frac{\lambda}{n}\right)^{-k} \\ 
+&amp;= \lim_{n\to\infty} \underbrace{\frac{n!}{(n-k)!} \frac{1}{n^k}}_{=1} \; \underbrace{\frac{\lambda^k}{k!} \left(1-\frac{\lambda}{n}\right)^n}_{Poisson\ PMF} \; \underbrace{\left(1-\frac{\lambda}{n}\right)^{-k}}_{=1} \\
+&amp;= \underbrace{\frac{\lambda^k}{k!} \; e^{-\lambda}}_{Poisson\ PMF}
+\end{aligned}\]</span></p>
+<p>Phần chứng minh cụ thể cho từng thừa số nằm ở phụ lục cuối chương.</p>
+<p>Như vậy ta có: Với biến ngẫu nhiên <span class="math inline">\(Y\)</span> nhận giá trị <span class="math inline">\(y\)</span> là số sự kiện thành công trong một đơn vị thời gian/không gian nào đó, hay nói cách khác là hàm khối xác suất <em>pmf</em> là:</p>
+<p><span class="math display">\[\underbrace{\frac{\lambda^k}{k!} \; e^{-\lambda}}_{Poisson\ PMF}\]</span></p>
+<p>với <span class="math inline">\(\lambda\)</span> là số sự kiện kỳ vọng xảy ra trong một đơn vị thời gian/không gian và <span class="math inline">\(e\)</span> là <span class="math inline">\(2.718281828\dots\)</span> (base of natural logarithm). Từ đó, ta suy ra:</p>
+<p><span class="math display">\[E[Y]  =   \lambda\]</span>
+<span class="math display">\[Var[Y]    =   \lambda\]</span></p>
+<p><strong>Ví dụ:</strong> Có <span class="math inline">\(Y\)</span> là số khách hàng thanh toán tại quầy của 1 cửa hàng tạp hóa trong vòng 12 tiếng. Giả sử <span class="math inline">\(Y\sim Poi(\lambda=2.3)\)</span>. Hỏi:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Xác suất có 4 KH thanh toán trong 12 tiếng?</li>
+</ol>
+<p><span class="math display">\[P(Y=4) = \frac{2.3^4e^{-2.3}}{4!} = 0.1169\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Xác suất có nhiều nhất 4 KH?</li>
+</ol>
+<p><span class="math display">\[\begin{aligned} P(Y\le4) 
+  &amp;=    P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3)+P(Y=4) \\
+    &amp;=  0.1003+0.2306+0.2652+0.2033+0.1169 \\
+    &amp;=  0.9163 \end{aligned}\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Xác suất có nhiều hơn hoặc bằng 5 KH?</li>
+</ol>
+<p><span class="math display">\[P(Y\ge5)=1-P(Y\le4) =1-0.9163 =0.0837\]</span></p>
+<p>Các phép tính trên có thể thực hiện trên R với 4 nhóm hàm tương tự như PP nhị thức:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">NumCaught =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">10</span> ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-2" title="2"><span class="st">  </span><span class="kw">mutate</span>( <span class="dt">probability =</span> <span class="kw">dpois</span>( NumCaught, <span class="dt">lambda=</span><span class="fl">2.3</span> ) )</a>
+<a class="sourceLine" id="cb60-3" title="3"><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>NumCaught)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb60-4" title="4"><span class="st">  </span><span class="kw">geom_point</span>( <span class="kw">aes</span>(<span class="dt">y=</span>probability) ) <span class="op">+</span></a>
+<a class="sourceLine" id="cb60-5" title="5"><span class="st">  </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>( <span class="dt">ymax=</span>probability, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb60-6" title="6"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Poisson Distribution with  &#39;</span>, lambda <span class="op">==</span><span class="st"> </span><span class="fl">2.3</span>))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb60-7" title="7"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Number Caught&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb60-8" title="8"><span class="st">  </span><span class="kw">theme_bw</span>()            </a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="co"># P( Y = 4)</span></a>
+<a class="sourceLine" id="cb61-2" title="2"><span class="kw">dpois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.1169022</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="co"># P( Y &lt;= 4)</span></a>
+<a class="sourceLine" id="cb63-2" title="2"><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.9162493</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="co"># 1-P(Y &lt;= 4)  ==  P( Y &gt; 4)  ==  P( Y &gt;= 5)</span></a>
+<a class="sourceLine" id="cb65-2" title="2"><span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="fl">2.3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.08375072</code></pre>
+</div>
+</div>
+</div>
+<div id="biến-ngẫu-nhiên-liên-tục" class="section level2">
+<h2><span class="header-section-number">5.7</span> Biến ngẫu nhiên liên tục</h2>
+<p>Biến ngẫu nhiên liên tục (NNLT) có thể nhận số lượng vô hạn giá trị, dẫn đến nhiều sự khác biệt về toán học kahs hóc búa so với biến NNRR.</p>
+<p>Cụ thể, xác suất để biến NNLT <span class="math inline">\(X\)</span> nhận giá trị <span class="math inline">\(x\)</span> bằng 0, vì vậy chúng ta sẽ tìm xác suất biến <span class="math inline">\(X\)</span> rơi vào một khoảng nhất định. Vì thế, thay vì lấy tổng xác suất, ta sẽ lấy tích phân.</p>
+<p>Do tài liệu này không chuyên sâu về toán nên thay vào đó ta ưu tiên sử dụng R để tính hơn, nhưng vẫn sẽ đi sâu vào 1 số công thức toán cần thiết để hiểu sâu về bản chất.</p>
+<div id="pdf-cdf-và-ccdf" class="section level3">
+<h3><span class="header-section-number">5.7.1</span> PDF, CDF và CCDF</h3>
+<div id="pdf---hàm-mật-độ-xác-suất" class="section level4">
+<h4><span class="header-section-number">5.7.1.1</span> PDF - Hàm mật độ xác suất</h4>
+<p>Với các PP liên tục, ta sử dụng PDF (probability density function) thay vì PMF (probability mass function - hàm khối xác suất).</p>
+<p>PMF là hàm để tính xác suất của một biến ngẫu nhiên <span class="math inline">\(X\)</span> nhận giá trị <span class="math inline">\(x\)</span>, tức là <span class="math inline">\(P(X=x)\)</span>. Đồng thời, tổng xác suất của mọi <span class="math inline">\(x\)</span> mà <span class="math inline">\(X\)</span> có thể nhận bằng 1.</p>
+<p>Khi biểu diễn trên đồ thị, ta thấy xác suất của mỗi tương ứng với mỗi giá trị <span class="math inline">\(x\)</span> của biến NNRR <span class="math inline">\(X\)</span> chính là chiều cao của của các bar.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="co">#insert a graph here to demonstrate!!!</span></a></code></pre></div>
+<p>Tuy nhiên, với biến NNLT, do không thể tìm được xác suất của 1 giá trị <span class="math inline">\(x\)</span> cụ thể, ta sẽ quan tâm tới phần <strong>diện tích</strong> bên dưới đồ thị, cụ thể là ở giữa một khoảng 2 giá trị <span class="math inline">\([a,b]\)</span> nào đó, tương đương với xác suất mà biến <span class="math inline">\(X\)</span> nhận giá trị trong khoảng này.</p>
+<p>Cũng cần lưu ý rằng, xác suất mà biến <span class="math inline">\(X\)</span> nhận giá trị trong khoảng <span class="math inline">\([a,b]\)</span> không sử dụng hàm PDF để tính. Hàm PDF chỉ dùng để biểu diễn <em>mật độ xác suất</em>.</p>
+</div>
+<div id="cdf---hàm-phân-phối-tích-luỹ" class="section level4">
+<h4><span class="header-section-number">5.7.1.2</span> CDF - Hàm phân phối tích luỹ</h4>
+<p>Coi <span class="math inline">\(f(x)\)</span> là một hàm PDF và <span class="math inline">\(F(x)\)</span> là CDF tương ứng. Hàm <span class="math inline">\(f(x)\)</span> có thể nhận giá trị bất kỳ từ 0 đến <span class="math inline">\(\infty\)</span>, với điều kiện phần diện tích dưới <span class="math inline">\(f(x)\)</span> bằng 1, i.e. tích phân của <span class="math inline">\(f(x)\)</span> bằng 1, hay <span class="math inline">\(\int_{-\infty}^{x} f(t) dt = 1\)</span>.</p>
+<p>Khi muốn tìm xác suất từ hàm PDF, ta phải lấy tích phân của <span class="math inline">\(f(x)\)</span> giữa 2 giá trị <span class="math inline">\(a\)</span> và <span class="math inline">\(b\)</span>. Nếu giá trị bên trái, tức là <span class="math inline">\(a = -\infty\)</span>, ta có CDF chính là <span class="math inline">\(P(X \leq b)\)</span>.</p>
+<p>Ngược lại với CDF, ta còn quan tâm đến CCDF (complementary CDF) để tìm <span class="math inline">\(P(X&gt;b)\)</span>, hay chính là <span class="math inline">\(1-P(X \leq b) = 1 - CDF\)</span></p>
+</div>
+</div>
+</div>
+<div id="các-phân-phối-liên-tục-phổ-biến" class="section level2">
+<h2><span class="header-section-number">5.8</span> Các phân phối liên tục phổ biến</h2>
+<div id="exponential-distribution---pp-mũ" class="section level3">
+<h3><span class="header-section-number">5.8.1</span> Exponential distribution - PP mũ</h3>
+<p>PP mũ được sử dụng để mô hình hóa và dự đoán khoảng thời gian giữa 2 sự kiện liên tục, i.e. thời gian chờ đến sự kiện tiếp theo. Ví dụ:</p>
+<ul>
+<li>thời gian đến khi KH tiếp theo thanh toán</li>
+<li>thời gian chờ giữa 2 lần đón của xe buýt</li>
+</ul>
+<p>Tự định nghĩa này, có thể thấy PP mũ có liên quan chặt chẽ đến PP Poisson (tính xác suất số sự kiện thành công trong 1 đơn vị thời gian/không gian). PP Poisson cho ta biết về số sự kiện thành công trong mỗi khoảng thời gian, đồng thời PP mũ giúp ta miêu tả khoảng thời gian giữa mỗi sự kiện.</p>
+<div id="pdf-của-pp-mũ" class="section level4">
+<h4><span class="header-section-number">5.8.1.1</span> PDF của PP mũ</h4>
+<p>PP mũ có PDF như sau:</p>
+<p><span class="math display">\[f(t)=\begin{cases}
+\lambda e^{-\lambda t} &amp; t\ge0\;\textrm{ and }\;\lambda&gt;0\\
+0 &amp; \textrm{otherwise}
+\end{cases}\]</span></p>
+<p>Có thể suy ra công thức PDF trên từ công thức PDF của PP Poisson. Hai phân phối mũ và Poisson đều bắt nguồn từ <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-262-discrete-stochastic-processes-spring-2011/course-notes/MIT6_262S11_chap02.pdf">Poisson process</a>, trong đó có <span class="math inline">\(\lambda\)</span> là <em>event rate</em>, i.e. số sự kiện trong mỗi đơn vị thời gian. Như vậy, trung bình sẽ có <span class="math inline">\(\lambda t\)</span> sự kiện xảy ra trong <span class="math inline">\(t\)</span> đơn vị thời gian. Từ công thức PMF của Poisson:</p>
+<p><span class="math inline">\(\textrm{Có } P(x) = e^{-\lambda t}(\lambda t)^x / x! \\ \Leftrightarrow P(x=0) = e^{-\lambda t} \\ \textrm{Coi T là thời gian chờ đến sự kiện tiếp theo, ta có T &gt; t} \equiv \textrm{x = 0} \\ \Leftrightarrow P(T&gt;t) = e^{-\lambda t}\\ \Leftrightarrow P(T \leq t) = 1 - e^{-\lambda t}\)</span></p>
+<p>Đây là chính là CDF của PP mũ, tức là khi lấy đạo hàm, ta có PDF:</p>
+<p><span class="math display">\[F(t) = \int_{0}^{\infty} \lambda e^{-\lambda t} dt = 1-e^{-\lambda t}\]</span></p>
+<p>Ở trên, ta đã có <span class="math inline">\(\lambda t\)</span> sự kiện xảy ra trong <span class="math inline">\(t\)</span> đơn vị thời gian, tức là:</p>
+<p><span class="math inline">\(n = \lambda t \\ \Leftrightarrow t/n = 1/\lambda\)</span></p>
+<p>Hay diễn đạt bằng lời, ta có: thời gian trung bình đến khi sự kiện tiếp theo diễn ra là <span class="math inline">\(1/\lambda\)</span>, tương đương với:</p>
+<p><span class="math display">\[\mu = E[X] = \frac{1}_{\lambda}\]</span></p>
+<p>Đồng thời, phương sai của PP mũ là:</p>
+<p><span class="math display">\[\sigma^2 = Var[X] = \int_{0}^{\infty} (x-\mu)^2 f(x) dx = \dots = frac{1}_{\lambda^2}\]</span></p>
+</div>
+</div>
+<div id="uniform-01-distribution" class="section level3">
+<h3><span class="header-section-number">5.8.2</span> Uniform [0,1] distribution</h3>
+</div>
+<div id="normal-distribution" class="section level3">
+<h3><span class="header-section-number">5.8.3</span> Normal distribution</h3>
+<pre><code>d</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="th-ng-kê-mô-t-c-b-n.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
