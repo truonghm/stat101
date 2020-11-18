@@ -1,4 +1,3 @@
-# (PART\*) Giới thiệu chung {-}
 
 # Thống kê mô tả cơ bản
 

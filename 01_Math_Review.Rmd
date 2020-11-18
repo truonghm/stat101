@@ -1,0 +1,34 @@
+# (PART\*) Giới thiệu chung {-}
+
+
+# Review lại toán
+
+```{r, echo=FALSE}
+# Unattach any packages that happen to already be loaded
+pkgs = names(sessionInfo()$otherPkgs)
+if( length(pkgs > 0)){
+  pkgs = paste('package:', pkgs, sep = "")
+  for( i in 1:length(pkgs)){
+    detach(pkgs[i], character.only = TRUE, force=TRUE)
+  }
+}
+```
+
+
+
+
+
+
+```{r, message=FALSE, warning=FALSE, results='hide'}
+# load sẵn ggplot2 (đã bao gồm trong tidyverse)
+library(tidyverse, quietly = TRUE)
+```
+
+## Đạo hàm và tính phân
+
+Đạo hàm và tích phân được sử dụng để định nghĩa các công thức PDF và CDF.
+
+## Định nghĩa $e$
+
+## Tổ hợp, chỉnh hợp và hoán vị
+
