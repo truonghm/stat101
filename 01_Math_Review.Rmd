@@ -24,7 +24,7 @@ if( length(pkgs > 0)){
 library(tidyverse, quietly = TRUE)
 ```
 
-## Đạo hàm và tính phân
+## Đạo hàm và tích phân
 
 Đạo hàm và tích phân được sử dụng để định nghĩa các công thức PDF và CDF.
 

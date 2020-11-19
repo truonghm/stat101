@@ -1,6 +1,11 @@
 # History files
 .Rhistory
 .Rapp.history
+.Rproj.user
+.Rhistory
+.Ruserdata
+_book
+_bookdown_files
 
 # Session Data files
 .RData

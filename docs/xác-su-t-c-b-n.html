@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK</title>
   <meta name="description" content="5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK" />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Xác suất cơ bản | Giới thiệu cơ bản về XSTK" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,6 @@
 <meta name="author" content="Truong Hoang" />
 
 
-<meta name="date" content="2020-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,12 +49,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +66,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,7 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
 <li class="part"><span><b>Kiến thức cơ bản</b></span></li>
 <li class="chapter" data-level="4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html"><i class="fa fa-check"></i><b>4</b> Review lại toán</a><ul>
-<li class="chapter" data-level="4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#đạo-hàm-và-tính-phân"><i class="fa fa-check"></i><b>4.1</b> Đạo hàm và tính phân</a></li>
+<li class="chapter" data-level="4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#đạo-hàm-và-tích-phân"><i class="fa fa-check"></i><b>4.1</b> Đạo hàm và tích phân</a></li>
 <li class="chapter" data-level="4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#định-nghĩa-e"><i class="fa fa-check"></i><b>4.2</b> Định nghĩa <span class="math inline">\(e\)</span></a></li>
 <li class="chapter" data-level="4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tổ-hợp-chỉnh-hợp-và-hoán-vị"><i class="fa fa-check"></i><b>4.3</b> Tổ hợp, chỉnh hợp và hoán vị</a></li>
 </ul></li>
@@ -219,9 +223,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="xác-suất-cơ-bản" class="section level1">
 <h1><span class="header-section-number">5</span> Xác suất cơ bản</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">library</span>(venn)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="xác-su-t-c-b-n.html#cb2-1"></a><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></span>
+<span id="cb2-2"><a href="xác-su-t-c-b-n.html#cb2-2"></a><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-3"><a href="xác-su-t-c-b-n.html#cb2-3"></a><span class="kw">library</span>(venn)</span></code></pre></div>
 <div id="một-số-định-nghĩa-cơ-bản" class="section level2">
 <h2><span class="header-section-number">5.1</span> Một số định nghĩa cơ bản</h2>
 <ol style="list-style-type: decimal">
@@ -237,7 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.2</span> Lý thuyết tập hợp</h2>
 <div id="biểu-đồ-venn" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Biểu đồ Venn</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(VennDiagram, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="xác-su-t-c-b-n.html#cb3-1"></a><span class="kw">library</span>(VennDiagram, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p>Đặt <span class="math inline">\(S\)</span> là tập hợp tất cả các outcome của thí nghiệm ngẫu nhiên (tức là sample space). Trong đó, chúng ta quan tâm đến hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span>.</p>
 <p>Sử dụng biểu đồ Venn để thể hiện các sự kiện, với thí nghiệm là lăn một lần xúc xắc có 6 mặt, tức là <span class="math inline">\(S = \{1,2,3,4,5,6\}\)</span>, với:</p>
 <ul>
@@ -525,13 +529,13 @@ P(A)P(B)\;\; &amp; \textrm{ nếu A, B độc lập}
 &amp;=  7
 \end{aligned}\]</span></p>
 <p>Sau khi đã biết <span class="math inline">\(E[S]\)</span> trong ví dụ trên, ta tiếp tục thí nghiệm bằng cách tung 2 xúc sắc 100 lần:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">x &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>, <span class="dt">by=</span><span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb4-2" title="2">            <span class="dt">size =</span> <span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb4-3" title="3">            <span class="dt">prob =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, <span class="dv">6</span>),</a>
-<a class="sourceLine" id="cb4-4" title="4">            <span class="dt">replace =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb4-5" title="5"></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">mean</span>(x)</a></code></pre></div>
-<pre><code>## [1] 7.14</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="xác-su-t-c-b-n.html#cb4-1"></a>x &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>, <span class="dt">by=</span><span class="dv">2</span>),</span>
+<span id="cb4-2"><a href="xác-su-t-c-b-n.html#cb4-2"></a>            <span class="dt">size =</span> <span class="dv">100</span>,</span>
+<span id="cb4-3"><a href="xác-su-t-c-b-n.html#cb4-3"></a>            <span class="dt">prob =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, <span class="dv">6</span>),</span>
+<span id="cb4-4"><a href="xác-su-t-c-b-n.html#cb4-4"></a>            <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb4-5"><a href="xác-su-t-c-b-n.html#cb4-5"></a></span>
+<span id="cb4-6"><a href="xác-su-t-c-b-n.html#cb4-6"></a><span class="kw">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 7.12</code></pre>
 <p>Có thể thấy trong thí nghiệm này, giá trị trung bình không bằng với <span class="math inline">\(E[S]\)</span>. Nếu lặp lại thí nghiệm này với số lần <span class="math inline">\(n\)</span> lớn hơn thì khi <span class="math inline">\(n\)</span> tiến tới vô hạn, giá trị trung bình sẽ tiến tới giá trị kỳ vọng.</p>
 </div>
 <div id="phương-sai" class="section level4">
@@ -738,13 +742,13 @@ P(A)P(B)\;\; &amp; \textrm{ nếu A, B độc lập}
 <li>Tồn tại một biến ngẫu nhiên <span class="math inline">\(S\)</span> là số lần thành công trong <span class="math inline">\(n\)</span> phép thử</li>
 </ol>
 <p>Trong R, ta sử dụng hàm <code>dbinom</code> để mô phỏng lại phân phối nhị thức:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">xs=</span><span class="kw">dbinom</span>(x,<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">prob=</span><span class="fl">0.8</span>))</a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>x)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y=</span>xs)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="st">    </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span>xs, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;phân phối nhị phân: n=3, p=0.8&#39;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="st">  </span><span class="kw">theme_bw</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="xác-su-t-c-b-n.html#cb6-1"></a>dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb6-2"><a href="xác-su-t-c-b-n.html#cb6-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">xs=</span><span class="kw">dbinom</span>(x,<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">prob=</span><span class="fl">0.8</span>))</span>
+<span id="cb6-3"><a href="xác-su-t-c-b-n.html#cb6-3"></a><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>x)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb6-4"><a href="xác-su-t-c-b-n.html#cb6-4"></a><span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y=</span>xs)) <span class="op">+</span></span>
+<span id="cb6-5"><a href="xác-su-t-c-b-n.html#cb6-5"></a><span class="st">    </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span>xs, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></span>
+<span id="cb6-6"><a href="xác-su-t-c-b-n.html#cb6-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;phân phối nhị phân: n=3, p=0.8&#39;</span>) <span class="op">+</span></span>
+<span id="cb6-7"><a href="xác-su-t-c-b-n.html#cb6-7"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Trong đồ thị trên, để tính chiều cao các đường tần suất, ta sử dụng hàm pmf tại điểm tương ứng.</p>
 <p><span class="math display">\[\begin{aligned} P(S=2) 
@@ -848,23 +852,23 @@ E[X] &amp;= \vdots \\
 </ol>
 <p><span class="math display">\[P(Y\ge5)=1-P(Y\le4) =1-0.9163 =0.0837\]</span></p>
 <p>Các phép tính trên có thể thực hiện trên R với 4 nhóm hàm tương tự như PP nhị thức:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">NumCaught =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">10</span> ) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="st">  </span><span class="kw">mutate</span>( <span class="dt">probability =</span> <span class="kw">dpois</span>( NumCaught, <span class="dt">lambda=</span><span class="fl">2.3</span> ) )</a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>NumCaught)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="st">  </span><span class="kw">geom_point</span>( <span class="kw">aes</span>(<span class="dt">y=</span>probability) ) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="st">  </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>( <span class="dt">ymax=</span>probability, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Poisson Distribution with  &#39;</span>, lambda <span class="op">==</span><span class="st"> </span><span class="fl">2.3</span>))) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Number Caught&#39;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-8" title="8"><span class="st">  </span><span class="kw">theme_bw</span>()            </a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="xác-su-t-c-b-n.html#cb7-1"></a>dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">NumCaught =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">10</span> ) <span class="op">%&gt;%</span></span>
+<span id="cb7-2"><a href="xác-su-t-c-b-n.html#cb7-2"></a><span class="st">  </span><span class="kw">mutate</span>( <span class="dt">probability =</span> <span class="kw">dpois</span>( NumCaught, <span class="dt">lambda=</span><span class="fl">2.3</span> ) )</span>
+<span id="cb7-3"><a href="xác-su-t-c-b-n.html#cb7-3"></a><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>NumCaught)) <span class="op">+</span></span>
+<span id="cb7-4"><a href="xác-su-t-c-b-n.html#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>( <span class="kw">aes</span>(<span class="dt">y=</span>probability) ) <span class="op">+</span></span>
+<span id="cb7-5"><a href="xác-su-t-c-b-n.html#cb7-5"></a><span class="st">  </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>( <span class="dt">ymax=</span>probability, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></span>
+<span id="cb7-6"><a href="xác-su-t-c-b-n.html#cb7-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Poisson Distribution with  &#39;</span>, lambda <span class="op">==</span><span class="st"> </span><span class="fl">2.3</span>))) <span class="op">+</span></span>
+<span id="cb7-7"><a href="xác-su-t-c-b-n.html#cb7-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Number Caught&#39;</span>) <span class="op">+</span></span>
+<span id="cb7-8"><a href="xác-su-t-c-b-n.html#cb7-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()            </span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># P( Y = 4)</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">dpois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="xác-su-t-c-b-n.html#cb8-1"></a><span class="co"># P( Y = 4)</span></span>
+<span id="cb8-2"><a href="xác-su-t-c-b-n.html#cb8-2"></a><span class="kw">dpois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1169022</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># P( Y &lt;= 4)</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="xác-su-t-c-b-n.html#cb10-1"></a><span class="co"># P( Y &lt;= 4)</span></span>
+<span id="cb10-2"><a href="xác-su-t-c-b-n.html#cb10-2"></a><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9162493</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># 1-P(Y &lt;= 4)  ==  P( Y &gt; 4)  ==  P( Y &gt;= 5)</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="fl">2.3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="xác-su-t-c-b-n.html#cb12-1"></a><span class="co"># 1-P(Y &lt;= 4)  ==  P( Y &gt; 4)  ==  P( Y &gt;= 5)</span></span>
+<span id="cb12-2"><a href="xác-su-t-c-b-n.html#cb12-2"></a><span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="fl">2.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.08375072</code></pre>
 </div>
 </div>
@@ -881,7 +885,7 @@ E[X] &amp;= \vdots \\
 <p>Với các PP liên tục, ta sử dụng PDF (probability density function) thay vì PMF (probability mass function - hàm khối xác suất).</p>
 <p>PMF là hàm để tính xác suất của một biến ngẫu nhiên <span class="math inline">\(X\)</span> nhận giá trị <span class="math inline">\(x\)</span>, tức là <span class="math inline">\(P(X=x)\)</span>. Đồng thời, tổng xác suất của mọi <span class="math inline">\(x\)</span> mà <span class="math inline">\(X\)</span> có thể nhận bằng 1.</p>
 <p>Khi biểu diễn trên đồ thị, ta thấy xác suất của mỗi tương ứng với mỗi giá trị <span class="math inline">\(x\)</span> của biến NNRR <span class="math inline">\(X\)</span> chính là chiều cao của của các bar.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co">#insert a graph here to demonstrate!!!</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="xác-su-t-c-b-n.html#cb14-1"></a><span class="co">#insert a graph here to demonstrate!!!</span></span></code></pre></div>
 <p>Tuy nhiên, với biến NNLT, do không thể tìm được xác suất của 1 giá trị <span class="math inline">\(x\)</span> cụ thể, ta sẽ quan tâm tới phần <strong>diện tích</strong> bên dưới đồ thị, cụ thể là ở giữa một khoảng 2 giá trị <span class="math inline">\([a,b]\)</span> nào đó, tương đương với xác suất mà biến <span class="math inline">\(X\)</span> nhận giá trị trong khoảng này.</p>
 <p>Cũng cần lưu ý rằng, xác suất mà biến <span class="math inline">\(X\)</span> nhận giá trị trong khoảng <span class="math inline">\([a,b]\)</span> không sử dụng hàm PDF để tính. Hàm PDF chỉ dùng để biểu diễn <em>mật độ xác suất</em>.</p>
 </div>
