@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Review lại toán | Giới thiệu cơ bản về XSTK</title>
   <meta name="description" content="4 Review lại toán | Giới thiệu cơ bản về XSTK" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Review lại toán | Giới thiệu cơ bản về XSTK" />
   <meta property="og:type" content="book" />
@@ -24,6 +24,7 @@
 <meta name="author" content="Truong Hoang" />
 
 
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,15 +50,12 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,9 +134,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
 <li class="part"><span><b>Kiến thức cơ bản</b></span></li>
 <li class="chapter" data-level="4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html"><i class="fa fa-check"></i><b>4</b> Review lại toán</a><ul>
-<li class="chapter" data-level="4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#đạo-hàm-và-tích-phân"><i class="fa fa-check"></i><b>4.1</b> Đạo hàm và tích phân</a></li>
-<li class="chapter" data-level="4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#định-nghĩa-e"><i class="fa fa-check"></i><b>4.2</b> Định nghĩa <span class="math inline">\(e\)</span></a></li>
-<li class="chapter" data-level="4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tổ-hợp-chỉnh-hợp-và-hoán-vị"><i class="fa fa-check"></i><b>4.3</b> Tổ hợp, chỉnh hợp và hoán vị</a></li>
+<li class="chapter" data-level="4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hàm-số-mũ-và-hàm-số-logarit"><i class="fa fa-check"></i><b>4.1</b> Hàm số mũ và hàm số logarit</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hàm-số-mũ"><i class="fa fa-check"></i><b>4.1.1</b> Hàm số mũ</a></li>
+<li class="chapter" data-level="4.1.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hàm-số-logarit"><i class="fa fa-check"></i><b>4.1.2</b> Hàm số logarit</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#eulers-number-e"><i class="fa fa-check"></i><b>4.2</b> Euler’s number e</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tăng-trưởng-lũy-tiến"><i class="fa fa-check"></i><b>4.2.1</b> Tăng trưởng lũy tiến</a></li>
+<li class="chapter" data-level="4.2.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#định-nghĩa-e-với-dãy-số-vô-hạn"><i class="fa fa-check"></i><b>4.2.2</b> Định nghĩa e với dãy số vô hạn</a></li>
+<li class="chapter" data-level="4.2.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#đạo-hàm-của-expx"><i class="fa fa-check"></i><b>4.2.3</b> Đạo hàm của <span class="math inline">\(exp(x)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-điểm-cần-lưu-ý-về-giới-hạn"><i class="fa fa-check"></i><b>4.3</b> Một số điểm cần lưu ý về giới hạn</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#quy-tắc-lhospital"><i class="fa fa-check"></i><b>4.3.1</b> Quy tắc L’Hospital</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tổ-hợp-chỉnh-hợp-và-hoán-vị"><i class="fa fa-check"></i><b>4.4</b> Tổ hợp, chỉnh hợp và hoán vị</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
 <li class="chapter" data-level="5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#một-số-định-nghĩa-cơ-bản"><i class="fa fa-check"></i><b>5.1</b> Một số định nghĩa cơ bản</a></li>
@@ -223,17 +229,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="review-lại-toán" class="section level1">
 <h1><span class="header-section-number">4</span> Review lại toán</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="review-l-i-toán.html#cb1-1"></a><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></span>
-<span id="cb1-2"><a href="review-l-i-toán.html#cb1-2"></a><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<div id="đạo-hàm-và-tích-phân" class="section level2">
-<h2><span class="header-section-number">4.1</span> Đạo hàm và tích phân</h2>
-<p>Đạo hàm và tích phân được sử dụng để định nghĩa các công thức PDF và CDF.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div id="hàm-số-mũ-và-hàm-số-logarit" class="section level2">
+<h2><span class="header-section-number">4.1</span> Hàm số mũ và hàm số logarit</h2>
+<div id="hàm-số-mũ" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Hàm số mũ</h3>
+<p><strong>Định nghĩa</strong></p>
+<p>Hàm số <span class="math inline">\(f(x) = b^x\)</span> là một hàm số mũ nếu <span class="math inline">\(b&gt;0\)</span> và <span class="math inline">\(b \neq 1\)</span>.</p>
+<p><strong>Tính chất</strong></p>
+<ul>
+<li><p><span class="math inline">\(f(0) = 1\)</span>, hay nói cách khác, mọi đồ thị của hàm số mũ đều đi qua điểm <span class="math inline">\((0,1)\)</span>, bất kể giá trị của <span class="math inline">\(b\)</span>.</p></li>
+<li><p><span class="math inline">\(f(x) \neq 0\)</span></p></li>
+<li><p><span class="math inline">\(f(x) &gt; 0\)</span></p></li>
+<li><p>Tập xác định (domain - đầu vào) của <span class="math inline">\(f(x)\)</span>: <span class="math inline">\((-\infty, \infty)\)</span>, là các giá trị <span class="math inline">\(x\)</span> khiến hàm số xác định</p></li>
+<li><p>Khoảng biến thiên (range - đầu ra) của <span class="math inline">\(f(x)\)</span>: <span class="math inline">\((0, \infty)\)</span>, là các giá trị <span class="math inline">\(y\)</span> hợp lệ</p></li>
+<li><p>Nếu <span class="math inline">\(0&lt;b&lt;1\)</span>:</p>
+<ul>
+<li><span class="math inline">\(f(x) \to 0\)</span> khi <span class="math inline">\(x \to \infty\)</span></li>
+<li><span class="math inline">\(f(x) \to \infty\)</span> khi <span class="math inline">\(x\to-\infty\)</span></li>
+<li>Nói cách khác, <span class="math inline">\(f(x)\)</span> đồng biến (tăng) từ trái qua phải nếu <span class="math inline">\(0&lt;b&lt;1\)</span></li>
+</ul></li>
+<li><p>Nếu <span class="math inline">\(b&gt;1\)</span>:</p>
+<ul>
+<li><span class="math inline">\(f(x) \to \infty\)</span> khi <span class="math inline">\(x \to \infty\)</span></li>
+<li><span class="math inline">\(f(x) \to 0\)</span> khi <span class="math inline">\(x\to-\infty\)</span></li>
+<li>Nói cách khác, <span class="math inline">\(f(x)\)</span> nghịch biến (giảm) từ trái qua phải nếu <span class="math inline">\(b&gt;1\)</span></li>
+</ul></li>
+</ul>
+<p>Phần này cần nhớ để tính giới hạn (limit), nhất là các giới hạn có dạng vô định (indeterminate form).</p>
 </div>
-<div id="định-nghĩa-e" class="section level2">
-<h2><span class="header-section-number">4.2</span> Định nghĩa <span class="math inline">\(e\)</span></h2>
+<div id="hàm-số-logarit" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Hàm số logarit</h3>
+<p><strong>Định nghĩa</strong></p>
+<p>Hàm số mũ <span class="math inline">\(x=b^y\)</span> với <span class="math inline">\(b\neq1, b&gt;0\)</span> có dạng logarit là: <span class="math inline">\(y=log_{b}x\)</span>.</p>
+<p>Hàm số logarit tự nhiên (natural logarithm) có dạng: <span class="math inline">\(lnx=log_{e}x\)</span>, với cơ số (base) là <span class="math inline">\(e\)</span>.</p>
+<p>Hàm số logarit thập phân có sơ số là 10, có dạng: <span class="math inline">\(logx=log_{10}x\)</span>.</p>
+<p><strong>Tính chất</strong></p>
+<ul>
+<li>Tập xác định (domain - đầu vào) của <span class="math inline">\(f(x)\)</span>: <span class="math inline">\((0, \infty)\)</span>, là các giá trị <span class="math inline">\(x\)</span> khiến hàm số xác định</li>
+<li>Khoảng biến thiên (range - đầu ra) của <span class="math inline">\(f(x)\)</span>: <span class="math inline">\((-\infty, \infty)\)</span>, là các giá trị <span class="math inline">\(y\)</span> hợp lệ</li>
+<li><span class="math inline">\(log_{b}b=1\)</span></li>
+<li><span class="math inline">\(log_{b}1=0\)</span></li>
+<li><span class="math inline">\(log_{b}b^x=x\)</span></li>
+<li><span class="math inline">\(b^{log_{b}x}=x\)</span></li>
+<li>Từ 2 tính chất trên, ta có: nếu <span class="math inline">\(g(x)=log_{b}x\)</span> và <span class="math inline">\(f(x)=b^x\)</span> thì $f(x)=g^{-1}(x), hay nói cách khác, <span class="math inline">\(f(x)\)</span> là hàm ngược (inverse function) của <span class="math inline">\(g(x)\)</span></li>
+<li><span class="math inline">\(log_{b}xy=log_{b}x + log_{b}y\)</span></li>
+<li><span class="math inline">\(log_{b}(\frac{x}{y})=log_{b}x-log_{b}y\)</span></li>
+<li><span class="math inline">\(log_{b}(x^r)=rlog_{b}x\)</span></li>
+</ul>
+<p><strong>Quy tắc đổi cơ số</strong></p>
+<p>Ta có:</p>
+<p><span class="math display">\[log_{b}x=\frac{log_{a}x}{log_{a}b}\]</span></p>
+<p>Ví dụ: <span class="math inline">\(log_{b}x=\frac{lnx}{lnb}\)</span></p>
+</div>
+</div>
+<div id="eulers-number-e" class="section level2">
+<h2><span class="header-section-number">4.2</span> Euler’s number e</h2>
+<div id="tăng-trưởng-lũy-tiến" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Tăng trưởng lũy tiến</h3>
+<p>Ta có định nghĩa <span class="math inline">\(e\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+e
+&amp;=\lim_{n\to\infty} \left(1+\frac{1}{n}\right)^n \\
+&amp;=\lim_{n\to0} \left(1+\frac{1}{n}\right)^\frac{1}{n} \\
+&amp;= 2.71828...
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(e\)</span> là một hằng số toán học tương tự với <span class="math inline">\(\pi\)</span>, ở chỗ cả 2 hằng số này đều diễn giải các mối quan hệ trong tự nhiên. Đối với <span class="math inline">\(\pi\)</span>, đó là mối quan hệ giữa bán kính và chu vi đường tròn, còn với <span class="math inline">\(e\)</span>, đó là tốc độ tăng trưởng của sự vật khi chúng tăng trưởng với tốc độ tương ứng với chính quy mô của sự vật đó.</p>
+<p>Nghe thì có vẻ phức tạp, nhưng thực tế mô hình tăng trường này là mô hình tăng trưởng của rất nhiều sự vật và hiện tượng trong tự nhiên. Đối với kinh tế-tài chính, ta có tốc độ tăng trưởng lãi kép (continuous compound interest) khi đầu tư và liên tục (continuously) tái đầu tư lại các khoản lãi. Đối với các hiện tượng tự nhiên, ta có tăng trưởng dân số, hay thậm chí là tăng trưởng âm (giảm xuống) đối với nhiệt độ.</p>
+<p>Cần phân biệt exponential growth và polynomial growth. Exponential growth có thể dịch sang tiếng việt là <em>tăng trưởng lũy tiến</em>, còn polynomial growth là tăng trưởng lũy thừa. Ví dụ, dãy số [1, 2, 4, 8, 16, …] đang tăng trưởng lũy thừa theo <span class="math inline">\(x^2\)</span>.</p>
+</div>
+<div id="định-nghĩa-e-với-dãy-số-vô-hạn" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Định nghĩa e với dãy số vô hạn</h3>
+<p><span class="math inline">\(e\)</span> còn được định nghĩa là tổng của dãy số vô hạn:</p>
+<p><span class="math display">\[\begin{aligned}
+e
+&amp;=\sum_{k=0}^{\infty} \frac{1}{k!} \\
+&amp;=\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+...
+\end{aligned}
+\]</span></p>
+<p>Định nghĩa này có thể chứng minh được từ định nghĩa đầu tiên:</p>
+<p>Ta có định lý nhị thức (Binomial Theorem):</p>
+<p><span class="math display">\[(x+y)^n=\sum_{k=0}^{n}{n \choose k}x^{n-k}y^k\]</span></p>
+<p>Trong đó: <span class="math inline">\({n \choose k}=\frac{n!}{k!(n-k)!}\)</span></p>
+<p>Suy ra:</p>
+<p><span class="math display">\[\begin{aligned}
+e
+&amp;=(1+\frac{1}{n})^n \\
+&amp;=\sum_{k=0}^{n}{n \choose k}\frac{1}{n^k} \\
+&amp;=\sum_{k=0}^{n}\frac{n!}{k!(n-k)!}\frac{1}{n^k} \\
+&amp;=\sum_{k=0}^{n}\frac{1}{n^k}P(n,k)\frac{1}{k!},\ \ \ P(n,k)=n(n-1)(n-2)(n-3)...\\
+&amp;=\sum_{k=0}^{n}\frac{1}{k!}\frac{n}{n}\frac{n-1}{n}\frac{n-2}{n}\frac{n-3}{n}...\\
+\end{aligned}
+\]</span></p>
+<p>Khi <span class="math inline">\(n \to \infty\)</span>, mỗi phần tử trong tổng ở trên <span class="math inline">\(\to \frac{1}{k!}\)</span>.</p>
+<p>Vì vậy: <span class="math inline">\(e=\left(1+\frac{1}{n}\right)^n\to\sum_{k=0}^{\infty}\frac{1}{k!}\)</span></p>
+<p>Hay: <span class="math inline">\(e=\lim_{n\to\infty} \left(1+\frac{1}{n}\right)^n=\sum_{k=0}^{\infty}\frac{1}{k!}\)</span></p>
+</div>
+<div id="đạo-hàm-của-expx" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Đạo hàm của <span class="math inline">\(exp(x)\)</span></h3>
+</div>
+</div>
+<div id="một-số-điểm-cần-lưu-ý-về-giới-hạn" class="section level2">
+<h2><span class="header-section-number">4.3</span> Một số điểm cần lưu ý về giới hạn</h2>
+<div id="quy-tắc-lhospital" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Quy tắc L’Hospital</h3>
+<p>Để tính giới hạn của một số dạng giới hạn vô định (indeterminate forms) như <span class="math inline">\(0/0\)</span>, <span class="math inline">\(\pm\infty/\pm\infty\)</span>, <span class="math inline">\((0)(\pm\infty)\)</span>,</p>
+</div>
 </div>
 <div id="tổ-hợp-chỉnh-hợp-và-hoán-vị" class="section level2">
-<h2><span class="header-section-number">4.3</span> Tổ hợp, chỉnh hợp và hoán vị</h2>
+<h2><span class="header-section-number">4.4</span> Tổ hợp, chỉnh hợp và hoán vị</h2>
 
 </div>
 </div>

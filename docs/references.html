@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 References | Giới thiệu cơ bản về XSTK</title>
   <meta name="description" content="3 References | Giới thiệu cơ bản về XSTK" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 References | Giới thiệu cơ bản về XSTK" />
   <meta property="og:type" content="book" />
@@ -24,6 +24,7 @@
 <meta name="author" content="Truong Hoang" />
 
 
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,15 +50,12 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,9 +134,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
 <li class="part"><span><b>Kiến thức cơ bản</b></span></li>
 <li class="chapter" data-level="4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html"><i class="fa fa-check"></i><b>4</b> Review lại toán</a><ul>
-<li class="chapter" data-level="4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#đạo-hàm-và-tích-phân"><i class="fa fa-check"></i><b>4.1</b> Đạo hàm và tích phân</a></li>
-<li class="chapter" data-level="4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#định-nghĩa-e"><i class="fa fa-check"></i><b>4.2</b> Định nghĩa <span class="math inline">\(e\)</span></a></li>
-<li class="chapter" data-level="4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tổ-hợp-chỉnh-hợp-và-hoán-vị"><i class="fa fa-check"></i><b>4.3</b> Tổ hợp, chỉnh hợp và hoán vị</a></li>
+<li class="chapter" data-level="4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hàm-số-mũ-và-hàm-số-logarit"><i class="fa fa-check"></i><b>4.1</b> Hàm số mũ và hàm số logarit</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hàm-số-mũ"><i class="fa fa-check"></i><b>4.1.1</b> Hàm số mũ</a></li>
+<li class="chapter" data-level="4.1.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hàm-số-logarit"><i class="fa fa-check"></i><b>4.1.2</b> Hàm số logarit</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#eulers-number-e"><i class="fa fa-check"></i><b>4.2</b> Euler’s number e</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tăng-trưởng-lũy-tiến"><i class="fa fa-check"></i><b>4.2.1</b> Tăng trưởng lũy tiến</a></li>
+<li class="chapter" data-level="4.2.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#định-nghĩa-e-với-dãy-số-vô-hạn"><i class="fa fa-check"></i><b>4.2.2</b> Định nghĩa e với dãy số vô hạn</a></li>
+<li class="chapter" data-level="4.2.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#đạo-hàm-của-expx"><i class="fa fa-check"></i><b>4.2.3</b> Đạo hàm của <span class="math inline">\(exp(x)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-điểm-cần-lưu-ý-về-giới-hạn"><i class="fa fa-check"></i><b>4.3</b> Một số điểm cần lưu ý về giới hạn</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#quy-tắc-lhospital"><i class="fa fa-check"></i><b>4.3.1</b> Quy tắc L’Hospital</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#tổ-hợp-chỉnh-hợp-và-hoán-vị"><i class="fa fa-check"></i><b>4.4</b> Tổ hợp, chỉnh hợp và hoán vị</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
 <li class="chapter" data-level="5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#một-số-định-nghĩa-cơ-bản"><i class="fa fa-check"></i><b>5.1</b> Một số định nghĩa cơ bản</a></li>
