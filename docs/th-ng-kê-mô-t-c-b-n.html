@@ -52,6 +52,8 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -151,7 +153,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#quy-tắc-lhospital"><i class="fa fa-check"></i><b>4.3.1</b> Quy tắc L’Hospital</a></li>
 <li class="chapter" data-level="4.3.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chứng-minh-định-nghĩa-ex-từ-định-nghĩa-của-e"><i class="fa fa-check"></i><b>4.3.2</b> Chứng minh định nghĩa <span class="math inline">\(e^x\)</span> từ định nghĩa của <span class="math inline">\(e\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a></li>
+<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hoán-vị-permutation"><i class="fa fa-check"></i><b>4.4.1</b> Hoán vị (Permutation)</a></li>
+<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#giai-thừa"><i class="fa fa-check"></i><b>4.4.2</b> Giai thừa</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
 <li class="chapter" data-level="5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#một-số-định-nghĩa-cơ-bản"><i class="fa fa-check"></i><b>5.1</b> Một số định nghĩa cơ bản</a></li>
@@ -242,21 +247,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb17-2"></a><span class="kw">install.packages</span>(<span class="st">&#39;mosaicData&#39;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb18-1"></a><span class="kw">data</span>(TenMileRace, <span class="dt">package=</span><span class="st">&#39;mosaicData&#39;</span>)</span>
 <span id="cb18-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb18-2"></a><span class="kw">summary</span>(TenMileRace)</span></code></pre></div>
-<pre><code>##      state           time            net       
-##  VA     :3689   Min.   : 2816   Min.   : 2814  
-##  MD     :2166   1st Qu.: 5125   1st Qu.: 4950  
-##  DC     :1642   Median : 5806   Median : 5555  
-##  PA     : 273   Mean   : 5813   Mean   : 5599  
-##  NY     : 211   3rd Qu.: 6455   3rd Qu.: 6169  
-##  NJ     :  92   Max.   :10603   Max.   :10536  
-##  (Other): 563                                  
-##       age        sex     
-##  Min.   :10.00   F:4325  
-##  1st Qu.:28.00   M:4311  
-##  Median :35.00           
-##  Mean   :36.86           
-##  3rd Qu.:44.00           
-##  Max.   :87.00           
+<pre><code>##      state           time            net             age       
+##  VA     :3689   Min.   : 2816   Min.   : 2814   Min.   :10.00  
+##  MD     :2166   1st Qu.: 5125   1st Qu.: 4950   1st Qu.:28.00  
+##  DC     :1642   Median : 5806   Median : 5555   Median :35.00  
+##  PA     : 273   Mean   : 5813   Mean   : 5599   Mean   :36.86  
+##  NY     : 211   3rd Qu.: 6455   3rd Qu.: 6169   3rd Qu.:44.00  
+##  NJ     :  92   Max.   :10603   Max.   :10536   Max.   :87.00  
+##  (Other): 563                                                  
+##  sex     
+##  F:4325  
+##  M:4311  
+##          
+##          
+##          
+##          
 ## </code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb20-1"></a><span class="kw">head</span>(TenMileRace)</span></code></pre></div>
 <pre><code>##   state time  net age sex
@@ -296,14 +301,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 1 F      4325
 ## 2 M      4311</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb25-1"></a><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>sex)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>Có thể thấy 2 cột có chiều cao tương đương nhau do số observation của mỗi giá trị factor gần bằng nhau (4325 vs. 4311). Như vậy, dữ liệu về người chạy đua trong data rất cân bằng về giới tính.</p>
 </div>
 <div id="một-biến-liên-tục-univariate" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Một biến liên tục (univariate)</h3>
 <p>Đồ thị histogram nhìn khá giống với đồ thị bar chart, nhưng vì được sử dụng với biến liên tục nên các cột sẽ chạm vào nhau.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb26-1"></a><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>net)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>Chiều cao của mỗi cột trong đồ thị histogram thể hiện tần suất kết quả chạy theo các khoảng (interval), và trong R gọi là các bin (ngăn). Mặc định của hàm <code>geom_histogram</code> là <code>bins=30</code>, tức là mỗi khoảng cách nhau 30 đơn vị.</p>
 <p>Ta có thể diễn giải lại biểu đồ trên dưới dạng bảng:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb27-1"></a>TenMileRace <span class="op">%&gt;%</span></span>
@@ -333,25 +338,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Chúng ta thường phải so sánh mức độ phản hồi (dữ liệu liên tục) của hai biến rời rạc hoặc nhiều hơn. Biểu đồ boxplot thường để sử dụng để làm việc này. Mỗi observation gắn với một giá trị liên tục và 1 giá trị rời rạc</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb30-1"></a><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>sex, <span class="dt">y=</span>net)) <span class="op">+</span></span>
 <span id="cb30-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb30-2"></a><span class="st">    </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Tron biểu đồ trên, phần rìa (hinge) của hộp được định nghĩa là các khoảng phần tư thứ nhất và thứ 3 (1st quartile, tương đương với 25% quantile, và 3rd quartile, đương tương với 75% quantile). Nói cách khác, 25% dữ liệu nằm dưới hộp, 50% nằm trong hộp, và phần 25% cuối cùng nằm phía trên hộp. Các điểm bên ngoài hộp là các outliers (điểm ngoại lai). Nếu định nghĩa Inter-Quartile Range (IQR) là chiều dài của hộp thì tất các quan sát lớn hơn 1.5*IQR tính từ hộp được coi như là 1 outlier.</p>
 <p>Ngoài cách trên, chúng ta có thể dùng 2 đồ thị histogram đặt cạnh nhau để so sánh:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb31-1"></a><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>net)) <span class="op">+</span></span>
 <span id="cb31-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb31-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></span>
 <span id="cb31-3"><a href="th-ng-kê-mô-t-c-b-n.html#cb31-3"></a><span class="st">  </span><span class="kw">facet_grid</span>( . <span class="op">~</span><span class="st"> </span>sex )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Trong trường hợp này, đồ thị đặt theo chiều dọc sẽ dễ so sánh hơn:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb32-1"></a><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>net)) <span class="op">+</span></span>
 <span id="cb32-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb32-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></span>
 <span id="cb32-3"><a href="th-ng-kê-mô-t-c-b-n.html#cb32-3"></a><span class="st">  </span><span class="kw">facet_grid</span>( sex <span class="op">~</span><span class="st"> </span>. ) <span class="co"># thay đổi chiều facet</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 </div>
 <div id="hai-biến-liên-tục-bivariate" class="section level3">
 <h3><span class="header-section-number">6.1.4</span> Hai biến liên tục (bivariate)</h3>
 <p>Để biểu diễn mối quan hệ của 2 biến liên tục, ta dùng biểu đô dạng điểm:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb33-1"></a><span class="kw">ggplot</span>(TenMileRace, <span class="kw">aes</span>(<span class="dt">x=</span>age, <span class="dt">y=</span>net, <span class="dt">color=</span>sex)) <span class="op">+</span></span>
 <span id="cb33-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb33-2"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 </div>
 <div id="xu-hướng-trung-tâm" class="section level2">
@@ -528,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 </div>
 </div>
 <div id="tiếp-tục-với-biểu-đồ" class="section level2">

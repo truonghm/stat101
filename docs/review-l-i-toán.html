@@ -52,6 +52,8 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -151,7 +153,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#quy-tắc-lhospital"><i class="fa fa-check"></i><b>4.3.1</b> Quy tắc L’Hospital</a></li>
 <li class="chapter" data-level="4.3.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chứng-minh-định-nghĩa-ex-từ-định-nghĩa-của-e"><i class="fa fa-check"></i><b>4.3.2</b> Chứng minh định nghĩa <span class="math inline">\(e^x\)</span> từ định nghĩa của <span class="math inline">\(e\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a></li>
+<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hoán-vị-permutation"><i class="fa fa-check"></i><b>4.4.1</b> Hoán vị (Permutation)</a></li>
+<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#giai-thừa"><i class="fa fa-check"></i><b>4.4.2</b> Giai thừa</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
 <li class="chapter" data-level="5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#một-số-định-nghĩa-cơ-bản"><i class="fa fa-check"></i><b>5.1</b> Một số định nghĩa cơ bản</a></li>
@@ -317,7 +322,7 @@ e
 <p>Định nghĩa này có thể chứng minh được từ định nghĩa đầu tiên:</p>
 <p>Ta có định lý nhị thức (Binomial Theorem):</p>
 <p><span class="math display">\[(x+y)^n=\sum_{k=0}^{n}{n \choose k}x^{n-k}y^k\]</span></p>
-<p>Trong đó: <span class="math inline">\({n \choose k}=\frac{n!}{k!(n-k)!}\)</span></p>
+<p>Trong đó: <span class="math inline">\({n \choose k}=\frac{n!}{k!(n-k)!}\)</span> là hệ số nhị thức.</p>
 <p>Suy ra:</p>
 <p><span class="math display">\[\begin{aligned}
 e
@@ -383,8 +388,131 @@ x
 </div>
 <div id="toán-học-tổ-hợp" class="section level2">
 <h2><span class="header-section-number">4.4</span> Toán học tổ hợp</h2>
-<p>Toán học tổ hợp (Combinatorics)</p>
+<p>Ngoài việc bản chất toán học tổ hợp (Combinatorics) đã khó, mọi thứ còn trở nên khó hơn vì mảng toán này có rất nhiều kí hiệu và thuật ngữ, cũng như sự khác biệt trong thuật ngữ của tiếng Anh và tiếng Việt.</p>
+<div id="hoán-vị-permutation" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Hoán vị (Permutation)</h3>
+<p><strong>Định nghĩa 1</strong></p>
+<p>Cho <span class="math inline">\(A\)</span> là một tập hợp hữu hạn có <span class="math inline">\(n\)</span> phần tử, <span class="math inline">\(n\geqslant1\)</span>. Hoán vị của <span class="math inline">\(A\)</span> là một cách sắp xếp thứ tự <span class="math inline">\(n\)</span> phần tử của <span class="math inline">\(A\)</span>. Nói cách khác, một hoán vị của <span class="math inline">\(A\)</span> là ánh xạ 1-1 (one-to-one mapping) của <span class="math inline">\(A\)</span> lên chính nó.</p>
+<p>Wikipedia định nghĩa permutation <a href="https://en.wikipedia.org/wiki/Permutation#Definition">như sau</a>: “Permutations can be defined as bijections from a set S onto itself.”</p>
+<p>Để miêu tả cụ thể một hoán vị của tập hợp <span class="math inline">\(A\)</span>, trước tiên ta liệt kê các phần tử của <span class="math inline">\(A\)</span>, cũng như vị trí mà mỗi phần tử được “chuyển đến” (qua ánh xạ). Điều kiện của ánh xạ là 1-1 (one-to-one), nghĩa là không tồn tại hai phần tử của <span class="math inline">\(A\)</span> được chuyển đến cùng một phần tử khác của <span class="math inline">\(A\)</span> thông qua ánh xạ.</p>
+<p>Pphép hoán vị cũng được định nghĩa là một cách <strong>sắp xếp thứ tự</strong> <span class="math inline">\(n\)</span> phần tử của <span class="math inline">\(A\)</span>. Ví dụ, nếu có tập hợp <span class="math inline">\(A=\{1,2,3,4\}\)</span> là một dãy số có thứ tự, ta thể hiện việc sắp xếp lại thứ tự như sau:</p>
+<p><span class="math display">\[\sigma={1\ \ 2\ \ 3\ \ 4\choose 2\ \ 1\ \ 4\ \ 3}\]</span>
+Khi cần thực hiện nhiều phép hoán vị với một tập hợp <span class="math inline">\(A\)</span> cố định có thứ tự, ta chỉ cần viết ra dòng dưới và hiểu rằng đây là một cách sắp xếp lại của <span class="math inline">\(A\)</span>. Ví dụ, với <span class="math inline">\(A=\{1,2,3\}\)</span>, các cách sắp xếp có thể xảy ra là:</p>
+<p><span class="math display">\[123,132,213,231,312,321\]</span></p>
+<p>Để đếm số hoán vị có thể xảy ra của một tập hợp <span class="math inline">\(A=\{a_1, a_2, a_3, ...,a_n\}\)</span> với <span class="math inline">\(n\)</span> phần tử, ta có thể suy luận ra với logic là:</p>
+<ul>
+<li>Có <span class="math inline">\(n\)</span> cách sắp xếp phần tử đầu tiên, <span class="math inline">\(a_1\)</span>,</li>
+<li>Có <span class="math inline">\(n-1\)</span> cách sắp xếp <span class="math inline">\(a_2\)</span>; ta lấy <span class="math inline">\(n-1\)</span> vì chỉ còn <span class="math inline">\(n-1\)</span> chỗ để chuyển <span class="math inline">\(a_2\)</span> trong hoán vị của <span class="math inline">\(A\)</span>,</li>
+<li>Tương tự, có <span class="math inline">\(n-2\)</span> cách sắp xếp <span class="math inline">\(a_3\)</span>, và cứ tiếp tục như vậy đến hết.</li>
+</ul>
+<p>Từ đó ta tính ra được bảng sau:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="review-l-i-toán.html#cb2-1"></a><span class="kw">data.frame</span>(<span class="st">&quot;n&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
+<span id="cb2-2"><a href="review-l-i-toán.html#cb2-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="st">&quot;n!&quot;</span>=<span class="kw">factorial</span>(n)) <span class="op">%&gt;%</span></span>
+<span id="cb2-3"><a href="review-l-i-toán.html#cb2-3"></a><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;Số phần tử&quot;</span>=n,</span>
+<span id="cb2-4"><a href="review-l-i-toán.html#cb2-4"></a>         <span class="st">&quot;Số cách sắp xếp&quot;</span>=<span class="st">&quot;n!&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb2-5"><a href="review-l-i-toán.html#cb2-5"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
+<span id="cb2-6"><a href="review-l-i-toán.html#cb2-6"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F)</span></code></pre></div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Số phần tử
+</th>
+<th style="text-align:right;">
+Số cách sắp xếp
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+120
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+720
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+5040
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+40320
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+362880
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+3628800
+</td>
+</tr>
+</tbody>
+</table>
+<p>Từ đó đã có công thức tính số hoán vị của <span class="math inline">\(A\)</span> với <span class="math inline">\(n\)</span> phần tử là:
+<span class="math display">\[P_n=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1\]</span></p>
+</div>
+<div id="giai-thừa" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Giai thừa</h3>
 
+</div>
 </div>
 </div>
             </section>

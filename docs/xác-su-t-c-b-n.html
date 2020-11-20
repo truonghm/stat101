@@ -52,6 +52,8 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -151,7 +153,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#quy-tắc-lhospital"><i class="fa fa-check"></i><b>4.3.1</b> Quy tắc L’Hospital</a></li>
 <li class="chapter" data-level="4.3.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chứng-minh-định-nghĩa-ex-từ-định-nghĩa-của-e"><i class="fa fa-check"></i><b>4.3.2</b> Chứng minh định nghĩa <span class="math inline">\(e^x\)</span> từ định nghĩa của <span class="math inline">\(e\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a></li>
+<li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hoán-vị-permutation"><i class="fa fa-check"></i><b>4.4.1</b> Hoán vị (Permutation)</a></li>
+<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#giai-thừa"><i class="fa fa-check"></i><b>4.4.2</b> Giai thừa</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
 <li class="chapter" data-level="5.1" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html#một-số-định-nghĩa-cơ-bản"><i class="fa fa-check"></i><b>5.1</b> Một số định nghĩa cơ bản</a></li>
@@ -234,9 +239,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="xác-suất-cơ-bản" class="section level1">
 <h1><span class="header-section-number">5</span> Xác suất cơ bản</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="xác-su-t-c-b-n.html#cb2-1"></a><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></span>
-<span id="cb2-2"><a href="xác-su-t-c-b-n.html#cb2-2"></a><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-3"><a href="xác-su-t-c-b-n.html#cb2-3"></a><span class="kw">library</span>(venn)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="xác-su-t-c-b-n.html#cb3-1"></a><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></span>
+<span id="cb3-2"><a href="xác-su-t-c-b-n.html#cb3-2"></a><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb3-3"><a href="xác-su-t-c-b-n.html#cb3-3"></a><span class="kw">library</span>(venn)</span></code></pre></div>
 <div id="một-số-định-nghĩa-cơ-bản" class="section level2">
 <h2><span class="header-section-number">5.1</span> Một số định nghĩa cơ bản</h2>
 <ol style="list-style-type: decimal">
@@ -252,14 +257,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.2</span> Lý thuyết tập hợp</h2>
 <div id="biểu-đồ-venn" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Biểu đồ Venn</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="xác-su-t-c-b-n.html#cb3-1"></a><span class="kw">library</span>(VennDiagram, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="xác-su-t-c-b-n.html#cb4-1"></a><span class="kw">library</span>(VennDiagram, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p>Đặt <span class="math inline">\(S\)</span> là tập hợp tất cả các outcome của thí nghiệm ngẫu nhiên (tức là sample space). Trong đó, chúng ta quan tâm đến hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span>.</p>
 <p>Sử dụng biểu đồ Venn để thể hiện các sự kiện, với thí nghiệm là lăn một lần xúc xắc có 6 mặt, tức là <span class="math inline">\(S = \{1,2,3,4,5,6\}\)</span>, với:</p>
 <ul>
 <li><p><span class="math inline">\(A\)</span> là “lăn xúc xắc ra số lẻ”</p></li>
 <li><p><span class="math inline">\(B\)</span> là “lăn xúc xắc ra lớn hơn 5”</p></li>
 </ul>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 </div>
 <div id="các-phép-toánquan-hệ-tập-hợp" class="section level2">
@@ -267,12 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="phép-hợp-union" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> Phép hợp (Union)</h3>
 <p>Phép hợp thể hiện hoặc A và B sẽ sảy ra (quan hệ <em>either or</em>), được ký hiệu là <span class="math inline">\(A\cup B\)</span>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="phép-giao-intersection" class="section level3">
 <h3><span class="header-section-number">5.3.2</span> Phép giao (intersection)</h3>
 <p>Phép giao thể hiện sự kiện cả A và B <strong>cùng</strong> xảy ra (<em>both</em>), ký hiệu là <span class="math inline">\(A\cap B\)</span>.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="phần-bù-complement" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> Phần bù (Complement)</h3>
@@ -281,13 +286,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Phần bù tuyệt đối (absolute complement)</p></li>
 </ul>
 <p>Phần bù tuyệt đối của tập hợp A để thể hiện sự kiện “A không xảy ra”, tương ứng với tất cả các outcome không thuộc A, có thể nằm trong một không gian mẫu toàn thể khác.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="loại-trừ-lẫn-nhau-mutually-exclusive" class="section level3">
 <h3><span class="header-section-number">5.3.4</span> Loại trừ lẫn nhau (Mutually exclusive)</h3>
 <p>Quan hệ loại trừ lẫn nhau (hay còn gọi là xung khắc) - <em>mutually exclusiveness/disjoint</em> - ký hiệu là <span class="math inline">\(\bar{A}\)</span> hoặc <span class="math inline">\(A^{C}\)</span>.</p>
 <p><strong>Định nghĩa 1</strong>. Hai sự kiện A và B được gọi là loại trừ lẫn nhau nếu sự xảy ra của sự kiện này ngăn việc xảy ra của sự kiện kia. Ví dụ: Trong 1 lần đổ xúc xắc, số 2 và số 5 không thể cùng xảy ra.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 </div>
 <div id="quy-luật-xác-suất" class="section level2">
@@ -299,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span style="text-decoration: underline">Quy luật 1.</span> <em>Với bất kỳ sự kiện <span class="math inline">\(A\)</span>, xác suất <span class="math inline">\(P(A)\)</span> luôn thỏa mãn <span class="math inline">\(0\le P(A) \le 1\)</span> vì tỷ lệ luôn nằm trong khoảng <span class="math inline">\([0,1]\)</span>.</em></p>
 <p><span style="text-decoration: underline">Quy luật 2.</span> <em>Nếu hai sự kiện loại trừ lẫn nhau, <span class="math inline">\(PA \cup B = P(A) + P(B)\)</span>.</em></p>
 <p>Vì S là tập hợp tất cả các sự kiện có thể xảy ra, diện tích của hình chữ nhật bên ngoài biểu đồ sẽ là 1 và xác suất của sự kiện A được thể hiện bằng diện tích hình tròn A. Khi A và B loại trừ lẫn nhau, A và B là hai hình tròn tách biệt.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="xác-suất-có-điều-kiện-conditional-probability" class="section level3">
 <h3><span class="header-section-number">5.4.2</span> Xác suất có điều kiện (conditional probability)</h3>
@@ -527,7 +532,7 @@ P(A)P(B)\;\; &amp; \textrm{ nếu A, B độc lập}
 <h4><span class="header-section-number">5.5.1.1</span> Giá trị kỳ vọng</h4>
 <p><strong>Ví dụ</strong>: Xét biến NNRR <span class="math inline">\(S\)</span> là tổng kết quả của sự kiện thả 2 xúc xắc.</p>
 <p>Ta có biểu đồ thể hiện xác suất của các giá trị mà <span class="math inline">\(S\)</span> <strong>CÓ THỂ NHẬN</strong>:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Xác suất thường được áp dụng để đưa ra các phỏng đoán về tương lai, và một khái niệm cơ bản được xử dụng là giá trị kỳ vọng (expected value)</p>
 <p>Trong trường hợp tung xúc xắc, ta có giá trị kỳ vọng <span class="math inline">\(E[S]\)</span> chính là mean của tập hợp <span class="math inline">\(D\)</span> gồm tất cả các giá trị mà <span class="math inline">\(S\)</span> có thể nhận.</p>
 <p>Ta biết trước được mọi giá trị mà <span class="math inline">\(S\)</span> có thể nhận vì tập hợp này không lớn và dễ dàng suy ra được. Trong thực tế, việc có toàn bộ population là hiếm khi xảy ra, nên ta thường lấy một sample rất lớn và tìm giá trị kỳ vọng bằng cách tính <em>sample mean</em>, hay nói cách khác là <em>weighted average</em> của các giá trị có thể nhận được, với trọng số là xác suất (hay frequency) của từng giá trị.</p>
@@ -540,13 +545,13 @@ P(A)P(B)\;\; &amp; \textrm{ nếu A, B độc lập}
 &amp;=  7
 \end{aligned}\]</span></p>
 <p>Sau khi đã biết <span class="math inline">\(E[S]\)</span> trong ví dụ trên, ta tiếp tục thí nghiệm bằng cách tung 2 xúc sắc 100 lần:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="xác-su-t-c-b-n.html#cb4-1"></a>x &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>, <span class="dt">by=</span><span class="dv">2</span>),</span>
-<span id="cb4-2"><a href="xác-su-t-c-b-n.html#cb4-2"></a>            <span class="dt">size =</span> <span class="dv">100</span>,</span>
-<span id="cb4-3"><a href="xác-su-t-c-b-n.html#cb4-3"></a>            <span class="dt">prob =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, <span class="dv">6</span>),</span>
-<span id="cb4-4"><a href="xác-su-t-c-b-n.html#cb4-4"></a>            <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb4-5"><a href="xác-su-t-c-b-n.html#cb4-5"></a></span>
-<span id="cb4-6"><a href="xác-su-t-c-b-n.html#cb4-6"></a><span class="kw">mean</span>(x)</span></code></pre></div>
-<pre><code>## [1] 7.12</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="xác-su-t-c-b-n.html#cb5-1"></a>x &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>, <span class="dt">by=</span><span class="dv">2</span>),</span>
+<span id="cb5-2"><a href="xác-su-t-c-b-n.html#cb5-2"></a>            <span class="dt">size =</span> <span class="dv">100</span>,</span>
+<span id="cb5-3"><a href="xác-su-t-c-b-n.html#cb5-3"></a>            <span class="dt">prob =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, <span class="dv">6</span>),</span>
+<span id="cb5-4"><a href="xác-su-t-c-b-n.html#cb5-4"></a>            <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb5-5"><a href="xác-su-t-c-b-n.html#cb5-5"></a></span>
+<span id="cb5-6"><a href="xác-su-t-c-b-n.html#cb5-6"></a><span class="kw">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 6.82</code></pre>
 <p>Có thể thấy trong thí nghiệm này, giá trị trung bình không bằng với <span class="math inline">\(E[S]\)</span>. Nếu lặp lại thí nghiệm này với số lần <span class="math inline">\(n\)</span> lớn hơn thì khi <span class="math inline">\(n\)</span> tiến tới vô hạn, giá trị trung bình sẽ tiến tới giá trị kỳ vọng.</p>
 </div>
 <div id="phương-sai" class="section level4">
@@ -753,14 +758,14 @@ P(A)P(B)\;\; &amp; \textrm{ nếu A, B độc lập}
 <li>Tồn tại một biến ngẫu nhiên <span class="math inline">\(S\)</span> là số lần thành công trong <span class="math inline">\(n\)</span> phép thử</li>
 </ol>
 <p>Trong R, ta sử dụng hàm <code>dbinom</code> để mô phỏng lại phân phối nhị thức:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="xác-su-t-c-b-n.html#cb6-1"></a>dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-2"><a href="xác-su-t-c-b-n.html#cb6-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">xs=</span><span class="kw">dbinom</span>(x,<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">prob=</span><span class="fl">0.8</span>))</span>
-<span id="cb6-3"><a href="xác-su-t-c-b-n.html#cb6-3"></a><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>x)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb6-4"><a href="xác-su-t-c-b-n.html#cb6-4"></a><span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y=</span>xs)) <span class="op">+</span></span>
-<span id="cb6-5"><a href="xác-su-t-c-b-n.html#cb6-5"></a><span class="st">    </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span>xs, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></span>
-<span id="cb6-6"><a href="xác-su-t-c-b-n.html#cb6-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;phân phối nhị phân: n=3, p=0.8&#39;</span>) <span class="op">+</span></span>
-<span id="cb6-7"><a href="xác-su-t-c-b-n.html#cb6-7"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="xác-su-t-c-b-n.html#cb7-1"></a>dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-2"><a href="xác-su-t-c-b-n.html#cb7-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">xs=</span><span class="kw">dbinom</span>(x,<span class="dt">size=</span><span class="dv">3</span>,<span class="dt">prob=</span><span class="fl">0.8</span>))</span>
+<span id="cb7-3"><a href="xác-su-t-c-b-n.html#cb7-3"></a><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>x)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="xác-su-t-c-b-n.html#cb7-4"></a><span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y=</span>xs)) <span class="op">+</span></span>
+<span id="cb7-5"><a href="xác-su-t-c-b-n.html#cb7-5"></a><span class="st">    </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span>xs, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></span>
+<span id="cb7-6"><a href="xác-su-t-c-b-n.html#cb7-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;phân phối nhị phân: n=3, p=0.8&#39;</span>) <span class="op">+</span></span>
+<span id="cb7-7"><a href="xác-su-t-c-b-n.html#cb7-7"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Trong đồ thị trên, để tính chiều cao các đường tần suất, ta sử dụng hàm pmf tại điểm tương ứng.</p>
 <p><span class="math display">\[\begin{aligned} P(S=2) 
 &amp;= {3 \choose 2} (0.8)^2(1-0.8)^{3-2} \\
@@ -863,23 +868,23 @@ E[X] &amp;= \vdots \\
 </ol>
 <p><span class="math display">\[P(Y\ge5)=1-P(Y\le4) =1-0.9163 =0.0837\]</span></p>
 <p>Các phép tính trên có thể thực hiện trên R với 4 nhóm hàm tương tự như PP nhị thức:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="xác-su-t-c-b-n.html#cb7-1"></a>dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">NumCaught =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">10</span> ) <span class="op">%&gt;%</span></span>
-<span id="cb7-2"><a href="xác-su-t-c-b-n.html#cb7-2"></a><span class="st">  </span><span class="kw">mutate</span>( <span class="dt">probability =</span> <span class="kw">dpois</span>( NumCaught, <span class="dt">lambda=</span><span class="fl">2.3</span> ) )</span>
-<span id="cb7-3"><a href="xác-su-t-c-b-n.html#cb7-3"></a><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>NumCaught)) <span class="op">+</span></span>
-<span id="cb7-4"><a href="xác-su-t-c-b-n.html#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>( <span class="kw">aes</span>(<span class="dt">y=</span>probability) ) <span class="op">+</span></span>
-<span id="cb7-5"><a href="xác-su-t-c-b-n.html#cb7-5"></a><span class="st">  </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>( <span class="dt">ymax=</span>probability, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></span>
-<span id="cb7-6"><a href="xác-su-t-c-b-n.html#cb7-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Poisson Distribution with  &#39;</span>, lambda <span class="op">==</span><span class="st"> </span><span class="fl">2.3</span>))) <span class="op">+</span></span>
-<span id="cb7-7"><a href="xác-su-t-c-b-n.html#cb7-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Number Caught&#39;</span>) <span class="op">+</span></span>
-<span id="cb7-8"><a href="xác-su-t-c-b-n.html#cb7-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()            </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="xác-su-t-c-b-n.html#cb8-1"></a><span class="co"># P( Y = 4)</span></span>
-<span id="cb8-2"><a href="xác-su-t-c-b-n.html#cb8-2"></a><span class="kw">dpois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="xác-su-t-c-b-n.html#cb8-1"></a>dist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">NumCaught =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">10</span> ) <span class="op">%&gt;%</span></span>
+<span id="cb8-2"><a href="xác-su-t-c-b-n.html#cb8-2"></a><span class="st">  </span><span class="kw">mutate</span>( <span class="dt">probability =</span> <span class="kw">dpois</span>( NumCaught, <span class="dt">lambda=</span><span class="fl">2.3</span> ) )</span>
+<span id="cb8-3"><a href="xác-su-t-c-b-n.html#cb8-3"></a><span class="kw">ggplot</span>(dist, <span class="kw">aes</span>(<span class="dt">x=</span>NumCaught)) <span class="op">+</span></span>
+<span id="cb8-4"><a href="xác-su-t-c-b-n.html#cb8-4"></a><span class="st">  </span><span class="kw">geom_point</span>( <span class="kw">aes</span>(<span class="dt">y=</span>probability) ) <span class="op">+</span></span>
+<span id="cb8-5"><a href="xác-su-t-c-b-n.html#cb8-5"></a><span class="st">  </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>( <span class="dt">ymax=</span>probability, <span class="dt">ymin=</span><span class="dv">0</span>)) <span class="op">+</span></span>
+<span id="cb8-6"><a href="xác-su-t-c-b-n.html#cb8-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Poisson Distribution with  &#39;</span>, lambda <span class="op">==</span><span class="st"> </span><span class="fl">2.3</span>))) <span class="op">+</span></span>
+<span id="cb8-7"><a href="xác-su-t-c-b-n.html#cb8-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Number Caught&#39;</span>) <span class="op">+</span></span>
+<span id="cb8-8"><a href="xác-su-t-c-b-n.html#cb8-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()            </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="xác-su-t-c-b-n.html#cb9-1"></a><span class="co"># P( Y = 4)</span></span>
+<span id="cb9-2"><a href="xác-su-t-c-b-n.html#cb9-2"></a><span class="kw">dpois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1169022</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="xác-su-t-c-b-n.html#cb10-1"></a><span class="co"># P( Y &lt;= 4)</span></span>
-<span id="cb10-2"><a href="xác-su-t-c-b-n.html#cb10-2"></a><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="xác-su-t-c-b-n.html#cb11-1"></a><span class="co"># P( Y &lt;= 4)</span></span>
+<span id="cb11-2"><a href="xác-su-t-c-b-n.html#cb11-2"></a><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="dt">lambda=</span><span class="fl">2.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9162493</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="xác-su-t-c-b-n.html#cb12-1"></a><span class="co"># 1-P(Y &lt;= 4)  ==  P( Y &gt; 4)  ==  P( Y &gt;= 5)</span></span>
-<span id="cb12-2"><a href="xác-su-t-c-b-n.html#cb12-2"></a><span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="fl">2.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="xác-su-t-c-b-n.html#cb13-1"></a><span class="co"># 1-P(Y &lt;= 4)  ==  P( Y &gt; 4)  ==  P( Y &gt;= 5)</span></span>
+<span id="cb13-2"><a href="xác-su-t-c-b-n.html#cb13-2"></a><span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>, <span class="fl">2.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.08375072</code></pre>
 </div>
 </div>
@@ -896,7 +901,7 @@ E[X] &amp;= \vdots \\
 <p>Với các PP liên tục, ta sử dụng PDF (probability density function) thay vì PMF (probability mass function - hàm khối xác suất).</p>
 <p>PMF là hàm để tính xác suất của một biến ngẫu nhiên <span class="math inline">\(X\)</span> nhận giá trị <span class="math inline">\(x\)</span>, tức là <span class="math inline">\(P(X=x)\)</span>. Đồng thời, tổng xác suất của mọi <span class="math inline">\(x\)</span> mà <span class="math inline">\(X\)</span> có thể nhận bằng 1.</p>
 <p>Khi biểu diễn trên đồ thị, ta thấy xác suất của mỗi tương ứng với mỗi giá trị <span class="math inline">\(x\)</span> của biến NNRR <span class="math inline">\(X\)</span> chính là chiều cao của của các bar.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="xác-su-t-c-b-n.html#cb14-1"></a><span class="co">#insert a graph here to demonstrate!!!</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="xác-su-t-c-b-n.html#cb15-1"></a><span class="co">#insert a graph here to demonstrate!!!</span></span></code></pre></div>
 <p>Tuy nhiên, với biến NNLT, do không thể tìm được xác suất của 1 giá trị <span class="math inline">\(x\)</span> cụ thể, ta sẽ quan tâm tới phần <strong>diện tích</strong> bên dưới đồ thị, cụ thể là ở giữa một khoảng 2 giá trị <span class="math inline">\([a,b]\)</span> nào đó, tương đương với xác suất mà biến <span class="math inline">\(X\)</span> nhận giá trị trong khoảng này.</p>
 <p>Cũng cần lưu ý rằng, xác suất mà biến <span class="math inline">\(X\)</span> nhận giá trị trong khoảng <span class="math inline">\([a,b]\)</span> không sử dụng hàm PDF để tính. Hàm PDF chỉ dùng để biểu diễn <em>mật độ xác suất</em>.</p>
 </div>
@@ -942,7 +947,7 @@ E[X] &amp;= \vdots \\
 </div>
 <div id="normal-distribution" class="section level3">
 <h3><span class="header-section-number">5.8.3</span> Normal distribution</h3>
-<pre><code>d</code></pre>
+<p>d</p>
 
 </div>
 </div>

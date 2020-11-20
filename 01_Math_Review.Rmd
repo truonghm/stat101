@@ -211,13 +211,38 @@ Ngoài việc bản chất toán học tổ hợp (Combinatorics) đã khó, m�
 
 __Định nghĩa 1__
 
-Cho $A$ là một tập hợp hữu hạn có $n$ phần tử, $n\geqslant1$. Hoán vị của $A$ là một cách sắp xếp tự $n$ phần tử của $A$. Nói cách khác, một hoán vị của $A$ là ánh xạ 1-1 (one-to-one mapping) của $A$ lên chính nó.
+Cho $A$ là một tập hợp hữu hạn có $n$ phần tử, $n\geqslant1$. Hoán vị của $A$ là một cách sắp xếp thứ tự $n$ phần tử của $A$. Nói cách khác, một hoán vị của $A$ là ánh xạ 1-1 (one-to-one mapping) của $A$ lên chính nó.
 
 Wikipedia định nghĩa permutation [như sau](https://en.wikipedia.org/wiki/Permutation#Definition): "Permutations can be defined as bijections from a set S onto itself."
 
-Để miêu tả cụ thể một hoán vị của tập hợp $A$, trước tiên ta liệt kê các phần tử của $A$, cũng như vị trí mà mỗi phần tử được "chuyển đến" (qua ánh xạ). Ví dụ, nếu $A={a,b,c}$ thì một hoán vị $\sigma$ có thể xảy ra là:
+Để miêu tả cụ thể một hoán vị của tập hợp $A$, trước tiên ta liệt kê các phần tử của $A$, cũng như vị trí mà mỗi phần tử được "chuyển đến" (qua ánh xạ). Điều kiện của ánh xạ là 1-1 (one-to-one), nghĩa là không tồn tại hai phần tử của $A$ được chuyển đến cùng một phần tử khác của $A$ thông qua ánh xạ.
 
-$$a={a\ \ b\ \ c\choose b\ \ c\ \ a}$$
-Thông qua phép hoán vị $\sigma$, phần tử $a$ chuyển đến $b$, $b$ chuyển đến $c$ và $c$ chuyển đến $a$. Điều kiện của ánh xạ là 1-1 (one-to-one/đơn ánh), nghĩa là không tồn tại hai phần tử của $A$ được chuyển đến cùng một phần tử khác của $A$ thông qua ánh xạ.
+Pphép hoán vị cũng được định nghĩa là một cách __sắp xếp thứ tự__ $n$ phần tử của $A$. Ví dụ, nếu có tập hợp $A=\{1,2,3,4\}$ là một dãy số có thứ tự, ta thể hiện việc sắp xếp lại thứ tự như sau:
 
+$$\sigma={1\ \ 2\ \ 3\ \ 4\choose 2\ \ 1\ \ 4\ \ 3}$$
+Khi cần thực hiện nhiều phép hoán vị với một tập hợp $A$ cố định có thứ tự, ta chỉ cần viết ra dòng dưới và hiểu rằng đây là một cách sắp xếp lại của $A$. Ví dụ, với $A=\{1,2,3\}$, các cách sắp xếp có thể xảy ra là: 
+
+$$123,132,213,231,312,321$$
+
+Để đếm số hoán vị có thể xảy ra của một tập hợp $A=\{a_1, a_2, a_3, ...,a_n\}$ với $n$ phần tử, ta có thể suy luận ra với logic là:
+
+- Có $n$ cách sắp xếp phần tử đầu tiên, $a_1$,
+- Có $n-1$ cách sắp xếp $a_2$; ta lấy $n-1$ vì chỉ còn $n-1$ chỗ để chuyển $a_2$ trong hoán vị của $A$,
+- Tương tự, có $n-2$ cách sắp xếp $a_3$, và cứ tiếp tục như vậy đến hết.
+
+Từ đó ta tính ra được bảng sau:
+
+```{r}
+data.frame("n"=1:10) %>%
+  mutate("n!"=factorial(n)) %>%
+  rename("Số phần tử"=n,
+         "Số cách sắp xếp"="n!") %>%
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(full_width = F)
+```  
+
+Từ đó đã có công thức tính số hoán vị của $A$ với $n$ phần tử là:
+$$P_n=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1$$
+
+### Giai thừa
 

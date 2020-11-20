@@ -13,6 +13,8 @@ một-số-điểm-cần-lưu-ý-về-giới-hạn
 quy-tắc-lhospital
 chứng-minh-định-nghĩa-ex-từ-định-nghĩa-của-e
 toán-học-tổ-hợp
+hoán-vị-permutation
+giai-thừa
 xác-suất-cơ-bản
 một-số-định-nghĩa-cơ-bản
 lý-thuyết-tập-hợp
