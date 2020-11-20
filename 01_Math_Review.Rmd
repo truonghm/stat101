@@ -122,7 +122,7 @@ Ta có định lý nhị thức (Binomial Theorem):
 
 $$(x+y)^n=\sum_{k=0}^{n}{n \choose k}x^{n-k}y^k$$
 
-Trong đó: ${n \choose k}=\frac{n!}{k!(n-k)!}$
+Trong đó: ${n \choose k}=\frac{n!}{k!(n-k)!}$ là hệ số nhị thức.
 
 Suy ra:
 
@@ -205,6 +205,19 @@ Ta sẽ dùng lại định nghĩa này để chứng minh công thức PMF củ
 
 ## Toán học tổ hợp
 
-Toán học tổ hợp (Combinatorics)
+Ngoài việc bản chất toán học tổ hợp (Combinatorics) đã khó, mọi thứ còn trở nên khó hơn vì mảng toán này có rất nhiều kí hiệu và thuật ngữ, cũng như sự khác biệt trong thuật ngữ của tiếng Anh và tiếng Việt.
+
+### Hoán vị (Permutation)
+
+__Định nghĩa 1__
+
+Cho $A$ là một tập hợp hữu hạn có $n$ phần tử, $n\geqslant1$. Hoán vị của $A$ là một cách sắp xếp tự $n$ phần tử của $A$. Nói cách khác, một hoán vị của $A$ là ánh xạ 1-1 (one-to-one mapping) của $A$ lên chính nó.
+
+Wikipedia định nghĩa permutation [như sau](https://en.wikipedia.org/wiki/Permutation#Definition): "Permutations can be defined as bijections from a set S onto itself."
+
+Để miêu tả cụ thể một hoán vị của tập hợp $A$, trước tiên ta liệt kê các phần tử của $A$, cũng như vị trí mà mỗi phần tử được "chuyển đến" (qua ánh xạ). Ví dụ, nếu $A={a,b,c}$ thì một hoán vị $\sigma$ có thể xảy ra là:
+
+$$a={a\ \ b\ \ c\choose b\ \ c\ \ a}$$
+Thông qua phép hoán vị $\sigma$, phần tử $a$ chuyển đến $b$, $b$ chuyển đến $c$ và $c$ chuyển đến $a$. Điều kiện của ánh xạ là 1-1 (one-to-one/đơn ánh), nghĩa là không tồn tại hai phần tử của $A$ được chuyển đến cùng một phần tử khác của $A$ thông qua ánh xạ.
 
 
