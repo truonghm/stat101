@@ -85,7 +85,7 @@ $$log_{b}x=\frac{log_{a}x}{log_{a}b}$$
 Ví dụ: $log_{b}x=\frac{lnx}{lnb}$
 
 
-## Euler's number e
+## Euler's number $e$
 
 ### Tăng trưởng lũy tiến
 
@@ -150,8 +150,61 @@ Hay: $e=\lim_{n\to\infty} \left(1+\frac{1}{n}\right)^n=\sum_{k=0}^{\infty}\frac{
 
 ### Quy tắc L'Hospital
 
-Để tính giới hạn của một số dạng giới hạn vô định (indeterminate forms) như $0/0$, $\pm\infty/\pm\infty$, $(0)(\pm\infty)$, 
+Quy tắc L'Hospital được sử dụng để tính giới hạn của một số dạng giới hạn vô định (indeterminate forms) như $0/0$, $\pm\infty/\pm\infty$, $(0)(\pm\infty)$, $1^{\infty}$, $0^0$, $\infty^0$, $\infty-\infty$.
 
-## Tổ hợp, chỉnh hợp và hoán vị
+Quy tắc được sử dụng như sau:
+
+Nếu ta có một trong các dạng sau đây:
+
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=\frac{0}{0}$$
+
+hoặc:
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=\frac{\pm\infty}{\pm\infty}$$
+
+với $a\in \mathbf{R}$ hoặc $a=\pm\infty$. Khi đó ta có:
+
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+
+### Chứng minh định nghĩa $e^x$ từ định nghĩa của $e$
+
+Từ định nghĩa của $e$, khi sử dụng quy tắc L'Hospital, có thể chứng minh được:
+
+$$e^x=\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n$$
+
+Có $y=\left(1+\frac{x}{n}\right)^n$
+
+Như vậy:
+
+$$
+\begin{aligned}
+ln(y)&=ln\left[\left(1+\frac{x}{n}\right)^n\right] \\
+\iff\ln(y)&=n.ln\left(\frac{n+x}{n}\right) \\
+\iff\lim_{n\to\infty}\ln(y)&=\lim_{n\to\infty}n.ln\left(\frac{n+x}{n}\right) \\
+&=\lim_{n\to\infty}\frac{ln\left(\frac{n+x}{n}\right)}{\frac{1}{n}} \\
+&=\lim_{n\to\infty}\frac{\frac{n}{n+x}\frac{-x}{n^2}}{\frac{-1}{n^2}} \\
+&=\lim_{n\to\infty}\frac{xn}{n+x} \\
+&=\lim_{n\to\infty}x \\
+&=x
+\end{aligned}
+$$
+
+So:
+
+$$
+\begin{aligned}
+x
+&=\lim_{n\to\infty}\ln(y) \\
+\iff e^x&=e^{\lim_{n\to\infty}\ln(y)} \\
+&=\lim_{n\to\infty}e^{ln(y)} \\
+&=\lim_{n\to\infty}y \\
+&=\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n \\
+\end{aligned}
+$$
+
+Ta sẽ dùng lại định nghĩa này để chứng minh công thức PMF của phân phối Poisson.
+
+## Toán học tổ hợp
+
+Toán học tổ hợp (Combinatorics)
 
 
