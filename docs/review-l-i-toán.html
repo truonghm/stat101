@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Review lại toán | Giới thiệu cơ bản về XSTK</title>
   <meta name="description" content="4 Review lại toán | Giới thiệu cơ bản về XSTK" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Review lại toán | Giới thiệu cơ bản về XSTK" />
   <meta property="og:type" content="book" />
@@ -24,6 +24,7 @@
 <meta name="author" content="Truong Hoang" />
 
 
+<meta name="date" content="2020-11-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,17 +50,13 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -68,16 +65,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -86,9 +81,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -155,7 +150,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hoán-vị-permutation"><i class="fa fa-check"></i><b>4.4.1</b> Hoán vị (Permutation)</a></li>
-<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#giai-thừa"><i class="fa fa-check"></i><b>4.4.2</b> Giai thừa</a></li>
+<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chỉnh-hợp"><i class="fa fa-check"></i><b>4.4.2</b> Chỉnh hợp</a></li>
+<li class="chapter" data-level="4.4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-ghi-chú-về-ký-hiệu"><i class="fa fa-check"></i><b>4.4.3</b> Một số ghi chú về ký hiệu</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
@@ -239,8 +235,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="review-lại-toán" class="section level1">
 <h1><span class="header-section-number">4</span> Review lại toán</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="review-l-i-toán.html#cb1-1"></a><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></span>
-<span id="cb1-2"><a href="review-l-i-toán.html#cb1-2"></a><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># load sẵn ggplot2 (đã bao gồm trong tidyverse)</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(tidyverse, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(kableExtra)</a></code></pre></div>
 <div id="hàm-số-mũ-và-hàm-số-logarit" class="section level2">
 <h2><span class="header-section-number">4.1</span> Hàm số mũ và hàm số logarit</h2>
 <div id="hàm-số-mũ" class="section level3">
@@ -329,7 +326,7 @@ e
 &amp;=(1+\frac{1}{n})^n \\
 &amp;=\sum_{k=0}^{n}{n \choose k}\frac{1}{n^k} \\
 &amp;=\sum_{k=0}^{n}\frac{n!}{k!(n-k)!}\frac{1}{n^k} \\
-&amp;=\sum_{k=0}^{n}\frac{1}{n^k}P(n,k)\frac{1}{k!},\ \ \ P(n,k)=n(n-1)(n-2)(n-3)...\\
+&amp;=\sum_{k=0}^{n}\frac{1}{n^k}A(n,k)\frac{1}{k!},\ \ \ A(n,k)=n(n-1)(n-2)(n-3)...\\
 &amp;=\sum_{k=0}^{n}\frac{1}{k!}\frac{n}{n}\frac{n-1}{n}\frac{n-2}{n}\frac{n-3}{n}...\\
 \end{aligned}
 \]</span></p>
@@ -402,16 +399,16 @@ Khi cần thực hiện nhiều phép hoán vị với một tập hợp <span c
 <p>Để đếm số hoán vị có thể xảy ra của một tập hợp <span class="math inline">\(A=\{a_1, a_2, a_3, ...,a_n\}\)</span> với <span class="math inline">\(n\)</span> phần tử, ta có thể suy luận ra với logic là:</p>
 <ul>
 <li>Có <span class="math inline">\(n\)</span> cách sắp xếp phần tử đầu tiên, <span class="math inline">\(a_1\)</span>,</li>
-<li>Có <span class="math inline">\(n-1\)</span> cách sắp xếp <span class="math inline">\(a_2\)</span>; ta lấy <span class="math inline">\(n-1\)</span> vì chỉ còn <span class="math inline">\(n-1\)</span> chỗ để chuyển <span class="math inline">\(a_2\)</span> trong hoán vị của <span class="math inline">\(A\)</span>,</li>
+<li>Có <span class="math inline">\(n-1\)</span> cách sắp xếp <span class="math inline">\(a_2\)</span>; ta lấy <span class="math inline">\(n-1\)</span> vì chỉ còn <span class="math inline">\(n-1\)</span> phần tử để chọn ra trong <span class="math inline">\(A\)</span> và thỏa mãn điều kiện ánh xạ 1-1,</li>
 <li>Tương tự, có <span class="math inline">\(n-2\)</span> cách sắp xếp <span class="math inline">\(a_3\)</span>, và cứ tiếp tục như vậy đến hết.</li>
 </ul>
 <p>Từ đó ta tính ra được bảng sau:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="review-l-i-toán.html#cb2-1"></a><span class="kw">data.frame</span>(<span class="st">&quot;n&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
-<span id="cb2-2"><a href="review-l-i-toán.html#cb2-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="st">&quot;n!&quot;</span>=<span class="kw">factorial</span>(n)) <span class="op">%&gt;%</span></span>
-<span id="cb2-3"><a href="review-l-i-toán.html#cb2-3"></a><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;Số phần tử&quot;</span>=n,</span>
-<span id="cb2-4"><a href="review-l-i-toán.html#cb2-4"></a>         <span class="st">&quot;Số cách sắp xếp&quot;</span>=<span class="st">&quot;n!&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb2-5"><a href="review-l-i-toán.html#cb2-5"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kbl</span>() <span class="op">%&gt;%</span></span>
-<span id="cb2-6"><a href="review-l-i-toán.html#cb2-6"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">data.frame</span>(<span class="st">&quot;n&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="st">&quot;n!&quot;</span>=<span class="kw">factorial</span>(n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;Số phần tử&quot;</span>=n,</a>
+<a class="sourceLine" id="cb2-4" title="4">         <span class="st">&quot;Số cách sắp xếp&quot;</span>=<span class="st">&quot;n!&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F)</a></code></pre></div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -508,9 +505,246 @@ Số cách sắp xếp
 </table>
 <p>Từ đó đã có công thức tính số hoán vị của <span class="math inline">\(A\)</span> với <span class="math inline">\(n\)</span> phần tử là:
 <span class="math display">\[P_n=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1\]</span></p>
+<div id="giai-thừa" class="section level4">
+<h4><span class="header-section-number">4.4.1.1</span> Giai thừa</h4>
+<p>Một cách viết khác của <span class="math inline">\(P_n\)</span> trong công thức trên là <span class="math inline">\(n!\)</span>, hay còn gọi là giai thừa của <span class="math inline">\(n\)</span>.</p>
+<p>Ta có:</p>
+<p><span class="math display">\[P_n=n!=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1\]</span></p>
+<p>Khi <span class="math inline">\(n\)</span> ngày càng lớn, việc tính toán chính xác <span class="math inline">\(n!\)</span> trở nên không thực tiễn. Vì vậy ta có thể áp dụng _công thức Stirling$ để ước lượng như sau.</p>
 </div>
-<div id="giai-thừa" class="section level3">
-<h3><span class="header-section-number">4.4.2</span> Giai thừa</h3>
+<div id="tiệm-cận" class="section level4">
+<h4><span class="header-section-number">4.4.1.2</span> Tiệm cận</h4>
+<p><strong>Khái niệm</strong></p>
+<p>Cho <span class="math inline">\(a_n\)</span> và <span class="math inline">\(b_n\)</span> là hai dãy số. Ta gọi <span class="math inline">\(a_n\)</span> là <em>tiệm cận</em> với <span class="math inline">\(b_n\)</span> và viết là <span class="math inline">\(a_n \sim b_n\)</span>, nếu:</p>
+<p><span class="math display">\[\lim_{n\to\infty}\frac{a_n}{b_n}=1\]</span>
+#### Công thức Stirling</p>
+<p>Dãy <span class="math inline">\(n!\)</span> tiệm cận với:</p>
+<p><span class="math display">\[n^ne^{-n}\sqrt{2\pi n}\]</span></p>
+<p>Sử dụng R, ta có thể kiểm chứng công thức Stirling như sau:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">stirling &lt;-<span class="st"> </span><span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb3-2" title="2">  s=n<span class="op">^</span>n<span class="op">*</span><span class="kw">exp</span>(<span class="dv">1</span>)<span class="op">^</span>(<span class="op">-</span>n)<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">2</span><span class="op">*</span>pi<span class="op">*</span>n)</a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">return</span>(s)</a>
+<a class="sourceLine" id="cb3-4" title="4">}</a>
+<a class="sourceLine" id="cb3-5" title="5">  </a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="kw">data.frame</span>(<span class="st">&quot;n&quot;</span>=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="st">&quot;Factorial&quot;</span>=<span class="kw">factorial</span>(n),</a>
+<a class="sourceLine" id="cb3-8" title="8">         <span class="st">&quot;Approx&quot;</span>=<span class="kw">format</span>(<span class="kw">round</span>(<span class="kw">stirling</span>(n), <span class="dv">3</span>), <span class="dt">nsmall =</span> <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb3-9" title="9">         <span class="st">&quot;Ratio&quot;</span>=<span class="kw">format</span>(<span class="kw">round</span>(Factorial<span class="op">/</span><span class="kw">stirling</span>(n), <span class="dv">3</span>), <span class="dt">nsmall =</span> <span class="dv">3</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> F)</a></code></pre></div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+Factorial
+</th>
+<th style="text-align:left;">
+Approx
+</th>
+<th style="text-align:left;">
+Ratio
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+0.922
+</td>
+<td style="text-align:left;">
+1.084
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+1.919
+</td>
+<td style="text-align:left;">
+1.042
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+5.836
+</td>
+<td style="text-align:left;">
+1.028
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+23.506
+</td>
+<td style="text-align:left;">
+1.021
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:left;">
+118.019
+</td>
+<td style="text-align:left;">
+1.017
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+720
+</td>
+<td style="text-align:left;">
+710.078
+</td>
+<td style="text-align:left;">
+1.014
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+5040
+</td>
+<td style="text-align:left;">
+4980.396
+</td>
+<td style="text-align:left;">
+1.012
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+40320
+</td>
+<td style="text-align:left;">
+39902.395
+</td>
+<td style="text-align:left;">
+1.010
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+362880
+</td>
+<td style="text-align:left;">
+359536.873
+</td>
+<td style="text-align:left;">
+1.009
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+3628800
+</td>
+<td style="text-align:left;">
+3598695.619
+</td>
+<td style="text-align:left;">
+1.008
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="điểm-cố-định" class="section level4">
+<h4><span class="header-section-number">4.4.1.3</span> Điểm cố định</h4>
+<p>Điểm cố định (Fixed points) là các điểm của một hàm số mà tại đó <span class="math inline">\(f(x)=x\)</span>.</p>
+<p>Với hoán vị, điểm cố định là các điểm mà tại đó, vị trí của các phần tử trong hoán vị không đổi so với tập hợp <span class="math inline">\(A\)</span> ban đầu.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># library(arrangements)</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co"># </span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co"># # for (i in 1:3){</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># n=10</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co"># df &lt;- data.frame(permutations(n,n))</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co"># df2 &lt;- data.frame(&quot;id&quot;=seq.int(nrow(df)))</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co"># </span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co"># for (j in 1:n){</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#   df2&lt;-cbind(df2, df[[paste0(&#39;X&#39;,j)]] == j)</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co"># }</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co"># </span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co"># names(df2) &lt;- c(&quot;id&quot;,c(sprintf(&quot;X&quot;, 1:10)))</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co"># fixed &lt;- select(df2,-id)*1 %&gt;%</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#   mutate(sum1 = rowSums(.[1:10]))</span></a></code></pre></div>
+</div>
+</div>
+<div id="chỉnh-hợp" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Chỉnh hợp</h3>
+<p>Chỉnh hợp (arrangement) thực chất là một trường hợp đặc biệt của hoán vị, và trong tiếng Anh còn được gọi là <em><span class="math inline">\(k\)</span>-permutations of <span class="math inline">\(n\)</span></em>, tức là <em>chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử</em>.</p>
+<p><strong>Định nghĩa</strong></p>
+<p>Cho tập hợp <span class="math inline">\(A\)</span> gồm <span class="math inline">\(n\)</span> phần tử. Một bộ gồm <span class="math inline">\(k\)</span> <span class="math inline">\((1\leq k\leq n)\)</span> phần tử sắp xếp thứ tự của tập hợp <span class="math inline">\(A\)</span> được gọi là một chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử của tập hợp <span class="math inline">\(A\)</span>.</p>
+<p><span class="math display">\[\begin{aligned}
+A^k_n &amp;= A(n,k) \\
+&amp;=n\cdot(n-1)\cdot...\cdot(n-k+1) \\
+&amp;=\frac{n!}{(n-k)!}
+\end{aligned}
+\]</span></p>
+<p>Để đếm số chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> với tập hợp <span class="math inline">\(A=\{a_1, a_2, a_3, ...,a_n\}\)</span>, ta sử dụng quy tắc đếm như sau:</p>
+<ul>
+<li>Có <span class="math inline">\(n\)</span> cách sắp xếp phần tử đầu tiên, <span class="math inline">\(a_1\)</span> để đưa vào một bộ <span class="math inline">\(k\)</span> phần tử,</li>
+<li>Có <span class="math inline">\(n-1\)</span> cách sắp xếp <span class="math inline">\(a_2\)</span>; ta lấy <span class="math inline">\(n-1\)</span> vì chỉ còn <span class="math inline">\(n-1\)</span> phần tử trong <span class="math inline">\(A\)</span> để chọn,</li>
+<li>Tương tự, có <span class="math inline">\(n-2\)</span> cách sắp xếp <span class="math inline">\(a_3\)</span>, và cứ tiếp tục như vậy,</li>
+<li>Đến khi đã chọn ra được đủ <span class="math inline">\(k\)</span> phần tử, lúc này ta đã chọn đến phần tử <span class="math inline">\(a_k\)</span> trong <span class="math inline">\(A\)</span>, và phần tử này có <span class="math inline">\(n-k+1\)</span> cách chọn.</li>
+</ul>
+<p>Ta hình dung tập hợp <span class="math inline">\(A\)</span> như sau:</p>
+<p><span class="math display">\[A=\{\underbrace{a_1,...,a_{k-1}}_{k-1\ phần\ tử}, a_k,a_{k+1},...,a_n\}\]</span>
+Khi chọn đến phần tử thứ <span class="math inline">\(k-1\)</span> (tức là chỉ còn 1 chỗ trong bộ <span class="math inline">\(k\)</span> phần tử), ta đã có <span class="math inline">\(k-1\)</span> phần tử. Như vậy phần tử thứ <span class="math inline">\(k\)</span> được chọn ra sẽ có <span class="math inline">\([n-(k-1)]=n-k+1\)</span> cách chọn.</p>
+<div id="chỉnh-hợp-trong-r" class="section level4">
+<h4><span class="header-section-number">4.4.2.1</span> Chỉnh hợp trong R</h4>
+</div>
+</div>
+<div id="một-số-ghi-chú-về-ký-hiệu" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Một số ghi chú về ký hiệu</h3>
+<ul>
+<li>Trong giáo trình Việt Nam, ký hiệu chỉnh hợp là <span class="math inline">\(A^k_n\)</span>. Ký hiệu này có lẽ được <a href="https://fr.wikipedia.org/wiki/Arrangement">lấy từ Pháp</a>.</li>
+<li>Trong giáo trình tiếng Anh, chỉnh hợp thường được gộp chung vào với hoán vị và là trường hợp đặc biệt của hoán vị, và thường được ký hiệu là <span class="math inline">\(P^k_n\)</span> hoặc <span class="math inline">\(P(n,k)\)</span>.</li>
+<li>Trên các máy tính bỏ túi, ta cũng thường thấy ký hiệu <span class="math inline">\(P\)</span> và <span class="math inline">\(C\)</span> để tính chỉnh hợp và tổ hợp. Một số dòng máy của Casio sẽ sử dụng cú pháp <span class="math inline">\(nPk\)</span> và <span class="math inline">\(nCk\)</span> để tính tổ hợp và chỉnh hợp.</li>
+</ul>
 
 </div>
 </div>
