@@ -6,6 +6,8 @@
 .Ruserdata
 _book
 _bookdown_files
+.Rprofile
+.Renviron
 
 # Session Data files
 .RData

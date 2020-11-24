@@ -295,21 +295,44 @@ Với $n=10,20,30$ và 10000 lần simulations:
 
 ```{r}
 library(arrangements)
-
+f <- data.frame(matrix(ncol = 4, nrow = 0))
+colnames(f) <- c("rs","avg_fixed_points","fraction","n")
+avg_fixed <- c()
 for (i in 1:3) {
   n <- i*10
-  p <- data.frame(permutations(n,n,nsample = 500))
+  s <- 100000
+  p <- data.frame(permutations(n,n,nsample = s))
   
   for (j in 1:n){
       p[[paste0('X',j)]] <- (p[[paste0('X',j)]] == j)*1
   }
   
   p$rs <- rowSums(p[1:n])
-  print(paste(sum(p$rs==0)/length(p$rs),
-        mean(p$rs),
-        sep = ", ")
-  )
+  f <- rbind(f,
+             p %>%
+               filter(rs<=5) %>%
+               group_by(rs) %>%
+               summarise(fraction=n()/s,
+                         .groups="drop") %>%
+               mutate(n=n)
+             )
+  avg_fixed <- append(avg_fixed, mean(p$rs))
 }
+# f %>% 
+#   rbind(
+#     pivot_wider(names_from = n,
+#               values_from = fraction),
+#     data.frame("rs"="Average number of fixed points",
+#                "10"=avg_fixed[1],
+#                "20"=avg_fixed[2],
+#                "30"=avg_fixed[3])
+#     ) %>%
+#   kableExtra::kable() %>%
+#   kableExtra::kable_styling(full_width = F)
+f %>% pivot_wider(names_from = n,
+              values_from = fraction) %>%
+  kableExtra::kable() %>%
+  kableExtra::kable_styling(full_width = F)
 ```
 
 ### Chỉnh hợp
