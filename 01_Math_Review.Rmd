@@ -377,3 +377,6 @@ Khi chọn đến phần tử thứ $k-1$ (tức là chỉ còn 1 chỗ trong b�
 - Trong giáo trình Việt Nam, ký hiệu chỉnh hợp là $A^k_n$. Ký hiệu này có lẽ được [lấy từ Pháp](https://fr.wikipedia.org/wiki/Arrangement).
 - Trong giáo trình tiếng Anh, chỉnh hợp thường được gộp chung vào với hoán vị và là trường hợp đặc biệt của hoán vị, và thường được ký hiệu là $P^k_n$ hoặc $P(n,k)$.
 - Trên các máy tính bỏ túi, ta cũng thường thấy ký hiệu $P$ và $C$ để tính chỉnh hợp và tổ hợp. Một số dòng máy của Casio sẽ sử dụng cú pháp $nPk$ và $nCk$ để tính tổ hợp và chỉnh hợp.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjc2OTg2ODBdfQ==
+-->
