@@ -253,8 +253,6 @@ Ta có:
 
 $$P_n=n!=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1$$
 
-Khi $n$ ngày càng lớn, việc tính toán chính xác $n!$ trở nên không thực tiễn. Vì vậy ta có thể áp dụng _công thức  Stirling$ để ước lượng như sau.
-
 #### Tiệm cận
 
 __Khái niệm__
@@ -262,14 +260,17 @@ __Khái niệm__
 Cho $a_n$ và $b_n$ là hai dãy số. Ta gọi $a_n$ là _tiệm cận_ với $b_n$ và viết là $a_n \sim b_n$, nếu:
 
 $$\lim_{n\to\infty}\frac{a_n}{b_n}=1$$
+
 #### Công thức Stirling
+
+Khi $n$ ngày càng lớn, việc tính toán chính xác $n!$ trở nên không thực tiễn. Vì vậy ta có thể áp dụng _công thức  Stirling$ để ước lượng như sau.
 
 Dãy $n!$ tiệm cận với:
 
 $$n^ne^{-n}\sqrt{2\pi n}$$
 
 
-Sử dụng R, ta có thể kiểm chứng công thức Stirling như sau:
+Sử dụng R, ta có thể kiểm chứng công thức Stirling:
 
 ```{r}
 stirling <- function(n){
@@ -291,49 +292,54 @@ data.frame("n"=1:10) %>%
 
 Với hoán vị, điểm cố định là các điểm mà tại đó, vị trí của các phần tử trong hoán vị không đổi so với tập hợp $A$ ban đầu.
 
-Với $n=10,20,30$ và 10000 lần simulations:
+Ta có thể sử dụng thư viện `arrangements` trong R và lấy sample 10000 hoán vị với $n=10,20,30$, sẽ có kết quả như sau:
 
 ```{r}
 library(arrangements)
 f <- data.frame(matrix(ncol = 4, nrow = 0))
 colnames(f) <- c("rs","avg_fixed_points","fraction","n")
 avg_fixed <- c()
+
 for (i in 1:3) {
-  n <- i*10
-  s <- 100000
-  p <- data.frame(permutations(n,n,nsample = s))
-  
-  for (j in 1:n){
-      p[[paste0('X',j)]] <- (p[[paste0('X',j)]] == j)*1
-  }
-  
-  p$rs <- rowSums(p[1:n])
-  f <- rbind(f,
-             p %>%
-               filter(rs<=5) %>%
-               group_by(rs) %>%
-               summarise(fraction=n()/s,
-                         .groups="drop") %>%
-               mutate(n=n)
-             )
-  avg_fixed <- append(avg_fixed, mean(p$rs))
+    n <- i*10
+    s <- 100000
+    p <- data.frame(permutations(n,n,nsample = s))
+    
+    for (j in 1:n){
+        p[[paste0('X',j)]] <- (p[[paste0('X',j)]] == j)*1
+    }
+    
+    p$rs <- rowSums(p[1:n])
+    f <- rbind(f,
+               p %>%
+                   filter(rs<=5) %>%
+                   group_by(rs) %>%
+                   summarise(fraction=n()/s,
+                             .groups="drop") %>%
+                   mutate(n=n)
+    )
+    avg_fixed <- append(avg_fixed, mean(p$rs))
 }
-# f %>% 
-#   rbind(
-#     pivot_wider(names_from = n,
-#               values_from = fraction),
-#     data.frame("rs"="Average number of fixed points",
-#                "10"=avg_fixed[1],
-#                "20"=avg_fixed[2],
-#                "30"=avg_fixed[3])
-#     ) %>%
-#   kableExtra::kable() %>%
-#   kableExtra::kable_styling(full_width = F)
-f %>% pivot_wider(names_from = n,
-              values_from = fraction) %>%
-  kableExtra::kable() %>%
-  kableExtra::kable_styling(full_width = F)
+
+rbind(f, 
+      data.frame("rs"=rep("Avg. fixed points",each=3),
+                 "fraction"=avg_fixed,
+                 "n"=c(10,20,30)
+                 )
+      ) %>% 
+    pivot_wider(names_from = n,
+                      values_from = fraction) %>%
+    kableExtra::kable() %>%
+    kableExtra::kable_styling(full_width = F)
 ```
+
+Có thể thấy, xác suất hoán vị không có điểm cố định nào khi $n=10,20,30$ giao động trong khoảng 0.36 đến 0.37. Nếu lấy toàn bộ mọi hoán vị (thay vì lấy 10000 sample), ta sẽ tính được chính xác xác suất này hơn và nhận được kết quả là 0.367879, và kết quả này xấp xỉ $1/e$. 
+
+Có thể sử dụng file [FixedPoints.R](https://github.com/truonghm/stat101/blob/master/scripts/C1/FixedPoints.R) để tính với trường hợp $n=10$. Tuy nhiên, phương pháp này liệt kê mọi hoán vị có thể xảy ra, vì vậy chỉ có thể tính được với $n=10$. 
+
+Như vậy, với $n>=10$, xác suất để một hoán vị ngẫu nhiên không có điểm cố định nào không phụ thuộc vào $n$.
+
+Ta cũng thấy rằng số điểm cố định trung bình qua thí nghiệm vừa rồi tương đương với 1. Trong thực tế, trung bình số điểm cố định sẽ bằng 1 với mọi $n$.
 
 ### Chỉnh hợp
 
