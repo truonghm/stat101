@@ -154,9 +154,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chứng-minh-định-nghĩa-ex-từ-định-nghĩa-của-e"><i class="fa fa-check"></i><b>4.3.2</b> Chứng minh định nghĩa <span class="math inline">\(e^x\)</span> từ định nghĩa của <span class="math inline">\(e\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hoán-vị-permutation"><i class="fa fa-check"></i><b>4.4.1</b> Hoán vị (Permutation)</a></li>
-<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chỉnh-hợp"><i class="fa fa-check"></i><b>4.4.2</b> Chỉnh hợp</a></li>
-<li class="chapter" data-level="4.4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-ghi-chú-về-ký-hiệu"><i class="fa fa-check"></i><b>4.4.3</b> Một số ghi chú về ký hiệu</a></li>
+<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#các-vấn-đề-cơ-bản"><i class="fa fa-check"></i><b>4.4.1</b> Các vấn đề cơ bản</a></li>
+<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hệ-số-nhị-thức"><i class="fa fa-check"></i><b>4.4.2</b> Hệ số nhị thức</a></li>
+<li class="chapter" data-level="4.4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-kiến-thức-liên-quan"><i class="fa fa-check"></i><b>4.4.3</b> Một số kiến thức liên quan</a></li>
+<li class="chapter" data-level="4.4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-ghi-chú-về-ký-hiệu"><i class="fa fa-check"></i><b>4.4.4</b> Một số ghi chú về ký hiệu</a></li>
+<li class="chapter" data-level="4.4.5" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#bài-tập"><i class="fa fa-check"></i><b>4.4.5</b> Bài tập</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
@@ -248,22 +250,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb19-2"></a><span class="kw">install.packages</span>(<span class="st">&#39;mosaicData&#39;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb20-1"></a><span class="kw">data</span>(TenMileRace, <span class="dt">package=</span><span class="st">&#39;mosaicData&#39;</span>)</span>
 <span id="cb20-2"><a href="th-ng-kê-mô-t-c-b-n.html#cb20-2"></a><span class="kw">summary</span>(TenMileRace)</span></code></pre></div>
-<pre><code>##      state           time            net       
-##  VA     :3689   Min.   : 2816   Min.   : 2814  
-##  MD     :2166   1st Qu.: 5125   1st Qu.: 4950  
-##  DC     :1642   Median : 5806   Median : 5555  
-##  PA     : 273   Mean   : 5813   Mean   : 5599  
-##  NY     : 211   3rd Qu.: 6455   3rd Qu.: 6169  
-##  NJ     :  92   Max.   :10603   Max.   :10536  
-##  (Other): 563                                  
-##       age        sex     
-##  Min.   :10.00   F:4325  
-##  1st Qu.:28.00   M:4311  
-##  Median :35.00           
-##  Mean   :36.86           
-##  3rd Qu.:44.00           
-##  Max.   :87.00           
-## </code></pre>
+<pre><code>##      state           time            net             age        sex     
+##  VA     :3689   Min.   : 2816   Min.   : 2814   Min.   :10.00   F:4325  
+##  MD     :2166   1st Qu.: 5125   1st Qu.: 4950   1st Qu.:28.00   M:4311  
+##  DC     :1642   Median : 5806   Median : 5555   Median :35.00           
+##  PA     : 273   Mean   : 5813   Mean   : 5599   Mean   :36.86           
+##  NY     : 211   3rd Qu.: 6455   3rd Qu.: 6169   3rd Qu.:44.00           
+##  NJ     :  92   Max.   :10603   Max.   :10536   Max.   :87.00           
+##  (Other): 563</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="th-ng-kê-mô-t-c-b-n.html#cb22-1"></a><span class="kw">head</span>(TenMileRace)</span></code></pre></div>
 <pre><code>##   state time  net age sex
 ## 1    VA 6060 5978  12   M

@@ -154,9 +154,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chứng-minh-định-nghĩa-ex-từ-định-nghĩa-của-e"><i class="fa fa-check"></i><b>4.3.2</b> Chứng minh định nghĩa <span class="math inline">\(e^x\)</span> từ định nghĩa của <span class="math inline">\(e\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#toán-học-tổ-hợp"><i class="fa fa-check"></i><b>4.4</b> Toán học tổ hợp</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hoán-vị-permutation"><i class="fa fa-check"></i><b>4.4.1</b> Hoán vị (Permutation)</a></li>
-<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#chỉnh-hợp"><i class="fa fa-check"></i><b>4.4.2</b> Chỉnh hợp</a></li>
-<li class="chapter" data-level="4.4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-ghi-chú-về-ký-hiệu"><i class="fa fa-check"></i><b>4.4.3</b> Một số ghi chú về ký hiệu</a></li>
+<li class="chapter" data-level="4.4.1" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#các-vấn-đề-cơ-bản"><i class="fa fa-check"></i><b>4.4.1</b> Các vấn đề cơ bản</a></li>
+<li class="chapter" data-level="4.4.2" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#hệ-số-nhị-thức"><i class="fa fa-check"></i><b>4.4.2</b> Hệ số nhị thức</a></li>
+<li class="chapter" data-level="4.4.3" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-kiến-thức-liên-quan"><i class="fa fa-check"></i><b>4.4.3</b> Một số kiến thức liên quan</a></li>
+<li class="chapter" data-level="4.4.4" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#một-số-ghi-chú-về-ký-hiệu"><i class="fa fa-check"></i><b>4.4.4</b> Một số ghi chú về ký hiệu</a></li>
+<li class="chapter" data-level="4.4.5" data-path="review-l-i-toán.html"><a href="review-l-i-toán.html#bài-tập"><i class="fa fa-check"></i><b>4.4.5</b> Bài tập</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="xác-su-t-c-b-n.html"><a href="xác-su-t-c-b-n.html"><i class="fa fa-check"></i><b>5</b> Xác suất cơ bản</a><ul>
@@ -374,7 +376,7 @@ ln(y)&amp;=ln\left[\left(1+\frac{x}{n}\right)^n\right] \\
 &amp;=x
 \end{aligned}
 \]</span></p>
-<p>So:</p>
+<p>Tức là:</p>
 <p><span class="math display">\[
 \begin{aligned}
 x
@@ -391,9 +393,18 @@ x
 <div id="toán-học-tổ-hợp" class="section level2">
 <h2><span class="header-section-number">4.4</span> Toán học tổ hợp</h2>
 <p>Ngoài việc bản chất toán học tổ hợp (Combinatorics) đã khó, mọi thứ còn trở nên khó hơn vì mảng toán này có rất nhiều kí hiệu và thuật ngữ, cũng như sự khác biệt trong thuật ngữ của tiếng Anh và tiếng Việt.</p>
-<div id="hoán-vị-permutation" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Hoán vị (Permutation)</h3>
-<p><strong>Định nghĩa 1</strong></p>
+<div id="các-vấn-đề-cơ-bản" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Các vấn đề cơ bản</h3>
+<div id="quy-tắc-cộng-và-quy-tắc-nhân" class="section level4">
+<h4><span class="header-section-number">4.4.1.1</span> Quy tắc cộng và quy tắc nhân</h4>
+<p><strong>Quy tắc cộng (Sum Rule)</strong>: Cho <span class="math inline">\(S_1, S_2,..., S_m\)</span> là các tập hợp hữu hạn không giao nhau (không có phần tử chung - mutually disjoint), và <span class="math inline">\(|S_i|=n_i\)</span> với <span class="math inline">\(1\leq i\leq m\)</span>. Số cách để chọn một phần tử từ các tập hợp <span class="math inline">\(S_1, S_2,..., S_m\)</span> là tổng của <span class="math inline">\(n_1+n_2+...+n_m\)</span>.</p>
+<p><strong>Quy tắc nhân (Product Rule)</strong>: Cho <span class="math inline">\(S_1, S_2,..., S_m\)</span> là các tập hợp hữu hạn, và <span class="math inline">\(|S_i|=n_i\)</span> với <span class="math inline">\(1\leq i\leq m\)</span>. Số cách để chọn một phần tử từ <span class="math inline">\(S_1\)</span>, sau đó chọn tiếp một phần tử từ <span class="math inline">\(S_2\)</span>, và tiếp tục đến một phần tử từ <span class="math inline">\(S_m\)</span>, là tích của <span class="math inline">\(n_1n_2...n_m\)</span>. Điều kiện để áp dụng quy tắc nhân là tất cả mọi lựa chọn đều độc lập, hay nói cách khác, mọi phần từ chọn từ <span class="math inline">\(S_1\)</span> đến <span class="math inline">\(S_{i-1}\)</span> không ảnh hưởng đến lựa chọn từ <span class="math inline">\(S_i\)</span>, với mỗi <span class="math inline">\(i\)</span>.</p>
+</div>
+<div id="vấn-đề-1---hoán-vị-permutation" class="section level4">
+<h4><span class="header-section-number">4.4.1.2</span> Vấn đề 1 - Hoán vị (Permutation)</h4>
+<p><strong>Câu hỏi:</strong> Có bao nhiêu cách để sắp xếp có thứ tự một tập hợp <span class="math inline">\(n\)</span> phần tử?</p>
+<p><strong>Ví dụ:</strong> Có bao nhiêu cách để tráo một bộ bài gồm 52 lá bài? Có bao nhiêu cách để sắp xếp 10 quyển sách trên một giá sách? Chú ý rằng việc sắp xếp trong các ví dụ này đều có thứ tự, tức là <span class="math inline">\(1,2,3,4\)</span> sẽ khác với <span class="math inline">\(1,4,3,2\)</span>, cho dù cả 2 tập hợp này có các phần tử giống hệt nhau.</p>
+<p><strong>Định nghĩa</strong></p>
 <p>Cho <span class="math inline">\(A\)</span> là một tập hợp hữu hạn có <span class="math inline">\(n\)</span> phần tử, <span class="math inline">\(n\geqslant1\)</span>. Hoán vị của <span class="math inline">\(A\)</span> là một cách sắp xếp thứ tự <span class="math inline">\(n\)</span> phần tử của <span class="math inline">\(A\)</span>. Nói cách khác, một hoán vị của <span class="math inline">\(A\)</span> là ánh xạ 1-1 (one-to-one mapping) của <span class="math inline">\(A\)</span> lên chính nó.</p>
 <p>Wikipedia định nghĩa permutation <a href="https://en.wikipedia.org/wiki/Permutation#Definition">như sau</a>: “Permutations can be defined as bijections from a set S onto itself.”</p>
 <p>Để miêu tả cụ thể một hoán vị của tập hợp <span class="math inline">\(A\)</span>, trước tiên ta liệt kê các phần tử của <span class="math inline">\(A\)</span>, cũng như vị trí mà mỗi phần tử được “chuyển đến” (qua ánh xạ). Điều kiện của ánh xạ là 1-1 (one-to-one), nghĩa là không tồn tại hai phần tử của <span class="math inline">\(A\)</span> được chuyển đến cùng một phần tử khác của <span class="math inline">\(A\)</span> thông qua ánh xạ.</p>
@@ -509,21 +520,102 @@ Số cách sắp xếp
 </tbody>
 </table>
 <p>Từ đó đã có công thức tính số hoán vị của <span class="math inline">\(A\)</span> với <span class="math inline">\(n\)</span> phần tử là:
-<span class="math display">\[P_n=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1\]</span></p>
-<div id="giai-thừa" class="section level4">
-<h4><span class="header-section-number">4.4.1.1</span> Giai thừa</h4>
-<p>Một cách viết khác của <span class="math inline">\(P_n\)</span> trong công thức trên là <span class="math inline">\(n!\)</span>, hay còn gọi là giai thừa của <span class="math inline">\(n\)</span>.</p>
-<p>Ta có:</p>
-<p><span class="math display">\[P_n=n!=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1\]</span></p>
+<span class="math display">\[P_n=n!=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1\]</span></p>
 </div>
+<div id="vấn-đề-2---chỉnh-hợp" class="section level4">
+<h4><span class="header-section-number">4.4.1.3</span> Vấn đề 2 - Chỉnh hợp</h4>
+<p><strong>Câu hỏi:</strong> Có bao nhiêu cách để tạo ra một nhóm có thứ tự của <span class="math inline">\(k\)</span> phần tử, chọn ra từ một tập hợp ban đầu có <span class="math inline">\(n\)</span> phần tử?</p>
+<p><strong>Ví dụ:</strong> Có bao nhiêu cách để một bảng xếp hạng sắp xếp 20 đội bóng tốt nhất trong đó 100 đội bóng của toàn giải đấu? Có bao nhiêu cách để một ban nhạc chơi một danh sách gồm 12 bài hát nếu họ chỉ biết chơi tổng cộng 25 bài?</p>
+<p>Chỉnh hợp (arrangement) thực chất là một trường hợp đặc biệt của hoán vị, và trong tiếng Anh còn được gọi là <em><span class="math inline">\(k\)</span>-permutations of <span class="math inline">\(n\)</span></em>, tức là <em>chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử</em>.</p>
+<p><strong>Định nghĩa</strong></p>
+<p>Cho tập hợp <span class="math inline">\(A\)</span> gồm <span class="math inline">\(n\)</span> phần tử. Một bộ gồm <span class="math inline">\(k\)</span> <span class="math inline">\((1\leq k\leq n)\)</span> phần tử sắp xếp thứ tự của tập hợp <span class="math inline">\(A\)</span> được gọi là một chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử của tập hợp <span class="math inline">\(A\)</span>.</p>
+<p><span class="math display">\[\begin{aligned}
+A^n_k &amp;= A(n,k) \\
+&amp;=n\cdot(n-1)\cdot...\cdot(n-k+1) \\
+&amp;=\frac{n!}{(n-k)!}
+\end{aligned}
+\]</span></p>
+<p>Để đếm số chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> với tập hợp <span class="math inline">\(A=\{a_1, a_2, a_3, ...,a_n\}\)</span>, ta sử dụng quy tắc đếm như sau:</p>
+<ul>
+<li>Có <span class="math inline">\(n\)</span> cách sắp xếp phần tử đầu tiên, <span class="math inline">\(a_1\)</span> để đưa vào một bộ <span class="math inline">\(k\)</span> phần tử,</li>
+<li>Có <span class="math inline">\(n-1\)</span> cách sắp xếp <span class="math inline">\(a_2\)</span>; ta lấy <span class="math inline">\(n-1\)</span> vì chỉ còn <span class="math inline">\(n-1\)</span> phần tử trong <span class="math inline">\(A\)</span> để chọn,</li>
+<li>Tương tự, có <span class="math inline">\(n-2\)</span> cách sắp xếp <span class="math inline">\(a_3\)</span>, và cứ tiếp tục như vậy,</li>
+<li>Đến khi đã chọn ra được đủ <span class="math inline">\(k\)</span> phần tử, lúc này ta đã chọn đến phần tử <span class="math inline">\(a_k\)</span> trong <span class="math inline">\(A\)</span>, và phần tử này có <span class="math inline">\(n-k+1\)</span> cách chọn.</li>
+</ul>
+<p>Ta hình dung tập hợp <span class="math inline">\(A\)</span> như sau:</p>
+<p><span class="math display">\[A=\{\underbrace{a_1,...,a_{k-1}}_{k-1\ phần\ tử}, a_k,a_{k+1},...,a_n\}\]</span>
+Khi chọn đến phần tử thứ <span class="math inline">\(k-1\)</span> (tức là chỉ còn 1 chỗ trong bộ <span class="math inline">\(k\)</span> phần tử), ta đã có <span class="math inline">\(k-1\)</span> phần tử. Như vậy phần tử thứ <span class="math inline">\(k\)</span> được chọn ra sẽ có <span class="math inline">\([n-(k-1)]=n-k+1\)</span> cách chọn.</p>
+</div>
+<div id="vấn-đề-3---tổ-hợp" class="section level4">
+<h4><span class="header-section-number">4.4.1.4</span> Vấn đề 3 - Tổ hợp</h4>
+<p><strong>Câu hỏi:</strong> Có bao nhiêu cách để chọn ra <span class="math inline">\(k\)</span> phần tử từ một tập hợp <span class="math inline">\(n\)</span> phần tử, nếu thứ tự không quan trọng?</p>
+<p><strong>Ví dụ:</strong> Có bao nhiêu cách để bốc ra 5 lá bài (cho một hand trong poker) từ bộ bài gồm 52 lá? Thứ tự của 5 lá bài này không quan trọng vì người chơi có thể tuỳ ý sắp xếp mà không ảnh hưởng đến cách chơi.</p>
+<p><strong>Định nghĩa</strong>: Tổ hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử là:</p>
+<p><span class="math display">\[{n \choose k}=C(n,k)=\frac{A(n,k)}{k!}=\frac{n!}{k!(n-k)!}\]</span></p>
+<p>Ta chứng minh được công thức tổ hợp từ công thức của hoán vị và chỉnh hợp như sau:</p>
+<ul>
+<li><p>Chọn ra <span class="math inline">\(k\)</span> phần tử từ tập hợp <span class="math inline">\(n\)</span> phần tử, ta có số cách chọn là một số <span class="math inline">\(C\)</span>.</p></li>
+<li><p>Với mỗi cách chọn, ta sắp xếp lại <span class="math inline">\(k\)</span> phần tử được chọn, như vậy số cách chọn là hoán vị của <span class="math inline">\(k\)</span> phần từ và bằng <span class="math inline">\(k!\)</span>.</p></li>
+<li><p>Như vậy, số cách để chọn ra <span class="math inline">\(k\)</span> phần tử <strong>có thứ tự</strong> từ <span class="math inline">\(n\)</span> phần từ là <span class="math inline">\(C \cdot k!\)</span>. Đồng thời, số chọn này còn bằng <span class="math inline">\(A(n,k)\)</span>, từ định nghĩa chỉnh hợp. Có nghĩa là:</p></li>
+</ul>
+<p><span class="math display">\[C={n \choose k}=\frac{A(n,k)}{k!}=\frac{n!}{k!(n-k)!}\]</span></p>
+<p>Số <span class="math inline">\({n \choose k}\)</span> còn được gọi là <strong>hệ số nhị thức.</strong></p>
+</div>
+</div>
+<div id="hệ-số-nhị-thức" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Hệ số nhị thức</h3>
+<p>Một số tính chất của hệ số nhị thức (binomial coefficient):</p>
+<ol style="list-style-type: decimal">
+<li><strong>Công thức tổ hợp</strong>:</li>
+</ol>
+<p><span class="math display">\[
+{n \choose k}=
+\begin{cases}
+\frac{n!}{k!(n-k)!}=\frac{n^{\underline{k}}}{k!}=\frac{P(n,k}{k!} \quad if \;0 \leq k \leq n, \\
+0 \quad otherwise
+\end{cases}
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Tính đối xứng:</strong> <span class="math inline">\({n \choose k}={n \choose n-k}\)</span></p></li>
+<li><p><strong>Phép cộng:</strong> <span class="math inline">\({n \choose k}={n-1 \choose k}+{n-1 \choose k-1}\)</span></p></li>
+<li><p><strong>Định lý nhị thức:</strong></p></li>
+</ol>
+<p><span class="math display">\[(x+y)^n=\sum_{k=0}^n {n \choose k}x^ky^{n-k}\]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>Tổng của dãy số nhị thức:</strong> <span class="math inline">\(\sum_{k=0}^n{n \choose k}=2^n\)</span>, when <span class="math inline">\(x=1 \;and\;y=1\)</span></p></li>
+<li><p><strong>Summing over lower index</strong> (or symmetry. Accross row <span class="math inline">\(n\)</span> of Pascal’s Triangle):</p></li>
+</ol>
+<p><span class="math display">\[\sum_{k}(-1)^k{n \choose k}=
+\begin{cases}
+0 \;if\;n\geq1 \\
+1 \;if\;n=0
+\end{cases}
+\]</span></p>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Summing over upper index</strong> (i.e. summing by column in Pascal’s Triangle):</li>
+</ol>
+<p><span class="math display">\[\sum_{k=0}^n{k \choose m}={n+1 \choose m+1}\]</span></p>
+<p>với <span class="math inline">\(m\)</span> là thứ tự cột, và <span class="math inline">\(n\)</span> là thứ tự dòng. Sau khi cộng lại, ta có tổng của tất cả các giá trị trong cột <span class="math inline">\(m\)</span>, tính từ dòng <span class="math inline">\(0\)</span> đến dòng <span class="math inline">\(n\)</span>.</p>
+<ol start="8" style="list-style-type: decimal">
+<li><strong>Vandermonde’s identity:</strong></li>
+</ol>
+<p><span class="math display">\[{m+n \choose r}=\sum_{k}{m \choose k}{n \choose r-k}\]</span></p>
+<p>Ý nghĩa &amp; Ví dụ: Giả sử có một nhóm gồm <span class="math inline">\(m\)</span> nam và <span class="math inline">\(n\)</span> nữ. Số cách để chọn một nhóm nhỏ gồm <span class="math inline">\(r\)</span> thành viên, trong đó có <span class="math inline">\(k\)</span> nam và <span class="math inline">\(r-k\)</span> nữ là:</p>
+<ul>
+<li><p>Khi chọn trực tiếp từ nhóm ban đầu gồm <span class="math inline">\(m+n\)</span> người, ta có: <span class="math inline">\({m+n \choose r}\)</span></p></li>
+<li><p>Khi chọn lần lượt <span class="math inline">\(k\)</span> nam từ <span class="math inline">\(m\)</span> nam và <span class="math inline">\(r-k\)</span> nữ từ <span class="math inline">\(n\)</span> nữ, ta có: <span class="math inline">\(\sum{m \choose k}{n \choose r-k}\)</span></p></li>
+</ul>
+</div>
+<div id="một-số-kiến-thức-liên-quan" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Một số kiến thức liên quan</h3>
 <div id="tiệm-cận" class="section level4">
-<h4><span class="header-section-number">4.4.1.2</span> Tiệm cận</h4>
+<h4><span class="header-section-number">4.4.3.1</span> Tiệm cận</h4>
 <p><strong>Khái niệm</strong></p>
 <p>Cho <span class="math inline">\(a_n\)</span> và <span class="math inline">\(b_n\)</span> là hai dãy số. Ta gọi <span class="math inline">\(a_n\)</span> là <em>tiệm cận</em> với <span class="math inline">\(b_n\)</span> và viết là <span class="math inline">\(a_n \sim b_n\)</span>, nếu:</p>
 <p><span class="math display">\[\lim_{n\to\infty}\frac{a_n}{b_n}=1\]</span></p>
 </div>
 <div id="công-thức-stirling" class="section level4">
-<h4><span class="header-section-number">4.4.1.3</span> Công thức Stirling</h4>
+<h4><span class="header-section-number">4.4.3.2</span> Công thức Stirling</h4>
 <p>Khi <span class="math inline">\(n\)</span> ngày càng lớn, việc tính toán chính xác <span class="math inline">\(n!\)</span> trở nên không thực tiễn. Vì vậy ta có thể áp dụng _công thức Stirling$ để ước lượng như sau.</p>
 <p>Dãy <span class="math inline">\(n!\)</span> tiệm cận với:</p>
 <p><span class="math display">\[n^ne^{-n}\sqrt{2\pi n}\]</span></p>
@@ -701,7 +793,7 @@ Ratio
 </table>
 </div>
 <div id="điểm-cố-định" class="section level4">
-<h4><span class="header-section-number">4.4.1.4</span> Điểm cố định</h4>
+<h4><span class="header-section-number">4.4.3.3</span> Điểm cố định</h4>
 <p>Điểm cố định (Fixed points) là các điểm của một hàm số mà tại đó <span class="math inline">\(f(x)=x\)</span>.</p>
 <p>Với hoán vị, điểm cố định là các điểm mà tại đó, vị trí của các phần tử trong hoán vị không đổi so với tập hợp <span class="math inline">\(A\)</span> ban đầu.</p>
 <p>Ta có thể sử dụng thư viện <code>arrangements</code> trong R và lấy sample 10000 hoán vị với <span class="math inline">\(n=10,20,30\)</span>, sẽ có kết quả như sau:</p>
@@ -764,13 +856,13 @@ rs
 0
 </td>
 <td style="text-align:right;">
-0.36840
+0.36571
 </td>
 <td style="text-align:right;">
-0.36641
+0.37196
 </td>
 <td style="text-align:right;">
-0.36763
+0.36606
 </td>
 </tr>
 <tr>
@@ -778,13 +870,13 @@ rs
 1
 </td>
 <td style="text-align:right;">
-0.36679
+0.36943
 </td>
 <td style="text-align:right;">
-0.36761
+0.36974
 </td>
 <td style="text-align:right;">
-0.36786
+0.36998
 </td>
 </tr>
 <tr>
@@ -792,13 +884,13 @@ rs
 2
 </td>
 <td style="text-align:right;">
-0.18429
+0.18444
 </td>
 <td style="text-align:right;">
-0.18533
+0.17927
 </td>
 <td style="text-align:right;">
-0.18471
+0.18459
 </td>
 </tr>
 <tr>
@@ -806,13 +898,13 @@ rs
 3
 </td>
 <td style="text-align:right;">
-0.06146
+0.06127
 </td>
 <td style="text-align:right;">
-0.06068
+0.06064
 </td>
 <td style="text-align:right;">
-0.06095
+0.06043
 </td>
 </tr>
 <tr>
@@ -820,13 +912,13 @@ rs
 4
 </td>
 <td style="text-align:right;">
-0.01558
+0.01547
 </td>
 <td style="text-align:right;">
-0.01597
+0.01503
 </td>
 <td style="text-align:right;">
-0.01524
+0.01539
 </td>
 </tr>
 <tr>
@@ -834,13 +926,13 @@ rs
 5
 </td>
 <td style="text-align:right;">
-0.00294
+0.00311
 </td>
 <td style="text-align:right;">
-0.00337
+0.00278
 </td>
 <td style="text-align:right;">
-0.00312
+0.00288
 </td>
 </tr>
 <tr>
@@ -848,13 +940,13 @@ rs
 Avg. fixed points
 </td>
 <td style="text-align:right;">
-1.00006
+1.00306
 </td>
 <td style="text-align:right;">
-1.00492
+0.98776
 </td>
 <td style="text-align:right;">
-0.99974
+1.00051
 </td>
 </tr>
 </tbody>
@@ -865,38 +957,17 @@ Avg. fixed points
 <p>Ta cũng thấy rằng số điểm cố định trung bình qua thí nghiệm vừa rồi tương đương với 1. Trong thực tế, trung bình số điểm cố định sẽ bằng 1 với mọi <span class="math inline">\(n\)</span>.</p>
 </div>
 </div>
-<div id="chỉnh-hợp" class="section level3">
-<h3><span class="header-section-number">4.4.2</span> Chỉnh hợp</h3>
-<p>Chỉnh hợp (arrangement) thực chất là một trường hợp đặc biệt của hoán vị, và trong tiếng Anh còn được gọi là <em><span class="math inline">\(k\)</span>-permutations of <span class="math inline">\(n\)</span></em>, tức là <em>chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử</em>.</p>
-<p><strong>Định nghĩa</strong></p>
-<p>Cho tập hợp <span class="math inline">\(A\)</span> gồm <span class="math inline">\(n\)</span> phần tử. Một bộ gồm <span class="math inline">\(k\)</span> <span class="math inline">\((1\leq k\leq n)\)</span> phần tử sắp xếp thứ tự của tập hợp <span class="math inline">\(A\)</span> được gọi là một chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> phần tử của tập hợp <span class="math inline">\(A\)</span>.</p>
-<p><span class="math display">\[\begin{aligned}
-A^k_n &amp;= A(n,k) \\
-&amp;=n\cdot(n-1)\cdot...\cdot(n-k+1) \\
-&amp;=\frac{n!}{(n-k)!}
-\end{aligned}
-\]</span></p>
-<p>Để đếm số chỉnh hợp chập <span class="math inline">\(k\)</span> của <span class="math inline">\(n\)</span> với tập hợp <span class="math inline">\(A=\{a_1, a_2, a_3, ...,a_n\}\)</span>, ta sử dụng quy tắc đếm như sau:</p>
-<ul>
-<li>Có <span class="math inline">\(n\)</span> cách sắp xếp phần tử đầu tiên, <span class="math inline">\(a_1\)</span> để đưa vào một bộ <span class="math inline">\(k\)</span> phần tử,</li>
-<li>Có <span class="math inline">\(n-1\)</span> cách sắp xếp <span class="math inline">\(a_2\)</span>; ta lấy <span class="math inline">\(n-1\)</span> vì chỉ còn <span class="math inline">\(n-1\)</span> phần tử trong <span class="math inline">\(A\)</span> để chọn,</li>
-<li>Tương tự, có <span class="math inline">\(n-2\)</span> cách sắp xếp <span class="math inline">\(a_3\)</span>, và cứ tiếp tục như vậy,</li>
-<li>Đến khi đã chọn ra được đủ <span class="math inline">\(k\)</span> phần tử, lúc này ta đã chọn đến phần tử <span class="math inline">\(a_k\)</span> trong <span class="math inline">\(A\)</span>, và phần tử này có <span class="math inline">\(n-k+1\)</span> cách chọn.</li>
-</ul>
-<p>Ta hình dung tập hợp <span class="math inline">\(A\)</span> như sau:</p>
-<p><span class="math display">\[A=\{\underbrace{a_1,...,a_{k-1}}_{k-1\ phần\ tử}, a_k,a_{k+1},...,a_n\}\]</span>
-Khi chọn đến phần tử thứ <span class="math inline">\(k-1\)</span> (tức là chỉ còn 1 chỗ trong bộ <span class="math inline">\(k\)</span> phần tử), ta đã có <span class="math inline">\(k-1\)</span> phần tử. Như vậy phần tử thứ <span class="math inline">\(k\)</span> được chọn ra sẽ có <span class="math inline">\([n-(k-1)]=n-k+1\)</span> cách chọn.</p>
-<div id="chỉnh-hợp-trong-r" class="section level4">
-<h4><span class="header-section-number">4.4.2.1</span> Chỉnh hợp trong R</h4>
-</div>
-</div>
 <div id="một-số-ghi-chú-về-ký-hiệu" class="section level3">
-<h3><span class="header-section-number">4.4.3</span> Một số ghi chú về ký hiệu</h3>
+<h3><span class="header-section-number">4.4.4</span> Một số ghi chú về ký hiệu</h3>
 <ul>
 <li>Trong giáo trình Việt Nam, ký hiệu chỉnh hợp là <span class="math inline">\(A^k_n\)</span>. Ký hiệu này có lẽ được <a href="https://fr.wikipedia.org/wiki/Arrangement">lấy từ Pháp</a>.</li>
 <li>Trong giáo trình tiếng Anh, chỉnh hợp thường được gộp chung vào với hoán vị và là trường hợp đặc biệt của hoán vị, và thường được ký hiệu là <span class="math inline">\(P^k_n\)</span> hoặc <span class="math inline">\(P(n,k)\)</span>.</li>
 <li>Trên các máy tính bỏ túi, ta cũng thường thấy ký hiệu <span class="math inline">\(P\)</span> và <span class="math inline">\(C\)</span> để tính chỉnh hợp và tổ hợp. Một số dòng máy của Casio sẽ sử dụng cú pháp <span class="math inline">\(nPk\)</span> và <span class="math inline">\(nCk\)</span> để tính tổ hợp và chỉnh hợp.</li>
 </ul>
+</div>
+<div id="bài-tập" class="section level3">
+<h3><span class="header-section-number">4.4.5</span> Bài tập</h3>
+<p>Tham khảo bài tập về toán tổ hợp tại đây: <a href="https://github.com/truonghm/combinatorics_solutions">Lời giải bài tập cho sách Combinatorics and Graph Theory - John Harris</a></p>
 
 </div>
 </div>
