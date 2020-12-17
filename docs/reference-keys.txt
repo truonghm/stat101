@@ -84,3 +84,7 @@ skewness-kurtosis
 tổng-hợp-thuật-ngữ
 một-số-bài-tập
 tham-khảo
+phương-pháp-bootstrap
+bootstrap-là-gì
+giải-thích-thuật-ngữ
+lý-thuyết-bootstrapping
