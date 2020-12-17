@@ -189,7 +189,7 @@ ln(y)&=ln\left[\left(1+\frac{x}{n}\right)^n\right] \\
 \end{aligned}
 $$
 
-So:
+Tức là:
 
 $$
 \begin{aligned}
@@ -208,9 +208,21 @@ Ta sẽ dùng lại định nghĩa này để chứng minh công thức PMF củ
 
 Ngoài việc bản chất toán học tổ hợp (Combinatorics) đã khó, mọi thứ còn trở nên khó hơn vì mảng toán này có rất nhiều kí hiệu và thuật ngữ, cũng như sự khác biệt trong thuật ngữ của tiếng Anh và tiếng Việt.
 
-### Hoán vị (Permutation)
+### Các vấn đề cơ bản
 
-__Định nghĩa 1__
+#### Quy tắc cộng và quy tắc nhân
+
+__Quy tắc cộng (Sum Rule)__: Cho $S_1, S_2,..., S_m$ là các tập hợp hữu hạn không giao nhau (không có phần tử chung - mutually disjoint), và $|S_i|=n_i$ với $1\leq i\leq m$. Số cách để chọn một phần tử từ các tập hợp $S_1, S_2,..., S_m$ là tổng của $n_1+n_2+...+n_m$.
+
+__Quy tắc nhân (Product Rule)__: Cho $S_1, S_2,..., S_m$ là các tập hợp hữu hạn, và $|S_i|=n_i$ với $1\leq i\leq m$. Số cách để chọn một phần tử từ $S_1$, sau đó chọn tiếp một phần tử từ $S_2$, và tiếp tục đến một phần tử từ $S_m$, là tích của $n_1n_2...n_m$. Điều kiện để áp dụng quy tắc nhân là tất cả mọi lựa chọn đều độc lập, hay nói cách khác, mọi phần từ chọn từ $S_1$ đến $S_{i-1}$ không ảnh hưởng đến lựa chọn từ $S_i$, với mỗi $i$.
+
+#### Vấn đề 1 - Hoán vị (Permutation)
+
+__Câu hỏi:__ Có bao nhiêu cách để sắp xếp có thứ tự một tập hợp $n$ phần tử?
+
+__Ví dụ:__ Có bao nhiêu cách để tráo một bộ bài gồm 52 lá bài? Có bao nhiêu cách để sắp xếp 10 quyển sách trên một giá sách? Chú ý rằng việc sắp xếp trong các ví dụ này đều có thứ tự, tức là $1,2,3,4$ sẽ khác với $1,4,3,2$, cho dù cả 2 tập hợp này có các phần tử giống hệt nhau.
+
+__Định nghĩa__
 
 Cho $A$ là một tập hợp hữu hạn có $n$ phần tử, $n\geqslant1$. Hoán vị của $A$ là một cách sắp xếp thứ tự $n$ phần tử của $A$. Nói cách khác, một hoán vị của $A$ là ánh xạ 1-1 (one-to-one mapping) của $A$ lên chính nó.
 
@@ -243,15 +255,115 @@ data.frame("n"=1:10) %>%
 ```  
 
 Từ đó đã có công thức tính số hoán vị của $A$ với $n$ phần tử là:
-$$P_n=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1$$
-
-#### Giai thừa
-
-Một cách viết khác của $P_n$ trong công thức trên là $n!$, hay còn gọi là giai thừa của $n$.
-
-Ta có:
-
 $$P_n=n!=n(n-1)(n-2)(n-3)...\cdot3\cdot2\cdot1$$
+
+
+#### Vấn đề 2 - Chỉnh hợp
+
+__Câu hỏi:__ Có bao nhiêu cách để tạo ra một nhóm có thứ tự của $k$ phần tử, chọn ra từ một tập hợp ban đầu có $n$ phần tử?
+
+__Ví dụ:__ Có bao nhiêu cách để một bảng xếp hạng sắp xếp 20 đội bóng tốt nhất trong đó 100 đội bóng của toàn giải đấu? Có bao nhiêu cách để một ban nhạc chơi một danh sách gồm 12 bài hát nếu họ chỉ biết chơi tổng cộng 25 bài?
+
+Chỉnh hợp (arrangement) thực chất là một trường hợp đặc biệt của hoán vị, và trong tiếng Anh còn được gọi là _$k$-permutations of $n$_, tức là _chỉnh hợp chập $k$ của $n$ phần tử_.
+
+__Định nghĩa__
+
+Cho tập hợp $A$ gồm $n$ phần tử. Một bộ gồm $k$ $(1\leq k\leq n)$ phần tử sắp xếp thứ tự của tập hợp $A$ được gọi là một chỉnh hợp chập $k$ của $n$ phần tử của tập hợp $A$.
+
+$$\begin{aligned}
+A^n_k &= A(n,k) \\
+&=n\cdot(n-1)\cdot...\cdot(n-k+1) \\
+&=\frac{n!}{(n-k)!}
+\end{aligned}
+$$
+
+Để đếm số chỉnh hợp chập $k$ của $n$ với tập hợp $A=\{a_1, a_2, a_3, ...,a_n\}$, ta sử dụng quy tắc đếm như sau:
+
+- Có $n$ cách sắp xếp phần tử đầu tiên, $a_1$ để đưa vào một bộ $k$ phần tử,
+- Có $n-1$ cách sắp xếp $a_2$; ta lấy $n-1$ vì chỉ còn $n-1$ phần tử trong $A$ để chọn,
+- Tương tự, có $n-2$ cách sắp xếp $a_3$, và cứ tiếp tục như vậy,
+- Đến khi đã chọn ra được đủ $k$ phần tử, lúc này ta đã chọn đến phần tử $a_k$ trong $A$, và phần tử này có $n-k+1$ cách chọn.
+
+Ta hình dung tập hợp $A$ như sau:
+
+$$A=\{\underbrace{a_1,...,a_{k-1}}_{k-1\ phần\ tử}, a_k,a_{k+1},...,a_n\}$$
+Khi chọn đến phần tử thứ $k-1$ (tức là chỉ còn 1 chỗ trong bộ $k$ phần tử), ta đã có $k-1$ phần tử. Như vậy phần tử thứ $k$ được chọn ra sẽ có $[n-(k-1)]=n-k+1$ cách chọn.
+
+#### Vấn đề 3 - Tổ hợp
+
+__Câu hỏi:__ Có bao nhiêu cách để chọn ra $k$ phần tử từ một tập hợp $n$ phần tử, nếu thứ tự không quan trọng?
+
+__Ví dụ:__ Có bao nhiêu cách để bốc ra 5 lá bài (cho một hand trong poker) từ bộ bài gồm 52 lá? Thứ tự của 5 lá bài này không quan trọng vì người chơi có thể tuỳ ý sắp xếp mà không ảnh hưởng đến cách chơi.
+
+__Định nghĩa__: Tổ hợp chập $k$ của $n$ phần tử là: 
+
+$${n \choose k}=C(n,k)=\frac{A(n,k)}{k!}=\frac{n!}{k!(n-k)!}$$
+
+Ta chứng minh được công thức tổ hợp từ công thức của hoán vị và chỉnh hợp như sau: 
+
+- Chọn ra $k$ phần tử từ tập hợp $n$ phần tử, ta có số cách chọn là một số $C$.
+
+- Với mỗi cách chọn, ta sắp xếp lại $k$ phần tử được chọn, như vậy số cách chọn là hoán vị của $k$ phần từ và bằng $k!$.
+
+- Như vậy, số cách để chọn ra $k$ phần tử __có thứ tự__ từ $n$ phần từ là $C \cdot k!$. Đồng thời, số chọn này còn bằng $A(n,k)$, từ định nghĩa chỉnh hợp. Có nghĩa là:
+
+$$C={n \choose k}=\frac{A(n,k)}{k!}=\frac{n!}{k!(n-k)!}$$
+
+Số ${n \choose k}$ còn được gọi là __hệ số nhị thức.__
+
+
+### Hệ số nhị thức
+
+Một số tính chất của hệ số nhị thức (binomial coefficient):
+
+1. __Công thức tổ hợp__:
+
+$$
+{n \choose k}=
+\begin{cases}
+\frac{n!}{k!(n-k)!}=\frac{n^{\underline{k}}}{k!}=\frac{P(n,k}{k!} \quad if \;0 \leq k \leq n, \\
+0 \quad otherwise
+\end{cases}
+$$
+
+2. __Tính đối xứng:__ ${n \choose k}={n \choose n-k}$
+
+3. __Phép cộng:__ ${n \choose k}={n-1 \choose k}+{n-1 \choose k-1}$
+
+4. __Định lý nhị thức:__
+
+$$(x+y)^n=\sum_{k=0}^n {n \choose k}x^ky^{n-k}$$
+
+5. __Tổng của dãy số nhị thức:__ $\sum_{k=0}^n{n \choose k}=2^n$, when $x=1 \;and\;y=1$
+
+6. __Summing over lower index__ (or symmetry. Accross row $n$ of Pascal's Triangle):
+
+$$\sum_{k}(-1)^k{n \choose k}=
+\begin{cases}
+0 \;if\;n\geq1 \\
+1 \;if\;n=0
+\end{cases}
+$$
+
+7. __Summing over upper index__ (i.e. summing by column in Pascal's Triangle):
+
+$$\sum_{k=0}^n{k \choose m}={n+1 \choose m+1}$$
+
+với $m$ là thứ tự cột, và $n$ là thứ tự dòng. Sau khi cộng lại, ta có tổng của tất cả các giá trị trong cột $m$, tính từ dòng $0$ đến dòng $n$.
+
+
+8. __Vandermonde's identity:__
+
+$${m+n \choose r}=\sum_{k}{m \choose k}{n \choose r-k}$$
+
+Ý nghĩa & Ví dụ: Giả sử có một nhóm gồm $m$ nam và $n$ nữ. Số cách để chọn một nhóm nhỏ gồm $r$ thành viên, trong đó có $k$ nam và $r-k$ nữ là: 
+
+- Khi chọn trực tiếp từ nhóm ban đầu gồm $m+n$ người, ta có: ${m+n \choose r}$
+
+- Khi chọn lần lượt $k$ nam từ $m$ nam và $r-k$ nữ từ $n$ nữ, ta có: $\sum{m \choose k}{n \choose r-k}$
+
+
+### Một số kiến thức liên quan
 
 #### Tiệm cận
 
@@ -341,42 +453,12 @@ Như vậy, với $n>=10$, xác suất để một hoán vị ngẫu nhiên khô
 
 Ta cũng thấy rằng số điểm cố định trung bình qua thí nghiệm vừa rồi tương đương với 1. Trong thực tế, trung bình số điểm cố định sẽ bằng 1 với mọi $n$.
 
-### Chỉnh hợp
-
-Chỉnh hợp (arrangement) thực chất là một trường hợp đặc biệt của hoán vị, và trong tiếng Anh còn được gọi là _$k$-permutations of $n$_, tức là _chỉnh hợp chập $k$ của $n$ phần tử_.
-
-__Định nghĩa__
-
-Cho tập hợp $A$ gồm $n$ phần tử. Một bộ gồm $k$ $(1\leq k\leq n)$ phần tử sắp xếp thứ tự của tập hợp $A$ được gọi là một chỉnh hợp chập $k$ của $n$ phần tử của tập hợp $A$.
-
-$$\begin{aligned}
-A^k_n &= A(n,k) \\
-&=n\cdot(n-1)\cdot...\cdot(n-k+1) \\
-&=\frac{n!}{(n-k)!}
-\end{aligned}
-$$
-
-Để đếm số chỉnh hợp chập $k$ của $n$ với tập hợp $A=\{a_1, a_2, a_3, ...,a_n\}$, ta sử dụng quy tắc đếm như sau:
-
-- Có $n$ cách sắp xếp phần tử đầu tiên, $a_1$ để đưa vào một bộ $k$ phần tử,
-- Có $n-1$ cách sắp xếp $a_2$; ta lấy $n-1$ vì chỉ còn $n-1$ phần tử trong $A$ để chọn,
-- Tương tự, có $n-2$ cách sắp xếp $a_3$, và cứ tiếp tục như vậy,
-- Đến khi đã chọn ra được đủ $k$ phần tử, lúc này ta đã chọn đến phần tử $a_k$ trong $A$, và phần tử này có $n-k+1$ cách chọn.
-
-Ta hình dung tập hợp $A$ như sau:
-
-$$A=\{\underbrace{a_1,...,a_{k-1}}_{k-1\ phần\ tử}, a_k,a_{k+1},...,a_n\}$$
-Khi chọn đến phần tử thứ $k-1$ (tức là chỉ còn 1 chỗ trong bộ $k$ phần tử), ta đã có $k-1$ phần tử. Như vậy phần tử thứ $k$ được chọn ra sẽ có $[n-(k-1)]=n-k+1$ cách chọn.
-
-#### Chỉnh hợp trong R
-
-
-
 ### Một số ghi chú về ký hiệu
 
 - Trong giáo trình Việt Nam, ký hiệu chỉnh hợp là $A^k_n$. Ký hiệu này có lẽ được [lấy từ Pháp](https://fr.wikipedia.org/wiki/Arrangement).
 - Trong giáo trình tiếng Anh, chỉnh hợp thường được gộp chung vào với hoán vị và là trường hợp đặc biệt của hoán vị, và thường được ký hiệu là $P^k_n$ hoặc $P(n,k)$.
 - Trên các máy tính bỏ túi, ta cũng thường thấy ký hiệu $P$ và $C$ để tính chỉnh hợp và tổ hợp. Một số dòng máy của Casio sẽ sử dụng cú pháp $nPk$ và $nCk$ để tính tổ hợp và chỉnh hợp.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc2OTg2ODBdfQ==
--->
+
+### Bài tập
+
+Tham khảo bài tập về toán tổ hợp tại đây: [Lời giải bài tập cho sách Combinatorics and Graph Theory - John Harris](https://github.com/truonghm/combinatorics_solutions)
